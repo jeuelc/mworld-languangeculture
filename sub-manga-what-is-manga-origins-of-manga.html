@@ -1,0 +1,133 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-manga-what-is-manga-origins-of-manga">
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>
+  <script src="js/slidebar_Manga.js"></script>
+  <link rel="stylesheet" href="css/style_Manga.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnManga"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnManga"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnManga"></div></div>
+  <div class="infobtnholder"><div class="infobtnManga"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnManga"></div></div>
+  <div class="menubtnholder"><div class="menubtnManga"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:0px;"><h1>Origins of Manga</h1></div>
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+        <a id="mangalink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Language_and_Culture/Manga/What_Is_Manga/Origins_Of_Manga/Hokusai_Great_Wave_Hi_Res.jpg', 'This is a famous woodblock print. Maybe you\'ve seen it before, but did you know that the artist is the person who made up the word \'manga\'? (Courtesy: DEA/G. DAGLI ORTI/Getty Images)');">click here</a>
+		
+        <a id="shelveslink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Language_and_Culture/Manga/What_Is_Manga/Origins_Of_Manga/Japan_Punch_Hi_Res.jpg', 'Early Japanese magazines used woodblock printing for pictures, such as \'The Japan Punch\', by Charles Wigman, which included many satirical cartoons.');">click here</a>
+		
+		<div id="zoomwrapper">
+          <div id="polb1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/9-12/Language_and_Culture/Manga/What_Is_Manga/Origins_Of_Manga/Hokusai_Great_Wave.jpg" alt="" />
+          </div>
+          <div id="polb2"class="pPiece" style="left:75px;top:290px;">
+             <img src="css/images/9-12/Language_and_Culture/Manga/What_Is_Manga/Origins_Of_Manga/Japan_Punch.jpg" alt="" />
+          </div>
+		</div><!--/zoomwrapper-->
+      </div>
+      
+      <div class="bpcontentManga">
+        <p>Can you guess how old manga are?</p>
+		<p>Manga have a long history in Japan.  Manga-style pictures of animals have even been found in an 8th century temple!  The name 'manga' was invented in the early 1800s by the artist Katsushika Hokusai, who is most famous for his paintings of Mt Fuji, including The Great Wave. Manga means 'whimsical drawings'.</p>
+		<p>Manga exploded in popularity in the 1940s and '50s.  Manga from this era, like Astro Boy, were influenced not only by traditional Japanese art, but by Disney cartoons and American comic books. Kids could borrow comics from rental libraries by paying a small fee.</p>
+		<p>In the 1960s and '70s, kids who had grown up reading manga began to demand comics aimed at an older age group.  The weekly manga magazine was born.  These magazines are about 500 pages thick and have lots of different stories by different artists.  Artists whose manga is serialized in weekly magazines have to draw about 20 pages each week! A lot of artists have assistants, who help by drawing the backgrounds and other finishing touches.</p>
+      </div>
+       
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Language_and_Culture/bottomhomelc.png"></a></div>
+    </div> <!-- end content -->  
+  </div><!--/spacechar-->        
+  
+    <div class="micbtnholder"><div class="micbtnManga" id="playstopOriginsOfManga"></div></div>
+    <div class="bManga"><div class="rwManga" id="OriginsOfMangaaudiobbtn"></div></div>
+    <div class="plManga"><div class="plpsManga" id="OriginsOfMangaaudioplbtn"></div></div>
+    <div class="fManga"><div class="fwManga" id="OriginsOfMangaaudiofbtn"></div></div>
+    <div id="actualaudio-OriginsOfManga" style="visibility:hidden;"></div>
+  <!-- </div> -->
+  
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+ 
+	var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      $('div#polb1').css("z-index", 2);
+      $('div#polb2').css("z-index", 1);
+      $('div#polb1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#polb2 > img').css("-webkit-transform", "rotate(5deg)");
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-OriginsOfManga').html('<audio id="OriginsOfMangaaudio" controls preload onpause="playsManga()" onplay="pauseManga()"><source src="audio/Manga/Origins_Of_Manga.mp3" type="audio/mpeg"></audio>');
+      }             
+      $("#sub-manga-what-is-manga-origins-of-manga").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundManga.pause(); bgsoundManga.currentTime = 0;});
+    
+    $("#polb1").on('tap', function() {
+      $('#mangalink')[0].click();
+    });
+    $("#polb2").on('tap', function() {
+      $('#shelveslink')[0].click();
+    });
+	
+    function goBack() {
+      $.mobile.changePage("sub-manga-what-is-manga.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsManga() {
+         bgsoundManga.play();
+    }
+       
+    function pauseManga() {
+         bgsoundManga.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopOriginsOfManga").on('tap', function() {
+      if(!playing) {
+        OriginsOfMangaaudio.play();
+        $('.micbtnManga').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        OriginsOfMangaaudio.pause(); OriginsOfMangaaudio.currentTime = 0;
+        $('.micbtnManga').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#OriginsOfMangaaudioplbtn").on('tap', function() {
+      if(!paused) {
+        OriginsOfMangaaudio.pause();
+        paused = true;
+      } else {
+        OriginsOfMangaaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#OriginsOfMangaaudiofbtn").on('tap', function() {
+      var ctime = OriginsOfMangaaudio.currentTime;
+      OriginsOfMangaaudio.currentTime = ctime + 10;
+    });
+    
+    $("#OriginsOfMangaaudiobbtn").on('tap', function() {
+      var ctime = OriginsOfMangaaudio.currentTime;
+      OriginsOfMangaaudio.currentTime = ctime - 10;
+    });
+    
+    $("#OriginsOfMangaaudiopsbtn").on('tap', function() {
+      OriginsOfMangaaudio.pause();
+    });
+  </script>
+  <script src="js/twocardLogicb.js"></script>  <!-- for card dragging effects -->
+</div> <!--//home-->

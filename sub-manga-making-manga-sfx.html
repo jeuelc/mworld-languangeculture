@@ -1,0 +1,188 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-manga-making-manga-sfx">
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>
+  <script src="js/slidebar_Manga.js"></script>
+  <link rel="stylesheet" href="css/style_Manga.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnManga"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnManga"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnManga"></div></div>
+  <div class="infobtnholder"><div class="infobtnManga"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnManga"></div></div>
+  <div class="menubtnholder"><div class="menubtnManga"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:0px;"><h1>SFX</h1></div>
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+        
+		<div id="f1_container" style="visibility:hidden;position:absolute;left:100px;top:270px;">
+          <div id="f1_card">
+            <div class="front face">
+              <img id="dopple" src="css/images/9-12/Language_and_Culture/Manga/Making_Manga/SFX/Manga_Sound_Effects_Quiz.png">
+            </div>
+            <div id="backofcard" class="back face center" style="background:url(css/images/9-12/Language_and_Culture/Manga/Making_Manga/SFX/Manga_Sound_Effects_Quiz_Reverse.png) no-repeat;">
+              <div class="returncard" style="position:absolute;left:0px;top:0px;width:362px;height:170px;"></div>
+              <div id="trueans" style="position:absolute;left:90px;top:180px;width:70px;height:50px;"></div>
+              <div id="falseans" style="position:absolute;left:200px;top:180px;width:70px;height:50px;"></div>
+            </div>
+          </div><!--/f1+card-->
+        </div><!--/f1_container-->
+		
+		<div id="f2_container" style="visibility:hidden;position:absolute;left:100px;top:270px;">
+          <div id="f2_card">
+            <div class="front face">
+              <img id="dopple" src="css/images/9-12/Language_and_Culture/Manga/Making_Manga/SFX/Mountains_Of_Manga.png">
+            </div>
+            <div id="backofcard" class="back face center" style="background:url(css/images/9-12/Language_and_Culture/Manga/Making_Manga/SFX/Mountains_Of_Manga_Reverse.png) no-repeat;">
+              <div class="returncard" style="position:absolute;left:0px;top:0px;width:362px;height:170px;"></div>
+              <div id="trueans" style="position:absolute;left:90px;top:180px;width:70px;height:50px;"></div>
+              <div id="falseans" style="position:absolute;left:200px;top:180px;width:70px;height:50px;"></div>
+            </div>
+          </div><!--/f1+card-->
+        </div><!--/f1_container-->
+		
+		<div id="zoomwrapper">
+          <div id="pol1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/9-12/Language_and_Culture/Manga/Making_Manga/SFX/Manga_Sound_Effects_Quiz.png" alt="" />
+          </div>
+          <div id="pol2"class="pPiece" style="left:75px;top:290px;">
+             <img src="css/images/9-12/Language_and_Culture/Manga/Making_Manga/SFX/Mountains_Of_Manga.png" alt="" />
+          </div>
+		</div><!--/zoomwrapper-->
+      </div>
+      
+      <div class="bpcontentManga">
+        <p>Comics are famous for their sound effects (SFX) like "POW!" or "BAM!"  Japanese has even more SFX than English, many of which are unique.</p>
+		<p>SFX in Japanese manga don't just express action sounds.  They also tell you how a character is feeling, what the background sounds like, and there is even one for silence (shiiin)!  There are SFX to express the sound of a pencil rolling across a table (koro koro), a flying airship (guoooooo) or biting into an apple (baku!) among many other weird and wonderful examples.</p>
+		<p>In contrast to speech, which is normally typed, SFX are usually hand drawn, and are seen as part of the artwork.  Because there are so many SFX in Japanese, and because they are often seen as part of the art, they are very difficult to translate.  Sometimes, they aren't translated at all.  Have you ever seen Japanese SFX?</p>
+      </div>
+       
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Language_and_Culture/bottomhomelc.png"></a></div>
+    </div> <!-- end content -->  
+  </div><!--/spacechar-->        
+  
+    <div class="micbtnholder"><div class="micbtnManga" id="playstopSFX"></div></div>
+    <div class="bManga"><div class="rwManga" id="SFXaudiobbtn"></div></div>
+    <div class="plManga"><div class="plpsManga" id="SFXaudioplbtn"></div></div>
+    <div class="fManga"><div class="fwManga" id="SFXaudiofbtn"></div></div>
+    <div id="actualaudio-SFX" style="visibility:hidden;"></div>
+  <!-- </div> -->
+  
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+ 
+	var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      $('div#pol1').css("z-index", 2);
+      $('div#pol2').css("z-index", 1);
+      $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-SFX').html('<audio id="SFXaudio" controls preload onpause="playsManga()" onplay="pauseManga()"><source src="audio/Manga/SFX.mp3" type="audio/mpeg"></audio>');
+      }             
+      $("#sub-manga-making-manga-sfx").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundManga.pause(); bgsoundManga.currentTime = 0;});
+    
+    $(".returncard").on('tap', function() {
+      $('#f1_card').css({"-webkit-transform": "rotateY(0deg)"});
+      $('#f1_card').css({"-moz-transform": "rotateY(0deg)"});
+      $('#f1_card').css({"-o-transform": "rotateY(0deg)"});
+      $('#f1_card').css({"transform": "rotateY(0deg)"});
+      setTimeout(function() {
+        $("#pol1").css({"visibility":"visible", "z-index":4});
+        $('#f1_container').css({"visibility":"hidden", "z-index":0});
+      }, 1000);
+    });
+    
+    $("#pol1").on('tap', function() {
+      $('#f1_container').css({"visibility":"visible", "z-index":10});
+      $(this).css({"visibility":"hidden"});
+      $('#f1_card').css({"-webkit-transform": "rotateY(180deg)"});
+      $('#f1_card').css({"-moz-transform": "rotateY(180deg)"});
+      $('#f1_card').css({"-o-transform": "rotateY(180deg)"});
+      $('#f1_card').css({"transform": "rotateY(180deg)"});
+    });
+	
+	$(".returncard").on('tap', function() {
+      $('#f2_card').css({"-webkit-transform": "rotateY(0deg)"});
+      $('#f2_card').css({"-moz-transform": "rotateY(0deg)"});
+      $('#f2_card').css({"-o-transform": "rotateY(0deg)"});
+      $('#f2_card').css({"transform": "rotateY(0deg)"});
+      setTimeout(function() {
+        $("#pol2").css({"visibility":"visible", "z-index":4});
+        $('#f2_container').css({"visibility":"hidden", "z-index":0});
+      }, 1000);
+    });
+    
+    $("#pol2").on('tap', function() {
+      $('#f2_container').css({"visibility":"visible", "z-index":10});
+      $(this).css({"visibility":"hidden"});
+      $('#f2_card').css({"-webkit-transform": "rotateY(180deg)"});
+      $('#f2_card').css({"-moz-transform": "rotateY(180deg)"});
+      $('#f2_card').css({"-o-transform": "rotateY(180deg)"});
+      $('#f2_card').css({"transform": "rotateY(180deg)"});
+    });
+	
+    function goBack() {
+      $.mobile.changePage("sub-manga-making-manga.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsManga() {
+         bgsoundManga.play();
+    }
+       
+    function pauseManga() {
+         bgsoundManga.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopSFX").on('tap', function() {
+      if(!playing) {
+        SFXaudio.play();
+        $('.micbtnManga').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        SFXaudio.pause(); SFXaudio.currentTime = 0;
+        $('.micbtnManga').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#SFXaudioplbtn").on('tap', function() {
+      if(!paused) {
+        SFXaudio.pause();
+        paused = true;
+      } else {
+        SFXaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#SFXaudiofbtn").on('tap', function() {
+      var ctime = SFXaudio.currentTime;
+      SFXaudio.currentTime = ctime + 10;
+    });
+    
+    $("#SFXaudiobbtn").on('tap', function() {
+      var ctime = SFXaudio.currentTime;
+      SFXaudio.currentTime = ctime - 10;
+    });
+    
+    $("#SFXaudiopsbtn").on('tap', function() {
+      SFXaudio.pause();
+    });
+  </script>
+  <script src="js/twocardLogic.js"></script>  <!-- for card dragging effects -->
+</div> <!--//home-->

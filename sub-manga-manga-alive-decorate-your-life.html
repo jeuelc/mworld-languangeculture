@@ -1,0 +1,151 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-manga-manga-alive-decorate-your-life">
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>
+  <script src="js/slidebar_Manga.js"></script>
+  <link rel="stylesheet" href="css/style_Manga.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnManga"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnManga"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnManga"></div></div>
+  <div class="infobtnholder"><div class="infobtnManga"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnManga"></div></div>
+  <div class="menubtnholder"><div class="menubtnManga"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:0px;"><h1>Decorate Your Life</h1></div>
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+        <a id="queenielink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Language_and_Culture/Manga/Manga_Alive/Decorate_Your_Life/Queenie_Hi_Res.jpg', 'You could decorate your whole room with character goods! (Courtesy: Queenie Chan)');">click here</a>
+		
+        <a id="okashilink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Language_and_Culture/Manga/Manga_Alive/Decorate_Your_Life/Okashi_Packets_Hi_Res.jpg', 'Manga characters can be put on anything. They are especially popular on food packets. (Courtesy: Greg Elms/Getty Images)');">click here</a>
+		
+		<a id="hellokittylink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Language_and_Culture/Manga/Manga_Alive/Decorate_Your_Life/Hello_Kitty_Hi_Res.jpg', 'Hello Kitty can be found on almost anything in Japan, even things like these festival lanterns.');">click here</a>
+		
+		<a id="snowlink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Language_and_Culture/Manga/Manga_Alive/Decorate_Your_Life/Snow_Hatsune_Miku_Hi_Res.jpg', 'Manga character statues decorate outside areas all over Japan. Most are cast in iron, or carved from stone, etc. But at the Snow Festival in Sapporo you can even see manga snow sculptures.');">click here</a>
+        
+		<div id="zoomwrapper">
+          <div id="pol1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/9-12/Language_and_Culture/Manga/Manga_Alive/Decorate_Your_Life/Queenie.jpg" alt="" />
+          </div>
+          <div id="pol2"class="pPiece" style="left:75px;top:290px;">
+             <img src="css/images/9-12/Language_and_Culture/Manga/Manga_Alive/Decorate_Your_Life/Okashi_Packets.jpg" alt="" />
+          </div>
+		  <div id="pol3"class="pPiece" style="left:80px;top:270px;">
+             <img src="css/images/9-12/Language_and_Culture/Manga/Manga_Alive/Decorate_Your_Life/Hello_Kitty.jpg" alt="" />
+          </div>
+		  <div id="pol4"class="pPiece" style="left:70px;top:270px;">
+             <img src="css/images/9-12/Language_and_Culture/Manga/Manga_Alive/Decorate_Your_Life/Snow_Hatsune_Miku.jpg" alt="" />
+          </div>
+        </div><!--/zoomwrapper-->
+      </div>
+      
+      <div class="bpcontentManga">
+        <p>Do you own things with manga characters on them? What's the most interesting character merchandise you've ever seen?</p>
+		<p>Manga/anime characters are often turned into merchandise called 'character goods'.  These could be jewellery, lunch boxes, toilet seat covers, slippers, food, drinks, and more.  You can even buy tissues with your favourite characters printed on them!</p>
+		<p>One of the biggest manufacturers of character goods is Sanrio.  Their most famous character is Hello Kitty. Although Hello Kitty is not originally from a manga, she is drawn in a manga style and now there are heaps of Hello Kitty manga and anime.  Hello Kitty has appeared on thousands of products, including toasters, toothbrushes, toilet paper, and wedding dresses. Some dedicated fans decorate their entire home with Hello Kitty!</p>
+		<p>Another character who appears on many goods is Doraemon.  Doraemon is a robotic cat who originally appeared in the manga by Fujiko Fujio.  There are Doraemon key-rings, clocks, T-shirts, iPhone cases, nail clippers, shower caps, car mirrors, suitcases, soup mugs and USB chargers!</p>
+      </div>
+       
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Language_and_Culture/bottomhomelc.png"></a></div>
+    </div> <!-- end content -->  
+  </div><!--/spacechar-->        
+  
+    <div class="micbtnholder"><div class="micbtnManga" id="playstopDecorate"></div></div>
+    <div class="bManga"><div class="rwManga" id="Decorateaudiobbtn"></div></div>
+    <div class="plManga"><div class="plpsManga" id="Decorateaudioplbtn"></div></div>
+    <div class="fManga"><div class="fwManga" id="Decorateaudiofbtn"></div></div>
+    <div id="actualaudio-Decorate" style="visibility:hidden;"></div>
+  <!-- </div> -->
+  
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+ 
+	var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      $('div#pol1').css("z-index", 3);
+      $('div#pol2').css("z-index", 2);
+      $('div#pol3').css("z-index", 1);
+      $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
+      $('div#pol3 > img').css("-webkit-transform", "rotate(-3deg)");
+      $('div#pol4 > img').css("-webkit-transform", "rotate(-3deg)");
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-Decorate').html('<audio id="Decorateaudio" controls preload onpause="playsManga()" onplay="pauseManga()"><source src="audio/Manga/Decorate_Your_Life.mp3" type="audio/mpeg"></audio>');
+      }             
+      $("#sub-manga-manga-alive-decorate-your-life").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundManga.pause(); bgsoundManga.currentTime = 0;});
+    
+    $("#pol1").on('tap', function() {
+      $('#queenielink')[0].click();
+    });
+    $("#pol2").on('tap', function() {
+      $('#okashilink')[0].click();
+    });
+	$("#pol3").on('tap', function() {
+      $('#hellokittylink')[0].click();
+    });
+	$("#pol4").on('tap', function() {
+      $('#snowlink')[0].click();
+    });
+    function goBack() {
+      $.mobile.changePage("sub-manga-manga-alive.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsManga() {
+         bgsoundManga.play();
+    }
+       
+    function pauseManga() {
+         bgsoundManga.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopDecorate").on('tap', function() {
+      if(!playing) {
+        Decorateaudio.play();
+        $('.micbtnManga').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        Decorateaudio.pause(); Decorateaudio.currentTime = 0;
+        $('.micbtnManga').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#Decorateaudioplbtn").on('tap', function() {
+      if(!paused) {
+        Decorateaudio.pause();
+        paused = true;
+      } else {
+        Decorateaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#Decorateaudiofbtn").on('tap', function() {
+      var ctime = Decorateaudio.currentTime;
+      Decorateaudio.currentTime = ctime + 10;
+    });
+    
+    $("#Decorateaudiobbtn").on('tap', function() {
+      var ctime = Decorateaudio.currentTime;
+      Decorateaudio.currentTime = ctime - 10;
+    });
+    
+    $("#Decorateaudiopsbtn").on('tap', function() {
+      Decorateaudio.pause();
+    });
+  </script>
+  <script src="js/fourcardLogic.js"></script>  <!-- for card dragging effects -->
+</div> <!--//home-->

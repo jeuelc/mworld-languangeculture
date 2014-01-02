@@ -1,0 +1,137 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-manga-manga-alive">
+  <!-- <script src="js/slidebarnat.js"></script> -->
+  <script src="js/slidebar_Manga.js"></script>
+  <link rel="stylesheet" href="css/style_Manga.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnManga"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnManga"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnManga"></div></div>
+  <div class="infobtnholder"><div class="infobtnManga"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnManga"></div></div>
+  <div class="menubtnholder"><div class="menubtnManga"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>Manga Alive!</h1></div>
+  
+    <div data-role="content" class="kidzcontent">
+      <div class="navManga-content">
+        <p>Is manga part of your life? Look around you.  Sometimes it is, even when you don't realise.</p>
+		<p>Art forms like manga can develop a life of their own.</p>
+		<p>Manga has become much more than just a form of comic book.  Manga drawing style and characters even influence the way people dress and decorate their homes.</p>
+		<p>Every year, hundreds of thousands of people around the world visit manga conventions.  There, you can dress up as your favourite manga or anime character, buy manga character goods, or manga which has been made by fans.</p>
+		<p>Discover how manga plays an important part in the lives of young people around the world!</p>
+      </div>
+        
+      <div class="navbtn1">
+        <p><a href="sub-manga-manga-alive-cool-japan.html" data-transition="slide"><img src="css/images/9-12/Language_and_Culture/Manga/Manga_Alive/Cool_Japan.png"></a></p>
+      </div>
+      <div class="navbtn2">
+        <p><a href="sub-manga-manga-alive-cosplay.html" data-transition="slide"><img src="css/images/9-12/Language_and_Culture/Manga/Manga_Alive/Cosplay.png"></a></p>
+      </div>
+      <div class="navbtn3">
+        <p><a href="sub-manga-manga-alive-decorate-your-life.html" data-transition="slide"><img src="css/images/9-12/Language_and_Culture/Manga/Manga_Alive/Decorate_Your_Life.png"></a></p>
+      </div>
+      <div class="navbtn4">
+        <p><a href="sub-manga-manga-alive-fan-conventions.html" data-transition="slide"><img src="css/images/9-12/Language_and_Culture/Manga/Manga_Alive/Fan_Conventions.png"></a></p>
+      </div>
+        
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Language_and_Culture/bottomhomelc.png"></a></div>
+    </div> <!-- end content -->  
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js -->
+    <div class="micbtnholder"><div class="micbtnManga" id="playstopMangaAlive"></div></div>
+    <div class="bManga"><div class="rwManga" id="MangaAliveaudiobbtn"></div></div>
+    <div class="plManga"><div class="plpsManga" id="MangaAliveaudioplbtn"></div></div>
+    <div class="fManga"><div class="fwManga" id="MangaAliveaudiofbtn"></div></div>
+    <div id="actualaudio-MangaAlive" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-MangaAlive').html('<audio id="MangaAliveaudio" controls preload onpause="playsManga()" onplay="pauseManga()"><source src="audio/Manga/Manga_Alive.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-manga-manga-alive").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { bgsoundManga.pause(); bgsoundManga.currentTime = 0; mainaudiobg.play(); });
+    
+    function goBack() {
+      $.mobile.changePage("sub-manga.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsManga() {
+         bgsoundManga.play();
+    }
+       
+    function pauseManga() {
+         bgsoundManga.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+	
+    $("#playstopMangaAlive").on('tap', function() {
+      if(!playing) {
+        MangaAliveaudio.play();
+        $('.micbtnManga').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        MangaAliveaudio.pause(); MangaAliveaudio.currentTime = 0;
+        $('.micbtnManga').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#MangaAliveaudioplbtn").on('tap', function() {
+      if(!paused) {
+        MangaAliveaudio.pause();
+        paused = true;
+      } else {
+        MangaAliveaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#MangaAliveaudiofbtn").on('tap', function() {
+      var ctime = MangaAliveaudio.currentTime;
+      MangaAliveaudio.currentTime = ctime + 10;
+    });
+    
+    $("#MangaAliveaudiobbtn").on('tap', function() {
+      var ctime = MangaAliveaudio.currentTime;
+      MangaAliveaudio.currentTime = ctime - 10;
+    });
+    
+    $("#MangaAliveaudiopsbtn").on('tap', function() {
+      MangaAliveaudio.pause();
+      //$(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
+    
+    $('.navbtn1').on('tap', function() { 
+      nav1Effects(); 
+    });
+    
+    $('.navbtn2').on('tap', function() { 
+      nav2Effects(); 
+    });
+    
+    $('.navbtn3').on('tap', function() { 
+      nav3Effects(); 
+    });
+    
+    $('.navbtn4').on('tap', function() { 
+      nav4Effects(); 
+    });
+  </script>
+</div> <!--//home-->

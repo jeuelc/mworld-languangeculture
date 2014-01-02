@@ -1,0 +1,141 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-manga-manga-alive-cool-japan">
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>
+  <script src="js/slidebar_Manga.js"></script>
+  <link rel="stylesheet" href="css/style_Manga.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnManga"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnManga"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnManga"></div></div>
+  <div class="infobtnholder"><div class="infobtnManga"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnManga"></div></div>
+  <div class="menubtnholder"><div class="menubtnManga"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:0px;"><h1>Cool Japan</h1></div>
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+        <a id="shinjukulink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Language_and_Culture/Manga/Manga_Alive/Cool_Japan/Shinjuku_Hi_Res.jpg', 'Shinjuku is a cultural hub often linked to the image of modern, Cool Japan.');">click here</a>
+		
+        <a id="harajukulink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Language_and_Culture/Manga/Manga_Alive/Cool_Japan/Harajuku_Girl_Hi_Res.jpg', 'Cool Japan is associated with fashion. Especially the styles common to the Harajuku area in Tokyo.');">click here</a>
+		
+		<a id="kaitenlink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Language_and_Culture/Manga/Manga_Alive/Cool_Japan/Kaiten_Sushi_Hi_Res.jpg', 'Food is a huge part of Cool Japan, and sushi has become popular around the world. Many visitors to Japan look forward to authentic Japanese restaurant experiences on their trip.');">click here</a>
+        
+		<div id="zoomwrapper">
+          <div id="pol1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/9-12/Language_and_Culture/Manga/Manga_Alive/Cool_Japan/Shinjuku.jpg" alt="" />
+          </div>
+          <div id="pol2"class="pPiece" style="left:75px;top:290px;">
+             <img src="css/images/9-12/Language_and_Culture/Manga/Manga_Alive/Cool_Japan/Harajuku_Girl.jpg" alt="" />
+          </div>
+		  <div id="pol3"class="pPiece" style="left:80px;top:270px;">
+             <img src="css/images/9-12/Language_and_Culture/Manga/Manga_Alive/Cool_Japan/Kaiten_Sushi.jpg" alt="" />
+          </div>
+        </div><!--/zoomwrapper-->
+      </div>
+      
+      <div class="bpcontentManga">
+        <p>What do you think the coolest thing in your country is?</p>
+		<p>When describing the economy of a country, people talk about its 'Gross Domestic Product' (GDP).  This is the value of goods and services produced by that country.  Japan's GDP was very strong in the 1980s and '90s.  Recently, people have started to describe Japan's 'Gross National Cool' (GNC)!  Hello Kitty is an example of GNC.  In 2008, Hello Kitty was named Japan's official ambassador of tourism to China and Hong Kong, the first fictional character in this role.</p>
+		<p>Much of Japan's GNC is related to manga/anime.  'Cool Japan' as a brand has been adopted by the Japanese government.  The Ministry for Economy, Trade and Industry even has a Cool Japan Promotion Office!</p>
+		<p>You can see the influence of manga across the world.  There are manga cafes throughout Asia and Europe, and American and European comics have been influenced by manga.  Some surveys show that more kids around the world recognise Japanese characters like Pikachu and Mario than Mickey Mouse!</p>
+      </div>
+       
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Language_and_Culture/bottomhomelc.png"></a></div>
+    </div> <!-- end content -->  
+  </div><!--/spacechar-->        
+  
+    <div class="micbtnholder"><div class="micbtnManga" id="playstopCoolJapan"></div></div>
+    <div class="bManga"><div class="rwManga" id="CoolJapanaudiobbtn"></div></div>
+    <div class="plManga"><div class="plpsManga" id="CoolJapanaudioplbtn"></div></div>
+    <div class="fManga"><div class="fwManga" id="CoolJapanaudiofbtn"></div></div>
+    <div id="actualaudio-CoolJapan" style="visibility:hidden;"></div>
+  <!-- </div> -->
+  
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+ 
+	var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      $('div#pol2').css("z-index", 2);
+      $('div#pol1').css("z-index", 1);
+      $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
+      $('div#pol3 > img').css("-webkit-transform", "rotate(-3deg)");
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-CoolJapan').html('<audio id="CoolJapanaudio" controls preload onpause="playsManga()" onplay="pauseManga()"><source src="audio/Manga/Cool_Japan.mp3" type="audio/mpeg"></audio>');
+      }             
+      $("#sub-manga-manga-alive-cool-japan").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundManga.pause(); bgsoundManga.currentTime = 0;});
+    
+    $("#pol1").on('tap', function() {
+      $('#shinjukulink')[0].click();
+    });
+    $("#pol2").on('tap', function() {
+      $('#harajukulink')[0].click();
+    });
+	$("#pol3").on('tap', function() {
+      $('#kaitenlink')[0].click();
+    });
+    function goBack() {
+      $.mobile.changePage("sub-manga-manga-alive.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsManga() {
+         bgsoundManga.play();
+    }
+       
+    function pauseManga() {
+         bgsoundManga.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopCoolJapan").on('tap', function() {
+      if(!playing) {
+        CoolJapanaudio.play();
+        $('.micbtnManga').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        CoolJapanaudio.pause(); CoolJapanaudio.currentTime = 0;
+        $('.micbtnManga').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#CoolJapanaudioplbtn").on('tap', function() {
+      if(!paused) {
+        CoolJapanaudio.pause();
+        paused = true;
+      } else {
+        CoolJapanaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#CoolJapanaudiofbtn").on('tap', function() {
+      var ctime = CoolJapanaudio.currentTime;
+      CoolJapanaudio.currentTime = ctime + 10;
+    });
+    
+    $("#CoolJapanaudiobbtn").on('tap', function() {
+      var ctime = CoolJapanaudio.currentTime;
+      CoolJapanaudio.currentTime = ctime - 10;
+    });
+    
+    $("#CoolJapanaudiopsbtn").on('tap', function() {
+      CoolJapanaudio.pause();
+    });
+  </script>
+  <script src="js/threecardLogic.js"></script>  <!-- for card dragging effects -->
+</div> <!--//home-->

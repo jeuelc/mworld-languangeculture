@@ -1,0 +1,142 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-manga-characters-and-worlds-weird-wonderful-worlds">
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>
+  <script src="js/slidebar_Manga.js"></script>
+  <link rel="stylesheet" href="css/style_Manga.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnManga"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnManga"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnManga"></div></div>
+  <div class="infobtnholder"><div class="infobtnManga"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnManga"></div></div>
+  <div class="menubtnholder"><div class="menubtnManga"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:0px;"><h1>Weird and Wonderful Worlds</h1></div>
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+        <a id="purplelink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Language_and_Culture/Manga/Characters_And_Worlds/Weird_And_Wonderful_Worlds/Boy_And_Robot_Hi_Res.jpg', 'Manga can be set in any kind of world. (Courtesty: Steve & Ghy Sampson/Getty Images)');">click here</a>
+		
+        <a id="yattalink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Language_and_Culture/Manga/Characters_And_Worlds/Weird_And_Wonderful_Worlds/Space_Robot_Hi_Res.jpg', 'They can be set anywhere in the universe!');">click here</a>
+		
+		<a id="motherlink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Language_and_Culture/Manga/Characters_And_Worlds/Weird_And_Wonderful_Worlds/Samurai_Hi_Res.jpg', 'They can be set any time in the past, present, or future.');">click here</a>
+        
+		<div id="zoomwrapper">
+          <div id="pol1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/9-12/Language_and_Culture/Manga/Characters_And_Worlds/Weird_And_Wonderful_Worlds/Boy_And_Robot.jpg" alt="" />
+          </div>
+          <div id="pol2"class="pPiece" style="left:75px;top:290px;">
+             <img src="css/images/9-12/Language_and_Culture/Manga/Characters_And_Worlds/Weird_And_Wonderful_Worlds/Space_Robot.jpg" alt="" />
+          </div>
+		  <div id="pol3"class="pPiece" style="left:80px;top:270px;">
+             <img src="css/images/9-12/Language_and_Culture/Manga/Characters_And_Worlds/Weird_And_Wonderful_Worlds/Samurai.jpg" alt="" />
+          </div>
+        </div><!--/zoomwrapper-->
+      </div>
+      
+      <div class="bpcontentManga">
+        <p>If you were making a manga, what sort of setting would you choose?</p>
+		<p>Manga can be set in worlds you know, like school or sports clubs, and worlds you dream about, like outer space, ancient Greece and Rome, samurai Japan, and alternative dimensions.</p>
+		<p>When people talk about the 'world' of a manga, this can mean the look and feel, or the style of a manga, as well as the time and place that the story happens.</p>
+		<p>Some manga are incredibly detailed and some have a more simplistic style.  Some are set in the past - depicting real events or imagined - and others are set in the present. Some even imagine the future.  While many manga are set in Japan, some are set in other parts of the world, and some are set in completely imaginary realms!</p>
+		<p>A well-planned world provides plenty of ideas for manga artists to write stories.</p>
+      </div>
+       
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Language_and_Culture/bottomhomelc.png"></a></div>
+    </div> <!-- end content -->  
+  </div><!--/spacechar-->        
+  
+    <div class="micbtnholder"><div class="micbtnManga" id="playstopWeirdWonderful"></div></div>
+    <div class="bManga"><div class="rwManga" id="WeirdWonderfulaudiobbtn"></div></div>
+    <div class="plManga"><div class="plpsManga" id="WeirdWonderfulaudioplbtn"></div></div>
+    <div class="fManga"><div class="fwManga" id="WeirdWonderfulaudiofbtn"></div></div>
+    <div id="actualaudio-WeirdWonderful" style="visibility:hidden;"></div>
+  <!-- </div> -->
+  
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+ 
+	var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      $('div#pol2').css("z-index", 2);
+      $('div#pol1').css("z-index", 1);
+      $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
+      $('div#pol3 > img').css("-webkit-transform", "rotate(-3deg)");
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-WeirdWonderful').html('<audio id="WeirdWonderfulaudio" controls preload onpause="playsManga()" onplay="pauseManga()"><source src="audio/Manga/Weird_Wonderful_Worlds.mp3" type="audio/mpeg"></audio>');
+      }             
+      $("#sub-manga-characters-and-worlds-weird-wonderful-worlds").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundManga.pause(); bgsoundManga.currentTime = 0;});
+    
+    $("#pol1").on('tap', function() {
+      $('#purplelink')[0].click();
+    });
+    $("#pol2").on('tap', function() {
+      $('#yattalink')[0].click();
+    });
+	$("#pol3").on('tap', function() {
+      $('#motherlink')[0].click();
+    });
+    function goBack() {
+      $.mobile.changePage("sub-manga-characters-and-worlds.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsManga() {
+         bgsoundManga.play();
+    }
+       
+    function pauseManga() {
+         bgsoundManga.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopWeirdWonderful").on('tap', function() {
+      if(!playing) {
+        WeirdWonderfulaudio.play();
+        $('.micbtnManga').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        WeirdWonderfulaudio.pause(); WeirdWonderfulaudio.currentTime = 0;
+        $('.micbtnManga').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#WeirdWonderfulaudioplbtn").on('tap', function() {
+      if(!paused) {
+        WeirdWonderfulaudio.pause();
+        paused = true;
+      } else {
+        WeirdWonderfulaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#WeirdWonderfulaudiofbtn").on('tap', function() {
+      var ctime = WeirdWonderfulaudio.currentTime;
+      WeirdWonderfulaudio.currentTime = ctime + 10;
+    });
+    
+    $("#WeirdWonderfulaudiobbtn").on('tap', function() {
+      var ctime = WeirdWonderfulaudio.currentTime;
+      WeirdWonderfulaudio.currentTime = ctime - 10;
+    });
+    
+    $("#WeirdWonderfulaudiopsbtn").on('tap', function() {
+      WeirdWonderfulaudio.pause();
+    });
+  </script>
+  <script src="js/threecardLogic.js"></script>  <!-- for card dragging effects -->
+</div> <!--//home-->

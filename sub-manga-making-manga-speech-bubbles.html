@@ -1,0 +1,133 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-manga-making-manga-speech-bubbles">
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>
+  <script src="js/slidebar_Manga.js"></script>
+  <link rel="stylesheet" href="css/style_Manga.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnManga"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnManga"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnManga"></div></div>
+  <div class="infobtnholder"><div class="infobtnManga"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnManga"></div></div>
+  <div class="menubtnholder"><div class="menubtnManga"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:0px;"><h1>Speech Bubbles</h1></div>
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+        <a id="shinjukulink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Language_and_Culture/Manga/Making_Manga/Speech_Bubbles/Soft_Bubbles_Hi_Res.jpg', 'Soft shaped speech bubbles express calm or thoughtful feelings.');">click here</a>
+		
+        <a id="harajukulink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Language_and_Culture/Manga/Making_Manga/Speech_Bubbles/Sharp_Bubbles_Hi_Res.jpg', 'Sharp, jagged speech bubbles are used for feelings like surprise and anger.');">click here</a>
+		
+		<div id="zoomwrapper">
+          <div id="pol1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/9-12/Language_and_Culture/Manga/Making_Manga/Speech_Bubbles/Soft_Bubbles.jpg" alt="" />
+          </div>
+          <div id="pol2"class="pPiece" style="left:75px;top:290px;">
+             <img src="css/images/9-12/Language_and_Culture/Manga/Making_Manga/Speech_Bubbles/Sharp_Bubbles.jpg" alt="" />
+          </div>
+		</div><!--/zoomwrapper-->
+      </div>
+      
+      <div class="bpcontentManga">
+        <p>How does a speech bubble's shape tell us about a characters emotions?</p>
+		<p>The shape of the speech bubble helps to convey a character's tone of voice. In a novel, the author can always write "she boomed" or "he whispered", but in a manga, the only words are those spoken by the characters.  So visual means like font size and shape, and speech bubble size and shape are used to show how loud someone is speaking, or the tone of voice they're using.</p>
+		<p>Thought bubbles are also used to display what a character is thinking or feeling.  These often look more like clouds, to show that they are thinking quietly, not talking out loud.</p>
+		<p>The same word can take on a new meaning when it is presented in different shaped bubbles.  Jagged edges can show a strong feeling, like shouting in surprise.  Wobbly edges can show an element of fear, like being surprised by a ghost.  And thought bubbles with little clouds can show speechlessness.</p>
+      </div>
+       
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Language_and_Culture/bottomhomelc.png"></a></div>
+    </div> <!-- end content -->  
+  </div><!--/spacechar-->        
+  
+    <div class="micbtnholder"><div class="micbtnManga" id="playstopSpeechBubbles"></div></div>
+    <div class="bManga"><div class="rwManga" id="SpeechBubblesaudiobbtn"></div></div>
+    <div class="plManga"><div class="plpsManga" id="SpeechBubblesaudioplbtn"></div></div>
+    <div class="fManga"><div class="fwManga" id="SpeechBubblesaudiofbtn"></div></div>
+    <div id="actualaudio-SpeechBubbles" style="visibility:hidden;"></div>
+  <!-- </div> -->
+  
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+ 
+	var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      $('div#pol1').css("z-index", 2);
+      $('div#pol2').css("z-index", 1);
+      $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-SpeechBubbles').html('<audio id="SpeechBubblesaudio" controls preload onpause="playsManga()" onplay="pauseManga()"><source src="audio/Manga/Speech_Bubbles.mp3" type="audio/mpeg"></audio>');
+      }             
+      $("#sub-manga-making-manga-speech-bubbles").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundManga.pause(); bgsoundManga.currentTime = 0;});
+    
+    $("#pol1").on('tap', function() {
+      $('#shinjukulink')[0].click();
+    });
+    $("#pol2").on('tap', function() {
+      $('#harajukulink')[0].click();
+    });
+	
+	function goBack() {
+      $.mobile.changePage("sub-manga-making-manga.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsManga() {
+         bgsoundManga.play();
+    }
+       
+    function pauseManga() {
+         bgsoundManga.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopSpeechBubbles").on('tap', function() {
+      if(!playing) {
+        SpeechBubblesaudio.play();
+        $('.micbtnManga').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        SpeechBubblesaudio.pause(); SpeechBubblesaudio.currentTime = 0;
+        $('.micbtnManga').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#SpeechBubblesaudioplbtn").on('tap', function() {
+      if(!paused) {
+        SpeechBubblesaudio.pause();
+        paused = true;
+      } else {
+        SpeechBubblesaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#SpeechBubblesaudiofbtn").on('tap', function() {
+      var ctime = SpeechBubblesaudio.currentTime;
+      SpeechBubblesaudio.currentTime = ctime + 10;
+    });
+    
+    $("#SpeechBubblesaudiobbtn").on('tap', function() {
+      var ctime = SpeechBubblesaudio.currentTime;
+      SpeechBubblesaudio.currentTime = ctime - 10;
+    });
+    
+    $("#SpeechBubblesaudiopsbtn").on('tap', function() {
+      SpeechBubblesaudio.pause();
+    });
+  </script>
+  <script src="js/twocardLogic.js"></script>  <!-- for card dragging effects -->
+</div> <!--//home-->

@@ -1,0 +1,114 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-manga-characters-and-worlds">
+  <script src="js/slidebar_Manga.js"></script>
+  <link rel="stylesheet" href="css/style_Manga.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnManga"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnManga"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnManga"></div></div>
+  <div class="infobtnholder"><div class="infobtnManga"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnManga"></div></div>
+  <div class="menubtnholder"><div class="menubtnManga"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>Characters and Worlds</h1></div>
+  <div id="weirdlink" style="position: absolute;left: 106px;top: 420px;width: 195px;height: 220px;"></div>
+  <div id="cutelink" style="position: absolute;left: 745px;top: 412px;width: 185px;height: 225px;"></div>
+  
+  <div data-role="content" class="kidzcontent">
+	  <div class="navManga-characters-worlds">
+        <p>Why are manga so popular?  Two big reasons are manga's strong characters and worlds.  People enjoy manga stories so much that they are retold over and over, and characters jump out of manga and into other media!</p>
+		<p>First, each manga story will be serialized (published in parts) in magazines.  Then, if it's popular, it will be republished as a standalone book or book series.  If it becomes even more popular, it will be turned into an anime!  Then if the anime is successful, merchandise that uses the show's characters will be made!  There are games, dolls, costumes, magazines, novels, cinematic comics, illustrations, posters, TV dramas, movies, and music based on manga.  All of these forms explore the worlds and characters of the original manga in new ways, giving fans the chance to enjoy their favourite stories all over again.</p>
+		<p>Come explore the characters and worlds of manga!</p>
+      </div>
+    <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Language_and_Culture/bottomhomelc.png"></a></div>
+  </div> <!-- end content -->  
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js 
+         note: change the ids to be able play the narration
+    -->
+    <div class="micbtnholder"><div class="micbtnManga" id="playstopCharactersWorlds"></div></div>
+    <div class="bManga"><div class="rwManga" id="CharactersWorldsaudiobbtn"></div></div>
+    <div class="plManga"><div class="plpsManga" id="CharactersWorldsaudioplbtn"></div></div>
+    <div class="fManga"><div class="fwManga" id="CharactersWorldsaudiofbtn"></div></div>
+    <div id="actualaudio-CharactersWorlds" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-CharactersWorlds').html('<audio id="CharactersWorldsaudio" controls preload onpause="playsManga()" onplay="pauseManga()"><source src="audio/Manga/Characters_And_Worlds.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-manga-characters-and-worlds").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('#weirdlink').on('tap', function() {
+      $.mobile.changePage("sub-manga-characters-and-worlds-weird-wonderful-worlds.html", {transition: "slide"});
+    });
+    
+    $('#cutelink').on('tap', function() {
+      $.mobile.changePage("sub-manga-characters-and-worlds-cute-cool-characters.html", {transition: "slide"});
+    });
+    
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundManga.pause(); bgsoundManga.currentTime = 0;});
+    
+    function goBack() {
+      $.mobile.changePage("sub-manga.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsManga() {
+         bgsoundManga.play();
+    }
+       
+    function pauseManga() {
+         bgsoundManga.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopCharactersWorlds").on('tap', function() {
+      if(!playing) {
+        CharactersWorldsaudio.play();
+        $('.micbtnManga').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        CharactersWorldsaudio.pause(); CharactersWorldsaudio.currentTime = 0;
+        $('.micbtnManga').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#CharactersWorldsaudioplbtn").on('tap', function() {
+      if(!paused) {
+        CharactersWorldsaudio.pause();
+        paused = true;
+      } else {
+        CharactersWorldsaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#CharactersWorldsaudiofbtn").on('tap', function() {
+      var ctime = CharactersWorldsaudio.currentTime;
+      CharactersWorldsaudio.currentTime = ctime + 10;
+    });
+    
+    $("#CharactersWorldsaudiobbtn").on('tap', function() {
+      var ctime = CharactersWorldsaudio.currentTime;
+      CharactersWorldsaudio.currentTime = ctime - 10;
+    });
+    
+    $("#CharactersWorldsaudiopsbtn").on('tap', function() {
+      CharactersWorldsaudio.pause();
+    });
+  </script>
+</div> <!--//home-->

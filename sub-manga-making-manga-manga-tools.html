@@ -1,0 +1,167 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-manga-making-manga-manga-tools">
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>
+  <script src="js/slidebar_Manga.js"></script>
+  <link rel="stylesheet" href="css/style_Manga.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnManga"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnManga"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnManga"></div></div>
+  <div class="infobtnholder"><div class="infobtnManga"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnManga"></div></div>
+  <div class="menubtnholder"><div class="menubtnManga"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:0px;"><h1>Manga Tools</h1></div>
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+        
+        <a id="artlink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Language_and_Culture/Manga/Making_Manga/Manga_Tools/Art_Supplies_Hi_Res.jpg', 'Professional manga artists use a range of tools to make manga. Here are just some of them.');">click here</a>
+		
+		<a id="frenchlink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Language_and_Culture/Manga/Making_Manga/Manga_Tools/French_Curves_Hi_Res.jpg', 'These special drawing tools called \'French curves\' are what the artists use to draw curves so well.');">click here</a>
+        
+		<div id="zoomwrapper">
+          <div id="pol1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/9-12/Language_and_Culture/Manga/Making_Manga/Manga_Tools/Sketching_And_Lnking.png" alt="" />
+          </div>
+          <div id="pol2"class="pPiece" style="left:75px;top:290px;">
+             <img src="css/images/9-12/Language_and_Culture/Manga/Making_Manga/Manga_Tools/Art_Supplies.jpg" alt="" />
+          </div>
+		  <div id="pol3"class="pPiece" style="left:80px;top:270px;">
+             <img src="css/images/9-12/Language_and_Culture/Manga/Making_Manga/Manga_Tools/French_Curves.jpg" alt="" />
+          </div>
+        </div><!--/zoomwrapper-->
+      </div>
+      
+      <div class="bpcontentManga">
+        <p>A lot of professional manga artists still draw their comics by hand.  They use art supplies like pens, ink, mechanical pencils, rulers, brush pens, and correction fluid.</p>
+		<p>Most of the early sketching is done using a light blue lead in the mechanical pencil.  Because manga is printed in monochrome (black printing on white or light-coloured paper), the blue colour isn't picked up in the printing process.  So if you forget to erase some of your sketching, it doesn't show in the final manga.  But you can also use a normal grey lead pencil and an eraser!</p>
+		<p>After the sketching is complete, ink is used to draw over the final pictures.  Even professional manga artists sometimes make mistakes!  This is what the correction fluid is for.  But it is important to wait for the ink to dry first, or you'll end up with a mess!</p>
+      </div>
+       
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Language_and_Culture/bottomhomelc.png"></a></div>
+    </div> <!-- end content -->  
+  </div><!--/spacechar-->        
+  
+    <div class="micbtnholder"><div class="micbtnManga" id="playstopMangaTools"></div></div>
+    <div class="bManga"><div class="rwManga" id="MangaToolsaudiobbtn"></div></div>
+    <div class="plManga"><div class="plpsManga" id="MangaToolsaudioplbtn"></div></div>
+    <div class="fManga"><div class="fwManga" id="MangaToolsaudiofbtn"></div></div>
+    <div id="actualaudio-MangaTools" style="visibility:hidden;"></div>
+  <!-- </div> -->
+  <!-- ----------------------- Video embedding --------------------------- -->
+  
+	<div id="watchsketchingvideo" style="width:1024px;height:748px;position:absolute;left:0px;top:0px;visibility:hidden;background:#000000;z-index:-1;">
+    <video id="watchsketching" width="1024" height="748" preload>
+      <source src="css/images/9-12/Language_and_Culture/Manga/Making_Manga/Manga_Tools/Sketching_And_Lnking.mp4" type="video/mp4">
+    </video>
+  </div>
+  
+  <!-- ------------------------------------------------------------------ -->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+ 
+	var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      $('div#pol1').css("z-index", 2);
+      $('div#pol2').css("z-index", 1);
+      $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('#watchsketchingvideo').css({"visibility":"hidden", "z-index":-10});		
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
+      $('div#pol3 > img').css("-webkit-transform", "rotate(-3deg)");
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-MangaTools').html('<audio id="MangaToolsaudio" controls preload onpause="playsManga()" onplay="pauseManga()"><source src="audio/Manga/Manga_Tools.mp3" type="audio/mpeg"></audio>');
+      }             
+      $("#sub-manga-making-manga-manga-tools").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundManga.pause(); bgsoundManga.currentTime = 0;});
+    	
+	watchsketching.addEventListener('ended', function() { 
+        $("#watchsketchingvideo").css({"visibility":"hidden", "z-index":-1});
+        $("#watchsketching").css({"z-index":-1});
+        bgsoundManga.play(); 
+      });
+    
+      $("#watchsketching").on('tap', function() {
+        $("#watchsketchingvideo").css({"visibility":"hidden", "z-index":-1});
+        $("#watchsketching").css({"z-index":-1});
+        bgsoundManga.play();
+        watchsketching.pause();
+        watchsketching.currentTime = 0;
+      });
+	  
+    $("#pol1").on('tap', function(){
+      $("#watchsketchingvideo").css({"visibility":"visible", "z-index":10});
+      $("#watchsketching").css({"z-index":9});
+      bgsoundManga.pause();
+      watchsketching.play();
+    });
+	
+    $("#pol2").on('tap', function() {
+      $('#artlink')[0].click();
+    });
+	
+	$("#pol3").on('tap', function() {
+      $('#frenchlink')[0].click();
+    });
+    function goBack() {
+      $.mobile.changePage("sub-manga-making-manga.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsManga() {
+         bgsoundManga.play();
+    }
+       
+    function pauseManga() {
+         bgsoundManga.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopMangaTools").on('tap', function() {
+      if(!playing) {
+        MangaToolsaudio.play();
+        $('.micbtnManga').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        MangaToolsaudio.pause(); MangaToolsaudio.currentTime = 0;
+        $('.micbtnManga').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#MangaToolsaudioplbtn").on('tap', function() {
+      if(!paused) {
+        MangaToolsaudio.pause();
+        paused = true;
+      } else {
+        MangaToolsaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#MangaToolsaudiofbtn").on('tap', function() {
+      var ctime = MangaToolsaudio.currentTime;
+      MangaToolsaudio.currentTime = ctime + 10;
+    });
+    
+    $("#MangaToolsaudiobbtn").on('tap', function() {
+      var ctime = MangaToolsaudio.currentTime;
+      MangaToolsaudio.currentTime = ctime - 10;
+    });
+    
+    $("#MangaToolsaudiopsbtn").on('tap', function() {
+      MangaToolsaudio.pause();
+    });
+  </script>
+  <script src="js/threecardLogic.js"></script>  <!-- for card dragging effects -->
+</div> <!--//home-->

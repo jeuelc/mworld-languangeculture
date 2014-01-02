@@ -1,0 +1,141 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-manga">
+  <!-- <script src="js/slidebarnat.js"></script> -->
+  <script src="js/slidebar_Manga.js"></script>
+  <link rel="stylesheet" href="css/style_Manga.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnManga"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnManga"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnManga"></div></div>
+  <div class="infobtnholder"><div class="infobtnManga"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnManga"></div></div>
+  <div class="menubtnholder"><div class="menubtnManga"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>Manga</h1></div>
+  
+    <div data-role="content" class="kidzcontent">
+      <div class="navManga-content">
+        <p>Welcome to the wonderful world of manga!</p>
+		<p>What is manga?</p>
+		<p>How are manga made?</p>
+		<p>What do the sound effects and symbols mean?</p>
+		<p>How have manga spread globally?</p>
+		<p>Come and learn to draw your own manga!</p>
+      </div>
+        
+      <div class="navbtn1">
+        <p><a href="sub-manga-characters-and-worlds.html" data-transition="slide"><img src="css/images/9-12/Language_and_Culture/Manga/Characters_And_Worlds.png"></a></p>
+      </div>
+      <div class="navbtn2">
+        <p><a href="sub-manga-making-manga.html" data-transition="slide"><img src="css/images/9-12/Language_and_Culture/Manga/Making_Manga.png"></a></p>
+      </div>
+      <div class="navbtn3">
+        <p><a href="sub-manga-manga-alive.html" data-transition="slide"><img src="css/images/9-12/Language_and_Culture/Manga/Manga_Alive.png"></a></p>
+      </div>
+      <div class="navbtn4">
+        <p><a href="sub-manga-what-is-manga.html" data-transition="slide"><img src="css/images/9-12/Language_and_Culture/Manga/What_Is_Manga.png"></a></p>
+      </div>
+        
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Language_and_Culture/bottomhomelc.png"></a></div>
+    </div> <!-- end content -->  
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js -->
+    <div class="micbtnholder"><div class="micbtnManga" id="playstopManga"></div></div>
+    <div class="bManga"><div class="rwManga" id="Mangaaudiobbtn"></div></div>
+    <div class="plManga"><div class="plpsManga" id="Mangaaudioplbtn"></div></div>
+    <div class="fManga"><div class="fwManga" id="Mangaaudiofbtn"></div></div>
+    <div id="actualaudio-Manga" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+     sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-Manga').html('<audio id="Mangaaudio" controls preload onpause="playsManga()" onplay="pauseManga()"><source src="audio/Manga/Manga.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-manga").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { bgsoundManga.pause(); bgsoundManga.currentTime = 0; mainaudiobg.play(); });
+    
+    function goBack() {
+      $.mobile.changePage("sub-languageculture.html", {transition: "slide", reverse: true });
+      bgsoundManga.pause(); 
+      bgsoundManga.currentTime = 0;
+      langcultsoundbg.play();
+    }
+    
+    function playsManga() {
+         bgsoundManga.play();
+    }
+       
+    function pauseManga() {
+         bgsoundManga.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+	
+    $("#playstopManga").on('tap', function() {
+      if(!playing) {
+        Mangaaudio.play();
+        $('.micbtnManga').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        Mangaaudio.pause(); Mangaaudio.currentTime = 0;
+        $('.micbtnManga').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#Mangaaudioplbtn").on('tap', function() {
+      if(!paused) {
+        Mangaaudio.pause();
+        paused = true;
+      } else {
+        Mangaaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#Mangaaudiofbtn").on('tap', function() {
+      var ctime = Mangaaudio.currentTime;
+      Mangaaudio.currentTime = ctime + 10;
+    });
+    
+    $("#Mangaaudiobbtn").on('tap', function() {
+      var ctime = Mangaaudio.currentTime;
+      Mangaaudio.currentTime = ctime - 10;
+    });
+    
+    $("#Mangaaudiopsbtn").on('tap', function() {
+      Mangaaudio.pause();
+      //$(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
+    
+    $('.navbtn1').on('tap', function() { 
+      nav1Effects(); 
+    });
+    
+    $('.navbtn2').on('tap', function() { 
+      nav2Effects(); 
+    });
+    
+    $('.navbtn3').on('tap', function() { 
+      nav3Effects(); 
+    });
+    
+    $('.navbtn4').on('tap', function() { 
+      nav4Effects(); 
+    });
+  </script>
+</div> <!--//home-->

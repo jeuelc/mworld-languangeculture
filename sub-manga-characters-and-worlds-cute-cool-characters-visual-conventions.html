@@ -1,0 +1,141 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-manga-characters-and-worlds-cute-cool-characters-visual-conventions">
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>
+  <script src="js/slidebar_Manga.js"></script>
+  <link rel="stylesheet" href="css/style_Manga.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnManga"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnManga"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnManga"></div></div>
+  <div class="infobtnholder"><div class="infobtnManga"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnManga"></div></div>
+  <div class="menubtnholder"><div class="menubtnManga"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:0px;"><h1>Visual Conventions</h1></div>
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+        <a id="purplelink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Language_and_Culture/Manga/Characters_And_Worlds/Cute_And_Cool_Characters/Visual_Convensions/Purple_Haired_Girl_Hi_Res.jpg', 'Purple-haired characters are often depicted as being wise.');">click here</a>
+		
+        <a id="yattalink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Language_and_Culture/Manga/Characters_And_Worlds/Cute_And_Cool_Characters/Visual_Convensions/Yatta_Boy_Hi_Res.jpg', 'Eyes are often the largest part of a manga character\'s face.');">click here</a>
+		
+		<a id="motherlink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Language_and_Culture/Manga/Characters_And_Worlds/Cute_And_Cool_Characters/Visual_Convensions/Mother_Daughter_Park_Hi_Res.jpg', 'Children are typically drawn with rounder faces than adults.');">click here</a>
+        
+		<div id="zoomwrapper">
+          <div id="polb1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/9-12/Language_and_Culture/Manga/Characters_And_Worlds/Cute_And_Cool_Characters/Visual_Convensions/Purple_Haired_Girl.jpg" alt="" />
+          </div>
+          <div id="polb2"class="pPiece" style="left:75px;top:290px;">
+             <img src="css/images/9-12/Language_and_Culture/Manga/Characters_And_Worlds/Cute_And_Cool_Characters/Visual_Convensions/Yatta_Boy.jpg" alt="" />
+          </div>
+		  <div id="polb3"class="pPiece" style="left:80px;top:270px;">
+             <img src="css/images/9-12/Language_and_Culture/Manga/Characters_And_Worlds/Cute_And_Cool_Characters/Visual_Convensions/Mother_Daughter_Park.jpg" alt="" />
+          </div>
+        </div><!--/zoomwrapper-->
+      </div>
+      
+      <div class="bpcontentManga">
+        <p>You can convey a lot about your character using visual conventions.  For example, eyes are often drawn very large in manga style, while noses and mouths are much smaller.  Eye size and shape is used to demonstrate a character's feelings, and is often considered more important than the position of the mouth.  Eyes are drawn lower on the face for small children.  As people age, the position of their eyes becomes higher.</p>
+		<p>Facial expressions also change the position of features on the face.  If you wanted to draw a character laughing, for example, you'd draw them with higher eyebrows and an upwards curved mouth.  Characters who are angry have lower eyebrows and a downwards curved mouth.  Crying characters have eyebrows that are low on the sides, and a lower mouth.</p>
+		<p>The colours you choose for your character can also convey meaning.  Green hair might mean fortune, purple hair wisdom, pink hair kindness, red hair energy, and silver hair intelligence!</p>
+		<p>What colour would you draw your own hair and why?</p>
+      </div>
+       
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Language_and_Culture/bottomhomelc.png"></a></div>
+    </div> <!-- end content -->  
+  </div><!--/spacechar-->        
+  
+    <div class="micbtnholder"><div class="micbtnManga" id="playstopVisualConventions"></div></div>
+    <div class="bManga"><div class="rwManga" id="VisualConventionsaudiobbtn"></div></div>
+    <div class="plManga"><div class="plpsManga" id="VisualConventionsaudioplbtn"></div></div>
+    <div class="fManga"><div class="fwManga" id="VisualConventionsaudiofbtn"></div></div>
+    <div id="actualaudio-VisualConventions" style="visibility:hidden;"></div>
+  <!-- </div> -->
+  
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+ 
+	var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      $('div#polb2').css("z-index", 2);
+      $('div#polb1').css("z-index", 1);
+      $('div#polb1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#polb2 > img').css("-webkit-transform", "rotate(5deg)");
+      $('div#polb3 > img').css("-webkit-transform", "rotate(-3deg)");
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-VisualConventions').html('<audio id="VisualConventionsaudio" controls preload onpause="playsManga()" onplay="pauseManga()"><source src="audio/Manga/Visual_Conventions.mp3" type="audio/mpeg"></audio>');
+      }             
+      $("#sub-manga-characters-and-worlds-cute-cool-characters-visual-conventions").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundManga.pause(); bgsoundManga.currentTime = 0;});
+    
+    $("#polb1").on('tap', function() {
+      $('#purplelink')[0].click();
+    });
+    $("#polb2").on('tap', function() {
+      $('#yattalink')[0].click();
+    });
+	$("#polb3").on('tap', function() {
+      $('#motherlink')[0].click();
+    });
+    function goBack() {
+      $.mobile.changePage("sub-manga-characters-and-worlds-cute-cool-characters.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsManga() {
+         bgsoundManga.play();
+    }
+       
+    function pauseManga() {
+         bgsoundManga.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopVisualConventions").on('tap', function() {
+      if(!playing) {
+        VisualConventionsaudio.play();
+        $('.micbtnManga').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        VisualConventionsaudio.pause(); VisualConventionsaudio.currentTime = 0;
+        $('.micbtnManga').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#VisualConventionsaudioplbtn").on('tap', function() {
+      if(!paused) {
+        VisualConventionsaudio.pause();
+        paused = true;
+      } else {
+        VisualConventionsaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#VisualConventionsaudiofbtn").on('tap', function() {
+      var ctime = VisualConventionsaudio.currentTime;
+      VisualConventionsaudio.currentTime = ctime + 10;
+    });
+    
+    $("#VisualConventionsaudiobbtn").on('tap', function() {
+      var ctime = VisualConventionsaudio.currentTime;
+      VisualConventionsaudio.currentTime = ctime - 10;
+    });
+    
+    $("#VisualConventionsaudiopsbtn").on('tap', function() {
+      VisualConventionsaudio.pause();
+    });
+  </script>
+  <script src="js/threecardLogicb.js"></script>  <!-- for card dragging effects -->
+</div> <!--//home-->

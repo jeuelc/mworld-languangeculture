@@ -1,0 +1,145 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-manga-making-manga">
+  <script src="js/slidebar_Manga.js"></script>
+  <link rel="stylesheet" href="css/style_Manga.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnManga"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnManga"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnManga"></div></div>
+  <div class="infobtnholder"><div class="infobtnManga"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnManga"></div></div>
+  <div class="menubtnholder"><div class="menubtnManga"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>Making Manga</h1></div>
+  <div id="mangalink" style="position: absolute;left: 180px;top: 72px;width: 92px;height: 66px;"></div>
+  <div id="panelslink" style="position: absolute;left: 100px;top: 192px;width: 70px;height: 68px;"></div>
+  <div id="sfxlink" style="position: absolute;left: 175px;top: 297px;width: 72px;height: 75px;"></div>
+  <div id="symbolslink" style="position: absolute;left: 100px;top: 469px;width: 65px;height: 70px;"></div>
+  <div id="feelingslink" style="position: absolute;left: 280px;top: 578px;width: 98px;height: 70px;"></div>
+  <div id="makemangolink" style="position: absolute;left: 438px;top: 465px;width: 95px;height: 72px;"></div>
+  <div id="speechbubbleslink" style="position: absolute;left: 375px;top: 278px;width: 65px;height: 65px;"></div>
+  <div id="toneslink" style="position: absolute;left: 435px;top: 153px;width: 74px;height: 67px;"></div>
+  
+  <div data-role="content" class="kidzcontent">
+	  <div class="navManga-making-manga">
+        <p>Have you ever thought about making your own manga? How would you start?</p>
+		<p>If you want to create your own manga, the first steps are to invent the plot, including your characters, and the world they will inhabit.  Next, you need to set out the story in panels, and begin to sketch the characters, backgrounds, and speech bubbles.  These are drawn over with ink, then shades, tones, and corrections are added, and finally, the words are added to the speech bubbles.</p>
+		<p>Manga artists use special ways to express characters' feelings, movement, the passing of time, and the atmosphere of an environment.</p>
+		<p>Tap on the panels in the manga to explore how the different elements work together to convey action and emotion, and try making your own manga!</p>
+      </div>
+    <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Language_and_Culture/bottomhomelc.png"></a></div>
+  </div> <!-- end content -->  
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js 
+         note: change the ids to be able play the narration
+    -->
+    <div class="micbtnholder"><div class="micbtnManga" id="playstopMakingManga"></div></div>
+    <div class="bManga"><div class="rwManga" id="MakingMangaaudiobbtn"></div></div>
+    <div class="plManga"><div class="plpsManga" id="MakingMangaaudioplbtn"></div></div>
+    <div class="fManga"><div class="fwManga" id="MakingMangaaudiofbtn"></div></div>
+    <div id="actualaudio-MakingManga" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-MakingManga').html('<audio id="MakingMangaaudio" controls preload onpause="playsManga()" onplay="pauseManga()"><source src="audio/Manga/Characters_And_Worlds.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-manga-making-manga").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('#mangalink').on('tap', function() {
+      $.mobile.changePage("sub-manga-making-manga-manga-tools.html", {transition: "slide"});
+    });
+    
+    $('#panelslink').on('tap', function() {
+      $.mobile.changePage("sub-manga-making-manga-panels.html", {transition: "slide"});
+    });
+	
+	$('#sfxlink').on('tap', function() {
+      $.mobile.changePage("sub-manga-making-manga-sfx.html", {transition: "slide"});
+    });
+	
+	$('#symbolslink').on('tap', function() {
+      $.mobile.changePage("sub-manga-making-manga-symbols.html", {transition: "slide"});
+    });
+	
+	$('#feelingslink').on('tap', function() {
+      $.mobile.changePage("sub-manga-making-manga-feelings-quiz.html", {transition: "slide"});
+    });
+	
+	$('#makemangolink').on('tap', function() {
+      $.mobile.changePage("sub-manga-making-mangamake-your-own-mango.html", {transition: "slide"});
+    });
+	
+	$('#speechbubbleslink').on('tap', function() {
+      $.mobile.changePage("sub-manga-making-manga-speech-bubbles.html", {transition: "slide"});
+    });
+	
+	$('#toneslink').on('tap', function() {
+      $.mobile.changePage("sub-manga-making-mangatones-textures-and-speech.html", {transition: "slide"});
+    });
+    
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundManga.pause(); bgsoundManga.currentTime = 0;});
+    
+    function goBack() {
+      $.mobile.changePage("sub-manga.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsManga() {
+         bgsoundManga.play();
+    }
+       
+    function pauseManga() {
+         bgsoundManga.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopMakingManga").on('tap', function() {
+      if(!playing) {
+        MakingMangaaudio.play();
+        $('.micbtnManga').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        MakingMangaaudio.pause(); MakingMangaaudio.currentTime = 0;
+        $('.micbtnManga').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#MakingMangaaudioplbtn").on('tap', function() {
+      if(!paused) {
+        MakingMangaaudio.pause();
+        paused = true;
+      } else {
+        MakingMangaaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#MakingMangaaudiofbtn").on('tap', function() {
+      var ctime = MakingMangaaudio.currentTime;
+      MakingMangaaudio.currentTime = ctime + 10;
+    });
+    
+    $("#MakingMangaaudiobbtn").on('tap', function() {
+      var ctime = MakingMangaaudio.currentTime;
+      MakingMangaaudio.currentTime = ctime - 10;
+    });
+    
+    $("#MakingMangaaudiopsbtn").on('tap', function() {
+      MakingMangaaudio.pause();
+    });
+  </script>
+</div> <!--//home-->

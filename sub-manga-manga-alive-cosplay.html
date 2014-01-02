@@ -1,0 +1,150 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-manga-manga-alive-cosplay">
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>
+  <script src="js/slidebar_Manga.js"></script>
+  <link rel="stylesheet" href="css/style_Manga.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnManga"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnManga"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnManga"></div></div>
+  <div class="infobtnholder"><div class="infobtnManga"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnManga"></div></div>
+  <div class="menubtnholder"><div class="menubtnManga"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:0px;"><h1>Cosplay</h1></div>
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+        <a id="shinjukulink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Language_and_Culture/Manga/Manga_Alive/Cosplay/Cosplay_Hair_Hi_Res.jpg', 'Recreating manga hairstyles in 3D is quite an art.');">click here</a>
+		
+        <a id="harajukulink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Language_and_Culture/Manga/Manga_Alive/Cosplay/Ninja_Hi_Rs.jpg', 'Ninjas are a very popular character.');">click here</a>
+		
+		<a id="kaitenlink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Language_and_Culture/Manga/Manga_Alive/Cosplay/Ribbon_Magic_Battle_Hi_Res.jpg', 'Cosplayers don\'t just dress up, they also act out their characters.');">click here</a>
+		
+		<a id="klink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Language_and_Culture/Manga/Manga_Alive/Cosplay/Violin_SchoolGirl_Hi_Res.jpg', 'Props can be hand-made, or they can be real world objects like this violin.');">click here</a>
+        
+		<div id="zoomwrapper">
+          <div id="pol1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/9-12/Language_and_Culture/Manga/Manga_Alive/Cosplay/Cosplay_Hair.jpg" alt="" />
+          </div>
+          <div id="pol2"class="pPiece" style="left:75px;top:290px;">
+             <img src="css/images/9-12/Language_and_Culture/Manga/Manga_Alive/Cosplay/Ninja.jpg" alt="" />
+          </div>
+		  <div id="pol3"class="pPiece" style="left:80px;top:270px;">
+             <img src="css/images/9-12/Language_and_Culture/Manga/Manga_Alive/Cosplay/Ribbon_Magic_Battle.jpg" alt="" />
+          </div>
+		  <div id="pol4"class="pPiece" style="left:70px;top:270px;">
+             <img src="css/images/9-12/Language_and_Culture/Manga/Manga_Alive/Cosplay/Violin_SchoolGirl.jpg" alt="" />
+          </div>
+        </div><!--/zoomwrapper-->
+      </div>
+      
+      <div class="bpcontentManga">
+        <p>'Cosplay' is short for 'costume play'.  Fans dress up as their favourite characters from a work of fiction - mostly these are manga and anime characters.  But there are also video game characters, comic book heroes, and movie characters.  Cosplay outfits have even had an influence on Japanese street fashion.</p>
+		<p>If you dress up for a fancy dress party or for something like Halloween, it doesn't matter if your costume is accurate or not. But if you're taking part in cosplay, it matters!  At conventions, there are even contests where participants are awarded points for accuracy!</p>
+		<p>Serious cosplayers spend many hours researching and constructing their outfits. Sometimes, manga costumes appear to defy gravity - such as giant floating bows, or capes that always appear to flow.  These are very tricky to make and require a lot of creativity!</p>
+      </div>
+       
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Language_and_Culture/bottomhomelc.png"></a></div>
+    </div> <!-- end content -->  
+  </div><!--/spacechar-->        
+  
+    <div class="micbtnholder"><div class="micbtnManga" id="playstopCosplay"></div></div>
+    <div class="bManga"><div class="rwManga" id="Cosplayaudiobbtn"></div></div>
+    <div class="plManga"><div class="plpsManga" id="Cosplayaudioplbtn"></div></div>
+    <div class="fManga"><div class="fwManga" id="Cosplayaudiofbtn"></div></div>
+    <div id="actualaudio-Cosplay" style="visibility:hidden;"></div>
+  <!-- </div> -->
+  
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+ 
+	var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      $('div#pol1').css("z-index", 3);
+      $('div#pol2').css("z-index", 2);
+      $('div#pol3').css("z-index", 1);
+      $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
+      $('div#pol3 > img').css("-webkit-transform", "rotate(-3deg)");
+      $('div#pol4 > img').css("-webkit-transform", "rotate(-3deg)");
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-Cosplay').html('<audio id="Cosplayaudio" controls preload onpause="playsManga()" onplay="pauseManga()"><source src="audio/Manga/Cosplay.mp3" type="audio/mpeg"></audio>');
+      }             
+      $("#sub-manga-manga-alive-cosplay").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundManga.pause(); bgsoundManga.currentTime = 0;});
+    
+    $("#pol1").on('tap', function() {
+      $('#shinjukulink')[0].click();
+    });
+    $("#pol2").on('tap', function() {
+      $('#harajukulink')[0].click();
+    });
+	$("#pol3").on('tap', function() {
+      $('#kaitenlink')[0].click();
+    });
+	$("#pol4").on('tap', function() {
+      $('#klink')[0].click();
+    });
+    function goBack() {
+      $.mobile.changePage("sub-manga-manga-alive.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsManga() {
+         bgsoundManga.play();
+    }
+       
+    function pauseManga() {
+         bgsoundManga.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopCosplay").on('tap', function() {
+      if(!playing) {
+        Cosplayaudio.play();
+        $('.micbtnManga').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        Cosplayaudio.pause(); Cosplayaudio.currentTime = 0;
+        $('.micbtnManga').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#Cosplayaudioplbtn").on('tap', function() {
+      if(!paused) {
+        Cosplayaudio.pause();
+        paused = true;
+      } else {
+        Cosplayaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#Cosplayaudiofbtn").on('tap', function() {
+      var ctime = Cosplayaudio.currentTime;
+      Cosplayaudio.currentTime = ctime + 10;
+    });
+    
+    $("#Cosplayaudiobbtn").on('tap', function() {
+      var ctime = Cosplayaudio.currentTime;
+      Cosplayaudio.currentTime = ctime - 10;
+    });
+    
+    $("#Cosplayaudiopsbtn").on('tap', function() {
+      Cosplayaudio.pause();
+    });
+  </script>
+  <script src="js/fourcardLogic.js"></script>  <!-- for card dragging effects -->
+</div> <!--//home-->

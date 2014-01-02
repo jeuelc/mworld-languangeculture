@@ -1,0 +1,134 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-manga-making-manga-symbols">
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>
+  <script src="js/slidebar_Manga.js"></script>
+  <link rel="stylesheet" href="css/style_Manga.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnManga"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnManga"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnManga"></div></div>
+  <div class="infobtnholder"><div class="infobtnManga"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnManga"></div></div>
+  <div class="menubtnholder"><div class="menubtnManga"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:0px;"><h1>Symbols</h1></div>
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+        <a id="panelslink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Language_and_Culture/Manga/Making_Manga/Symbols/Water_Drop_Hi_Res.png', 'Characters with a drop of water on or near their head are often worried about something.');">click here</a>
+		
+        <a id="readinglink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Language_and_Culture/Manga/Making_Manga/Symbols/Crosshatch_Hi_Res.png', 'The cross is meant to symbolise a character being so emotional that a vein sticks out on their forehead.');">click here</a>
+		
+		<div id="zoomwrapper">
+          <div id="pol1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/9-12/Language_and_Culture/Manga/Making_Manga/Symbols/Water_Drop.png" alt="" />
+          </div>
+          <div id="pol2"class="pPiece" style="left:75px;top:290px;">
+             <img src="css/images/9-12/Language_and_Culture/Manga/Making_Manga/Symbols/Crosshatch.png" alt="" />
+          </div>
+		</div><!--/zoomwrapper-->
+      </div>
+      
+      <div class="bpcontentManga">
+        <p>A lot of the story in manga is told through pictures without needing any words. How do you think they do that? It isn't just by drawing the action!</p>
+		<p>Manga artists use special symbols to show a character's emotions.  This is sometimes called the 'visual language' of manga.</p>
+		<p>Some commonly used symbols are sweat drops and tear drops.  A droplet above the eye or running down the side of the face represents a sweaty forehead - the character is stressed or physically tired. </p>
+		<p>Another common symbol is the cruciform or 'cross-popping' vein.  This represents the veins popping out of the head of a character to show they are really angry!</p>
+		<p>Red cheeks, or in black-and-white manga, cross-hatching, represent blushing and embarrassment.</p>
+      </div>
+       
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Language_and_Culture/bottomhomelc.png"></a></div>
+    </div> <!-- end content -->  
+  </div><!--/spacechar-->        
+  
+    <div class="micbtnholder"><div class="micbtnManga" id="playstopMangaSymbols"></div></div>
+    <div class="bManga"><div class="rwManga" id="MangaSymbolsaudiobbtn"></div></div>
+    <div class="plManga"><div class="plpsManga" id="MangaSymbolsaudioplbtn"></div></div>
+    <div class="fManga"><div class="fwManga" id="MangaSymbolsaudiofbtn"></div></div>
+    <div id="actualaudio-MangaSymbols" style="visibility:hidden;"></div>
+  <!-- </div> -->
+  
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+ 
+	var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      $('div#pol1').css("z-index", 2);
+      $('div#pol2').css("z-index", 1);
+      $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-MangaSymbols').html('<audio id="MangaSymbolsaudio" controls preload onpause="playsManga()" onplay="pauseManga()"><source src="audio/Manga/Manga_Symbols.mp3" type="audio/mpeg"></audio>');
+      }             
+      $("#sub-manga-making-manga-symbols").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundManga.pause(); bgsoundManga.currentTime = 0;});
+    
+    $("#pol1").on('tap', function() {
+      $('#panelslink')[0].click();
+    });
+    $("#pol2").on('tap', function() {
+      $('#readinglink')[0].click();
+    });
+	
+    function goBack() {
+      $.mobile.changePage("sub-manga-making-manga.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsManga() {
+         bgsoundManga.play();
+    }
+       
+    function pauseManga() {
+         bgsoundManga.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopMangaSymbols").on('tap', function() {
+      if(!playing) {
+        MangaSymbolsaudio.play();
+        $('.micbtnManga').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        MangaSymbolsaudio.pause(); MangaSymbolsaudio.currentTime = 0;
+        $('.micbtnManga').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#MangaSymbolsaudioplbtn").on('tap', function() {
+      if(!paused) {
+        MangaSymbolsaudio.pause();
+        paused = true;
+      } else {
+        MangaSymbolsaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#MangaSymbolsaudiofbtn").on('tap', function() {
+      var ctime = MangaSymbolsaudio.currentTime;
+      MangaSymbolsaudio.currentTime = ctime + 10;
+    });
+    
+    $("#MangaSymbolsaudiobbtn").on('tap', function() {
+      var ctime = MangaSymbolsaudio.currentTime;
+      MangaSymbolsaudio.currentTime = ctime - 10;
+    });
+    
+    $("#MangaSymbolsaudiopsbtn").on('tap', function() {
+      MangaSymbolsaudio.pause();
+    });
+  </script>
+  <script src="js/twocardLogic.js"></script>  <!-- for card dragging effects -->
+</div> <!--//home-->
