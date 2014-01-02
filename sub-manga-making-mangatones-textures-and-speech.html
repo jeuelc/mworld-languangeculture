@@ -31,7 +31,7 @@
       </div>
       
       <div class="bpcontentManga">
-        <p>Most manga are printed in <a href="#monochrome" data-rel="popup">monochrome</a>, so colour is represented through tone and texture. These features also have special meanings. Shading a character's face or background can show they're in a bad mood!</p>
+        <p>Most manga are printed in <a href="#mono" data-rel="popup">monochrome</a>, so colour is represented through tone and texture. These features also have special meanings. Shading a character's face or background can show they're in a bad mood!</p>
 		<p>Screentones are pre-made tones and textures that are used to add atmosphere or sometimes even entire backgrounds! Traditionally, they are made on special sheets of plastic.  They are very tricky to get right. These days there are also digital screentones for computers which are much easier to use.</p>
 		<p>Artists also use lines called impact lines.  These have two purposes.  One is to show the speed of an action.  These are called 'speed lines'.  Lots of lines portray extremely high speed!  You can use these to show the movement of a race car or train.  A couple of lines represent a quick dash.  You could use these to show a character running.</p>
 		<p>The other purpose of impact lines is to direct the reader's eyes towards something or someone.  When all of the lines concentrate around an object, or the character's face they are called 'focus lines'.</p>
@@ -40,14 +40,20 @@
       <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Language_and_Culture/bottomhomelc.png"></a></div>
     </div> <!-- end content -->  
   </div><!--/spacechar-->        
-  <div data-role="popup" id="monochrome" data-position-to="window" data-overlay-theme="a" style="text-align:center;">
+		
+		<div data-role="popup" id="mono" data-position-to="window" data-overlay-theme="a" style="text-align:center;">
 			<div id="node-pop">
-			<p>Monochrome</p>
-			<p>A monochrome is any sleep problem connected to waking or partial waking and/or moving from one sleep state to another. Like sleepwalking!</p>
-			<div>  <div class="defspeaker"  id="monochrome"> </div></div>
-			<audio id="monochromeaudio" controls preload onpause="playaudio()" onplay="pausebg()" style="visibility:hidden;"><source src="audio/Manga/Definition_Monochrome.mp3" type="audio/mpeg"></audio>
+				<div id="psbutton">
+				  <div id="audiobuttonholder"><a href="#" id="start"><img id="playhomernar" src="css/images/sound.png" height="30px" width="30px"></a></div>
+				  <div id="actualaudio-homer" style="display: none;">
+					<audio id="monochromeaudio" controls preload onpause="playsManga()" onplay="pauseManga()" style="visibility:hidden;"><source src="audio/Manga/Definition_Monochrome.mp3" type="audio/mpeg"></audio>
+				  </div>
+				</div><!-- end of psbutton -->
+				<p>Monochrome</p>
+				<p>In monochrome printing only black is used. Dark shades are made by using more black, closer together, and lighter shades are made by spacing out the black. If you look at a page closely you'll see that the grey shades are actually made up of black dots.</p>
 			</div>
-		</div>
+        </div>
+		
     <div class="micbtnholder"><div class="micbtnManga" id="playstopMangaTonestexture"></div></div>
     <div class="bManga"><div class="rwManga" id="MangaTonestextureaudiobbtn"></div></div>
     <div class="plManga"><div class="plpsManga" id="MangaTonestextureaudioplbtn"></div></div>
@@ -57,10 +63,10 @@
   <!-- ----------------------- Video embedding --------------------------- -->
   
 	<div id="watchfinishingvideo" style="width:1024px;height:748px;position:absolute;left:0px;top:0px;visibility:hidden;background:#000000;z-index:-1;">
-    <video id="watchfinishing" width="1024" height="748" preload>
-      <source src="css/images/9-12/Language_and_Culture/Manga/Making_Manga/Tones_Textures_Speed/Screemtones_Finishing.mp4" type="video/mp4">
-    </video>
-  </div>
+		<video id="watchfinishing" width="1024" height="748" preload>
+		  <source src="css/images/9-12/Language_and_Culture/Manga/Making_Manga/Tones_Textures_Speed/Screemtones_Finishing.mp4" type="video/mp4">
+		</video>
+    </div>
   
   <!-- ------------------------------------------------------------------ -->
   <script>
@@ -79,14 +85,28 @@
 	  $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
             
       if(sound.canPlayType('audio/mpeg')) {
-        $('#actualaudio-MangaTonestexture').html('<audio id="MangaTonestextureaudio" controls preload onpause="playsManga()" onplay="pauseManga()"><source src="audio/Manga/MangaTones.mp3" type="audio/mpeg"></audio>');
+        $('#actualaudio-MangaTonestexture').html('<audio id="MangaTonestextureaudio" controls preload onpause="playsManga()" onplay="pauseManga()"><source src="audio/Manga/Tones_Texture_Speech.mp3" type="audio/mpeg"></audio>');
       }             
       $("#sub-manga-making-mangatones-textures-and-speech").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
     })();
     
-    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundManga.pause(); bgsoundManga.currentTime = 0;});
+	$("#playhomernar").on('tap', function() {
+        if(monochromeaudio.currentTime == 0){
+			monochromeaudio.play();
+			MangaTonestextureaudio.pause();
+			MangaTonestextureaudio.currentTime = 0;
+			bgsoundManga.pause();
+			bgsoundManga.currentTime = 0;
+		}
+		if(monochromeaudio.currentTime > 0){
+			monochromeaudio.pause();
+			monochromeaudio.currentTime = 0;
+		}
+	});
+	
+	$('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundManga.pause(); bgsoundManga.currentTime = 0;});
     	
-	watchfinishing.addEventListener('ended', function() { 
+	  watchfinishing.addEventListener('ended', function() { 
         $("#watchfinishingvideo").css({"visibility":"hidden", "z-index":-1});
         $("#watchfinishing").css({"z-index":-1});
         bgsoundManga.play(); 
@@ -161,11 +181,6 @@
     
     $("#MangaTonestextureaudiopsbtn").on('tap', function() {
       MangaTonestextureaudio.pause();
-    });
-	$( "#monochrome" ).bind({
-          popupafterclose: function(event, ui) { 
-                  parasomniaaudio.pause(); 
-           }
     });
   </script>
   <script src="js/twocardLogic.js"></script>  <!-- for card dragging effects -->
