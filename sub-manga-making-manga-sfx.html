@@ -18,19 +18,6 @@
       <div class="v-spacer"></div>
       <div class="sidebarleft-half">
         
-		<div id="f1_container" style="visibility:hidden;position:absolute;left:100px;top:270px;">
-          <div id="f1_card">
-            <div class="front face">
-              <img id="dopple" src="css/images/9-12/Language_and_Culture/Manga/Making_Manga/SFX/Manga_Sound_Effects_Quiz.png">
-            </div>
-            <div id="backofcard" class="back face center" style="background:url(css/images/9-12/Language_and_Culture/Manga/Making_Manga/SFX/Manga_Sound_Effects_Quiz_Reverse.png) no-repeat;">
-              <div class="returncard" style="position:absolute;left:0px;top:0px;width:362px;height:170px;"></div>
-              <div id="trueans" style="position:absolute;left:90px;top:180px;width:70px;height:50px;"></div>
-              <div id="falseans" style="position:absolute;left:200px;top:180px;width:70px;height:50px;"></div>
-            </div>
-          </div><!--/f1+card-->
-        </div><!--/f1_container-->
-		
 		<div id="f2_container" style="visibility:hidden;position:absolute;left:100px;top:270px;">
           <div id="f2_card">
             <div class="front face">
@@ -92,24 +79,8 @@
     
     $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundManga.pause(); bgsoundManga.currentTime = 0;});
     
-    $(".returncard").on('tap', function() {
-      $('#f1_card').css({"-webkit-transform": "rotateY(0deg)"});
-      $('#f1_card').css({"-moz-transform": "rotateY(0deg)"});
-      $('#f1_card').css({"-o-transform": "rotateY(0deg)"});
-      $('#f1_card').css({"transform": "rotateY(0deg)"});
-      setTimeout(function() {
-        $("#pol1").css({"visibility":"visible", "z-index":4});
-        $('#f1_container').css({"visibility":"hidden", "z-index":0});
-      }, 1000);
-    });
-    
     $("#pol1").on('tap', function() {
-      $('#f1_container').css({"visibility":"visible", "z-index":10});
-      $(this).css({"visibility":"hidden"});
-      $('#f1_card').css({"-webkit-transform": "rotateY(180deg)"});
-      $('#f1_card').css({"-moz-transform": "rotateY(180deg)"});
-      $('#f1_card').css({"-o-transform": "rotateY(180deg)"});
-      $('#f1_card').css({"transform": "rotateY(180deg)"});
+      $.mobile.changePage("sub-manga-making-manga-sfx-manga-sound-effects.html", {transition: "slide"});
     });
 	
 	$(".returncard").on('tap', function() {
