@@ -1,0 +1,136 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-slang-features-of-slang">
+  <!-- <script src="js/slidebarnat.js"></script> -->
+  <script src="js/slidebar_Slang.js"></script>
+  <link rel="stylesheet" href="css/style_Slang.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnSlang"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnSlang"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnSlang"></div></div>
+  <div class="infobtnholder"><div class="infobtnSlang"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnSlang"></div></div>
+  <div class="menubtnholder"><div class="menubtnSlang"></div></div>
+
+  <div class="bptitleholder" style="padding-top:14px;"><h1>Features of Slang</h1></div>
+  
+    <div data-role="content" class="kidzcontent">
+      <div class="navSlang-content">
+        <p>So, you want to create some slang?  Far out!  It's happening around the world right now and can be a lot of fun.  Before you enter the Slang Factory, here are some basics you need to dig:</p>
+
+		<p>1.	Slang thrives in situations that are informal.  Think 'playground' not 'science class'!</p>
+
+		<p>2.	Slang is typically heard and not written, unless of course the internet or texting is involved.</p>
+
+		<p>3.	Slang mostly involves words and phrases, but pronunciation and grammar can also be slangy.</p>
+
+		<p>4.	Slang expressions are lively and provocative.  They grab your attention!</p>
+      </div>
+        
+
+      <div class="navbtn1" style="top:320px;">
+        <p><a href="sub-slang-features-of-slang-the-poetry-of-slang.html" data-transition="slide"><img src="css/images/9-12/Language_and_Culture/Slang/Features_Of_Slang/The_Poetry_Of_Slang.png"></a></p>
+      </div>
+      <div class="navbtn3" style="top:320px;">
+        <p><a href="sub-slang-features-of-slang-the-slang-factory.html" data-transition="slide"><img src="css/images/9-12/Language_and_Culture/Slang/Features_Of_Slang/Slang_Factory.png"></a></p>
+      </div>	  
+        
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Language_and_Culture/bottomhomelc.png"></a></div>
+    </div> <!-- end content -->  
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js -->
+    <div class="micbtnholder"><div class="micbtnSlang" id="playstopFeaturesOfSlang"></div></div>
+    <div class="bSlang"><div class="rwSlang" id="FeaturesOfSlangaudiobbtn"></div></div>
+    <div class="plSlang"><div class="plpsSlang" id="FeaturesOfSlangaudioplbtn"></div></div>
+    <div class="fSlang"><div class="fwSlang" id="FeaturesOfSlangaudiofbtn"></div></div>
+    <div id="actualaudio-FeaturesOfSlang" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-FeaturesOfSlang').html('<audio id="FeaturesOfSlangaudio" controls preload onpause="playsSlang()" onplay="pauseSlang()"><source src="audio/Slang/Features_Of_Slang.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-slang-features-of-slang").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { bgsoundSlang.pause(); bgsoundSlang.currentTime = 0; mainaudiobg.play(); });
+    
+    function goBack() {
+      $.mobile.changePage("sub-slang.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsSlang() {
+         bgsoundSlang.play();
+    }
+       
+    function pauseSlang() {
+         bgsoundSlang.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+	
+    $("#playstopFeaturesOfSlang").on('tap', function() {
+      if(!playing) {
+        FeaturesOfSlangaudio.play();
+        $('.micbtnSlang').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        FeaturesOfSlangaudio.pause(); FeaturesOfSlangaudio.currentTime = 0;
+        $('.micbtnSlang').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#FeaturesOfSlangaudioplbtn").on('tap', function() {
+      if(!paused) {
+        FeaturesOfSlangaudio.pause();
+        paused = true;
+      } else {
+        FeaturesOfSlangaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#FeaturesOfSlangaudiofbtn").on('tap', function() {
+      var ctime = FeaturesOfSlangaudio.currentTime;
+      FeaturesOfSlangaudio.currentTime = ctime + 10;
+    });
+    
+    $("#FeaturesOfSlangaudiobbtn").on('tap', function() {
+      var ctime = FeaturesOfSlangaudio.currentTime;
+      FeaturesOfSlangaudio.currentTime = ctime - 10;
+    });
+    
+    $("#FeaturesOfSlangaudiopsbtn").on('tap', function() {
+      FeaturesOfSlangaudio.pause();
+      //$(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
+    
+    $('.navbtn1').on('tap', function() { 
+      nav1Effects(); 
+    });
+    
+    $('.navbtn2').on('tap', function() { 
+      nav2Effects(); 
+    });
+    
+    $('.navbtn3').on('tap', function() { 
+      nav3Effects(); 
+    });
+    
+    $('.navbtn4').on('tap', function() { 
+      nav4Effects(); 
+    });
+  </script>
+</div> <!--//home-->

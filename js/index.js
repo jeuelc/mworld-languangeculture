@@ -834,3 +834,12 @@ bgsoundManga.addEventListener('ended', function() { bgsoundManga.play(); });
 
 function pauseManga() { bgsoundManga.pause() }
 function playsManga() { bgsoundManga.play(); $(".audiopanel").css({"backgroundPosition":"0px 0px"}); }
+
+
+/************************ Slang *******************************/
+var bgsoundSlang = new Audio();
+bgsoundSlang.src = "audio/Slang/Slang_BG.mp3";
+bgsoundSlang.addEventListener('ended', function() { bgsoundSlang.play(); });
+
+function pauseSlang() { bgsoundSlang.pause() }
+function playsSlang() { bgsoundSlang.play(); $(".audiopanel").css({"backgroundPosition":"0px 0px"}); }

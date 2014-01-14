@@ -1,0 +1,134 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-slang-the-slang-life-cycle">
+  <!-- <script src="js/slidebarnat.js"></script> -->
+  <script src="js/slidebar_Slang.js"></script>
+  <link rel="stylesheet" href="css/style_Slang.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnSlang"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnSlang"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnSlang"></div></div>
+  <div class="infobtnholder"><div class="infobtnSlang"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnSlang"></div></div>
+  <div class="menubtnholder"><div class="menubtnSlang"></div></div>
+
+  <div class="bptitleholder" style="padding-top:14px;"><h1>The Slang Lifecycle</h1></div>
+  
+    <div data-role="content" class="kidzcontent">
+      <div class="navSlang-content">
+        <p>Author J.M.  Wattie wrote in 1930: "Slang terms are the mayflies of language; by the time they get themselves recorded in a dictionary, they are already museum specimens."</p>
+
+		<p>One reason that guarantees some people will hate slang is that it is always changing.  A study showed that over a 15 year period, less than 10% of the expressions survived!  </p>
+
+		<p>Slang is creative.  It has to stand out.  It has to be novel, or new.  So what is slang for one generation isn't necessarily slang for another.  'Cool' might have made a comeback but the language of the 'hip culture' of the late 1960s is not fashionable any more  far-out has been replaced by awesome and who knows what new 'awesome' words will turn up tomorrow!</p>
+
+		<p>On the other hand, some expressions have lasted centuries.  They continue to capture people's imagination while not quite managing to edge out more 'proper' vocabulary.  For instance the word 'gob' meaning mouth, and 'shut your gob!' have been used since the 1500s!  Nowadays, the gobstopper is a non-slang word meaning a hard spherical sweet, although it's called a jawbreaker in North America!</p>
+      </div>
+        
+
+      <div class="navbtn1" style="top:320px;">
+        <p><a href="sub-slang-the-slang-life-cycle-slang-today.html" data-transition="slide"><img src="css/images/9-12/Language_and_Culture/Slang/The_Slang_Lifecycle/Slang_Today.png"></a></p>
+      </div>
+      <div class="navbtn3" style="top:320px;">
+        <p><a href="sub-slang-the-slang-life-cycle-the-latest-and-greatest.html" data-transition="slide"><img src="css/images/9-12/Language_and_Culture/Slang/The_Slang_Lifecycle/The_Latest_And_Greatest.png"></a></p>
+      </div>	  
+        
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Language_and_Culture/bottomhomelc.png"></a></div>
+    </div> <!-- end content -->  
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js -->
+    <div class="micbtnholder"><div class="micbtnSlang" id="playstopTheSlangLifecycle"></div></div>
+    <div class="bSlang"><div class="rwSlang" id="TheSlangLifecycleaudiobbtn"></div></div>
+    <div class="plSlang"><div class="plpsSlang" id="TheSlangLifecycleaudioplbtn"></div></div>
+    <div class="fSlang"><div class="fwSlang" id="TheSlangLifecycleaudiofbtn"></div></div>
+    <div id="actualaudio-TheSlangLifecycle" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-TheSlangLifecycle').html('<audio id="TheSlangLifecycleaudio" controls preload onpause="playsSlang()" onplay="pauseSlang()"><source src="audio/Slang/The_Slang_Lifecycle.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-slang-the-slang-life-cycle").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { bgsoundSlang.pause(); bgsoundSlang.currentTime = 0; mainaudiobg.play(); });
+    
+    function goBack() {
+      $.mobile.changePage("sub-slang.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsSlang() {
+         bgsoundSlang.play();
+    }
+       
+    function pauseSlang() {
+         bgsoundSlang.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+	
+    $("#playstopTheSlangLifecycle").on('tap', function() {
+      if(!playing) {
+        TheSlangLifecycleaudio.play();
+        $('.micbtnSlang').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        TheSlangLifecycleaudio.pause(); TheSlangLifecycleaudio.currentTime = 0;
+        $('.micbtnSlang').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#TheSlangLifecycleaudioplbtn").on('tap', function() {
+      if(!paused) {
+        TheSlangLifecycleaudio.pause();
+        paused = true;
+      } else {
+        TheSlangLifecycleaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#TheSlangLifecycleaudiofbtn").on('tap', function() {
+      var ctime = TheSlangLifecycleaudio.currentTime;
+      TheSlangLifecycleaudio.currentTime = ctime + 10;
+    });
+    
+    $("#TheSlangLifecycleaudiobbtn").on('tap', function() {
+      var ctime = TheSlangLifecycleaudio.currentTime;
+      TheSlangLifecycleaudio.currentTime = ctime - 10;
+    });
+    
+    $("#TheSlangLifecycleaudiopsbtn").on('tap', function() {
+      TheSlangLifecycleaudio.pause();
+      //$(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
+    
+    $('.navbtn1').on('tap', function() { 
+      nav1Effects(); 
+    });
+    
+    $('.navbtn2').on('tap', function() { 
+      nav2Effects(); 
+    });
+    
+    $('.navbtn3').on('tap', function() { 
+      nav3Effects(); 
+    });
+    
+    $('.navbtn4').on('tap', function() { 
+      nav4Effects(); 
+    });
+  </script>
+</div> <!--//home-->
