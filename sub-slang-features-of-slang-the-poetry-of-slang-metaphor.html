@@ -1,0 +1,186 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-slang-features-of-slang-the-poetry-of-slang-metaphor">
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>
+  <script src="js/slidebar_slang.js"></script>
+  <link rel="stylesheet" href="css/style_slang.css"/>
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnSlang"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnSlang"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnSlang"></div></div>
+  <div class="infobtnholder"><div class="infobtnSlang"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnSlang"></div></div>
+  <div class="menubtnholder"><div class="menubtnSlang"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:0px;"><h1>Metaphor</h1></div>
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+        <a id="img1" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Language_and_Culture/Slang/Features_Of_Slang/The_Poetry_Of_Slang/Metaphor/Bread_Metaphor_Hi_Res.jpg', 'The context - as here with the word \'bread\' - is often important in understanding slang.');">click here</a>
+		
+		 <a id="img2" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Language_and_Culture/Slang/Features_Of_Slang/The_Poetry_Of_Slang/Metaphor/Dude_Hi_Res.png', 'A US cartoon of 1888, mocking the dude fashion for high shirt collars. Today\'s meaning of \'dude\' is different while the words \'dandy\' and \'fop\' are equivalent to the original meaning.');">click here</a>
+		 
+		
+        <div id="f1_container" style="visibility:hidden;position:absolute;left:100px;top:270px;">
+          <div id="f1_card">
+            <div class="front face">
+              <img id="dopple" src="css/images/9-12/Language_and_Culture/Slang/Features_Of_Slang/The_Poetry_Of_Slang/Metaphor/Chicken_Quiz.png">
+            </div>
+            <div id="backofcard" class="back face center" style="background:url(css/images/9-12/Language_and_Culture/Slang/Features_Of_Slang/The_Poetry_Of_Slang/Metaphor/Chicken_Quiz_Reverse.png) no-repeat;">
+              <div class="returncard" style="position:absolute;left:0px;top:0px;width:362px;height:170px;"></div>
+			  <div id="trueans" style="position:absolute;left: 57px;top: 172px;width: 115px;height: 21px;"></div>
+			  <div class="falseans" style="position:absolute;left: 59px;top: 208px;width: 115px;height: 21px;"></div>
+			  <div class="falseans" style="position:absolute;left: 193px;top: 172px;width: 115px;height: 21px;"></div>
+			  <div class="falseans" style="position:absolute;left: 193px;top: 208px;width: 115px;height: 21px;"></div>
+            </div>
+          </div><!--/f1+card-->
+        </div><!--/f1_container-->		
+		
+		<div id="zoomwrapper">
+          <div id="pol1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/9-12/Language_and_Culture/Slang/Features_Of_Slang/The_Poetry_Of_Slang/Metaphor/Bread_Metaphor.jpg" alt="" />
+          </div>
+          <div id="pol2"class="pPiece" style="left:75px;top:290px;">
+             <img src="css/images/9-12/Language_and_Culture/Slang/Features_Of_Slang/The_Poetry_Of_Slang/Metaphor/Dude.png" alt="" />
+          </div>
+		   <div id="pol3"class="pPiece" style="left:75px;top:290px;">
+             <img src="css/images/9-12/Language_and_Culture/Slang/Features_Of_Slang/The_Poetry_Of_Slang/Metaphor/Chicken_Quiz.png" alt="" />
+          </div>
+        </div><!--/zoomwrapper-->
+      </div>
+      
+      <div class="bpcontentSlang">
+        <p>Scratch the surface of many slang expressions and you'll find metaphor.  When you use metaphorical language you are describing one kind of thing in terms of another.</p>
+
+<p>Take these two examples: dog and tank.  If you describe another person as a dog, you're saying they behave or look a bit like the animal.  To describe a person as a tank is to paint a picture of someone who resembles an armoured vehicle.</p>
+
+<p>Sometimes the metaphor is dead and buried.  'Dude' probably comes from the slangy expression duds meaning 'clothes'.  The original dudes in the 18th century were men who dressed in a fashionable and showy manner but now it just means 'man'.</p>
+
+<p>Clearly people aren't dogs, tanks or clothes, so a metaphor is a kind of lie!  But by using these expressions, you're making a connection between people (the figurative meaning) and things (the literal meaning)  and a lot of the colour and vibrancy of slanguage comes from such metaphors.</p>
+      </div>
+       
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Language_and_Culture/bottomhomelc.png"></a></div>
+    </div> <!-- end content -->  
+  </div><!--/spacechar-->        
+  
+    <div class="micbtnholder"><div class="micbtnSlang" id="playstopMetaphor"></div></div>
+    <div class="bSlang"><div class="rwSlang" id="Metaphoraudiobbtn"></div></div>
+    <div class="plSlang"><div class="plpsSlang" id="Metaphoraudioplbtn"></div></div>
+    <div class="fSlang"><div class="fwSlang" id="Metaphoraudiofbtn"></div></div>
+    <div id="actualaudio-Metaphor" style="visibility:hidden;"></div>
+  <!-- </div> -->
+  
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+ 
+	var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      $('div#pol2').css("z-index", 2);
+      $('div#pol1').css("z-index", 1);
+      $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
+      $('div#pol3 > img').css("-webkit-transform", "rotate(-3deg)");
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-Metaphor').html('<audio id="Metaphoraudio" controls preload onpause="playsSlang()" onplay="pauseSlang()"><source src="audio/Slang/Metaphor.mp3" type="audio/mpeg"></audio>');
+      }             
+      $("#sub-slang-features-of-slang-the-poetry-of-slang-metaphor").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundSlang.pause(); bgsoundSlang.currentTime = 0;});
+	
+    $('.falseans').on('tap', function() {
+      alert("Wrong answer");
+    });
+    $('#trueans').on('tap', function() {
+      alert("Correct answer");
+    });
+	
+    $("#pol1").on('tap', function() {
+      $('#img1')[0].click();
+    });
+    $("#pol2").on('tap', function() {
+      $('#img2')[0].click();
+    });
+	
+    
+
+    $(".returncard").on('tap', function() {
+      $('#f1_card').css({"-webkit-transform": "rotateY(0deg)"});
+      $('#f1_card').css({"-moz-transform": "rotateY(0deg)"});
+      $('#f1_card').css({"-o-transform": "rotateY(0deg)"});
+      $('#f1_card').css({"transform": "rotateY(0deg)"});
+      setTimeout(function() {
+        $("#pol3").css({"visibility":"visible", "z-index":4});
+        $('#f1_container').css({"visibility":"hidden", "z-index":0});
+      }, 1000);
+    });
+    
+    $("#pol3").on('tap', function() {
+      $('#f1_container').css({"visibility":"visible", "z-index":10});
+      $(this).css({"visibility":"hidden"});
+      $('#f1_card').css({"-webkit-transform": "rotateY(180deg)"});
+      $('#f1_card').css({"-moz-transform": "rotateY(180deg)"});
+      $('#f1_card').css({"-o-transform": "rotateY(180deg)"});
+      $('#f1_card').css({"transform": "rotateY(180deg)"});
+    });
+	
+
+    function goBack() {
+      $.mobile.changePage("sub-slang-features-of-slang-the-poetry-of-slang.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsSlang() {
+         bgsoundSlang.play();
+    }
+       
+    function pauseSlang() {
+         bgsoundSlang.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopMetaphor").on('tap', function() {
+      if(!playing) {
+        Metaphoraudio.play();
+        $('.micbtnSlang').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        Metaphoraudio.pause(); Metaphoraudio.currentTime = 0;
+        $('.micbtnSlang').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#Metaphoraudioplbtn").on('tap', function() {
+      if(!paused) {
+        Metaphoraudio.pause();
+        paused = true;
+      } else {
+        Metaphoraudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#Metaphoraudiofbtn").on('tap', function() {
+      var ctime = Metaphoraudio.currentTime;
+      Metaphoraudio.currentTime = ctime + 10;
+    });
+    
+    $("#Metaphoraudiobbtn").on('tap', function() {
+      var ctime = Metaphoraudio.currentTime;
+      Metaphoraudio.currentTime = ctime - 10;
+    });
+    
+    $("#Metaphoraudiopsbtn").on('tap', function() {
+      Metaphoraudio.pause();
+    });
+  </script>
+  <script src="js/threecardLogic.js"></script>  <!-- for card dragging effects -->
+</div> <!--//home-->

@@ -1,0 +1,137 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-slang-why-use-slang-standing-out-and-having-fun">
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>
+  <script src="js/slidebar_slang.js"></script>
+  <link rel="stylesheet" href="css/style_slang.css"/>
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnSlang"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnSlang"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnSlang"></div></div>
+  <div class="infobtnholder"><div class="infobtnSlang"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnSlang"></div></div>
+  <div class="menubtnholder"><div class="menubtnSlang"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:0px;"><h1>Standing Out and Having Fun</h1></div>
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+         <a id="img1" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Language_and_Culture/Slang/Why_Use_Slang/Standing_Out_And_Having_Fun/Bees_Knees_Hi_Res.png', 'We\'ve forgotten the origin of some of our favourite slang expressions.  They\'re still fun... as long as they\'re understood!');">click here</a>       
+		<div id="zoomwrapper">
+          <div id="pol1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/9-12/Language_and_Culture/Slang/Why_Use_Slang/Standing_Out_And_Having_Fun/Slang_In_Rap.png" alt="" />
+          </div>
+          
+		   <div id="pol2"class="pPiece" style="left:75px;top:290px;">
+             <img src="css/images/9-12/Language_and_Culture/Slang/Why_Use_Slang/Standing_Out_And_Having_Fun/Bees_Knees.png" alt="" />
+          </div>
+        </div><!--/zoomwrapper-->
+      </div>
+      
+      <div class="bpcontentSlang">
+				<p>The slang of all age groups is playful.  Look at how people bounce their slangy creations off each other.  It's a way of creating a sense that you get on with someone.  You've probably got a nickname your friends use.  Perhaps it's a shortened version of your name?</p>
+
+		<p>The curious phrase the 'cat's pyjamas' was a fad expression of the 1920s that bred many copy-cat constructions: 'the cat's whiskers', 'the cat's meow', 'the cat's eyebrows', 'the cat's ankle', 'tonsils', 'adenoids', even 'the cat's cufflinks', 'galoshes' and 'roller-skates'  all meaning 'outstanding'.</p>
+
+		<p>Ten years later came 'the bee's knees', with the added catchiness of a playful rhyme.  Then came heaps of expressions combining animals with body parts or clothing, and some were really bizarre!  'The eel's heel', 'the elephant's eyebrows' or 'instep', 'the gnat's eyebrows', 'the ant's eyebrows' are just a few.</p>
+
+		<p>Nowadays, even if you're not living in the tropics, you've probably heard, 'See you later, alligator!  In a while, crocodile!'  These sorts of expressions show how inventive slang can be  and the fun people have in creating new expressions.</p>
+      </div>
+       
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Language_and_Culture/bottomhomelc.png"></a></div>
+    </div> <!-- end content -->  
+  </div><!--/spacechar-->        
+  
+    <div class="micbtnholder"><div class="micbtnSlang" id="playstopStandingOutAndHavingFun"></div></div>
+    <div class="bSlang"><div class="rwSlang" id="StandingOutAndHavingFunaudiobbtn"></div></div>
+    <div class="plSlang"><div class="plpsSlang" id="StandingOutAndHavingFunaudioplbtn"></div></div>
+    <div class="fSlang"><div class="fwSlang" id="StandingOutAndHavingFunaudiofbtn"></div></div>
+    <div id="actualaudio-StandingOutAndHavingFun" style="visibility:hidden;"></div>
+  <!-- </div> -->
+
+  
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+ 
+	var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      $('div#pol1').css("z-index", 2);
+      $('div#pol2').css("z-index", 1);
+      $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-StandingOutAndHavingFun').html('<audio id="StandingOutAndHavingFunaudio" controls preload onpause="playsSlang()" onplay="pauseSlang()"><source src="audio/Slang/Standing_Out_And_Having_Fun.mp3" type="audio/mpeg"></audio>');
+      }             
+      $("#sub-slang-why-use-slang-standing-out-and-having-fun").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundSlang.pause(); bgsoundSlang.currentTime = 0;});
+	
+
+    $("#pol1").on('tap', function() {
+      $.mobile.changePage("sub-slang-why-use-slang-standing-out-and-having-fun-slang-in-rap.html", {transition: "slide"});
+    });
+    $("#pol2").on('tap', function() {
+      $('#img1')[0].click();
+    });
+    function goBack() {
+      $.mobile.changePage("sub-slang-why-use-slang.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsSlang() {
+         bgsoundSlang.play();
+    }
+       
+    function pauseSlang() {
+         bgsoundSlang.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopStandingOutAndHavingFun").on('tap', function() {
+      if(!playing) {
+        StandingOutAndHavingFunaudio.play();
+        $('.micbtnSlang').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        StandingOutAndHavingFunaudio.pause(); StandingOutAndHavingFunaudio.currentTime = 0;
+        $('.micbtnSlang').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#StandingOutAndHavingFunaudioplbtn").on('tap', function() {
+      if(!paused) {
+        StandingOutAndHavingFunaudio.pause();
+        paused = true;
+      } else {
+        StandingOutAndHavingFunaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#StandingOutAndHavingFunaudiofbtn").on('tap', function() {
+      var ctime = StandingOutAndHavingFunaudio.currentTime;
+      StandingOutAndHavingFunaudio.currentTime = ctime + 10;
+    });
+    
+    $("#StandingOutAndHavingFunaudiobbtn").on('tap', function() {
+      var ctime = StandingOutAndHavingFunaudio.currentTime;
+      StandingOutAndHavingFunaudio.currentTime = ctime - 10;
+    });
+    
+    $("#StandingOutAndHavingFunaudiopsbtn").on('tap', function() {
+      StandingOutAndHavingFunaudio.pause();
+    });
+
+
+  </script>
+  <script src="js/twocardLogic.js"></script>  <!-- for card dragging effects -->
+</div> <!--//home-->

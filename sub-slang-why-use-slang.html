@@ -1,0 +1,146 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-slang-why-use-slang">
+  <!-- <script src="js/slidebarnat.js"></script> -->
+  <script src="js/slidebar_Slang.js"></script>
+  <link rel="stylesheet" href="css/style_Slang.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnSlang"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnSlang"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnSlang"></div></div>
+  <div class="infobtnholder"><div class="infobtnSlang"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnSlang"></div></div>
+  <div class="menubtnholder"><div class="menubtnSlang"></div></div>
+
+  <div class="bptitleholder" style="padding-top:14px;"><h1>Why Use Slang?</h1></div>
+  
+    <div data-role="content" class="kidzcontent">
+      <div class="navSlang-content">
+        <p>Slanguage exists for a lot of reasons.  Here are some of the most important ones:</p>
+
+			<p>To define the gang  sharing the same slang is about unity and belonging.</p>
+
+			<p>To show familiarity  slang marks activities, events and objects that are routine.</p>
+
+			<p>To stand out  slang wants to amuse and perhaps even shock outsiders with novelty.</p>
+
+			<p>To have fun  people love playing about with language.</p>
+
+			<p>To safeguard privacy or secrecy  slang can be about hiding information.</p>
+      </div>
+        
+
+      <div class="navbtn1">
+        <p><a href="sub-slang-why-use-slang-defining-the-gang.html" data-transition="slide"><img src="css/images/9-12/Language_and_Culture/Slang/Why_Use_Slang/Defining_The_Gang.png"></a></p>
+      </div>
+      <div class="navbtn2">
+        <p><a href="sub-slang-why-use-slang-english-downunder.html" data-transition="slide"><img src="css/images/9-12/Language_and_Culture/Slang/Why_Use_Slang/English_Downunder.png"></a></p>
+      </div>
+      <div class="navbtn3">
+        <p><a href="sub-slang-why-use-slang-secrecy.html" data-transition="slide"><img src="css/images/9-12/Language_and_Culture/Slang/Why_Use_Slang/Secrecy.png"></a></p>
+      </div>
+      <div class="navbtn4">
+        <p><a href="sub-slang-why-use-slang-standing-out-and-having-fun.html" data-transition="slide"><img src="css/images/9-12/Language_and_Culture/Slang/Why_Use_Slang/Why_Use_Slang.png"></a></p>
+      </div>
+
+
+	  
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Language_and_Culture/bottomhomelc.png"></a></div>
+    </div> <!-- end content -->  
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js -->
+    <div class="micbtnholder"><div class="micbtnSlang" id="playstopWhyUseSlang"></div></div>
+    <div class="bSlang"><div class="rwSlang" id="WhyUseSlangaudiobbtn"></div></div>
+    <div class="plSlang"><div class="plpsSlang" id="WhyUseSlangaudioplbtn"></div></div>
+    <div class="fSlang"><div class="fwSlang" id="WhyUseSlangaudiofbtn"></div></div>
+    <div id="actualaudio-WhyUseSlang" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-WhyUseSlang').html('<audio id="WhyUseSlangaudio" controls preload onpause="playsSlang()" onplay="pauseSlang()"><source src="audio/Slang/Why_Use_Slang.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-slang-why-use-slang").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { bgsoundSlang.pause(); bgsoundSlang.currentTime = 0; mainaudiobg.play(); });
+    
+    function goBack() {
+      $.mobile.changePage("sub-slang.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsSlang() {
+         bgsoundSlang.play();
+    }
+       
+    function pauseSlang() {
+         bgsoundSlang.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+	
+    $("#playstopWhyUseSlang").on('tap', function() {
+      if(!playing) {
+        WhyUseSlangaudio.play();
+        $('.micbtnSlang').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        WhyUseSlangaudio.pause(); WhyUseSlangaudio.currentTime = 0;
+        $('.micbtnSlang').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#WhyUseSlangaudioplbtn").on('tap', function() {
+      if(!paused) {
+        WhyUseSlangaudio.pause();
+        paused = true;
+      } else {
+        WhyUseSlangaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#WhyUseSlangaudiofbtn").on('tap', function() {
+      var ctime = WhyUseSlangaudio.currentTime;
+      WhyUseSlangaudio.currentTime = ctime + 10;
+    });
+    
+    $("#WhyUseSlangaudiobbtn").on('tap', function() {
+      var ctime = WhyUseSlangaudio.currentTime;
+      WhyUseSlangaudio.currentTime = ctime - 10;
+    });
+    
+    $("#WhyUseSlangaudiopsbtn").on('tap', function() {
+      WhyUseSlangaudio.pause();
+      //$(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
+    
+    $('.navbtn1').on('tap', function() { 
+      nav1Effects(); 
+    });
+    
+    $('.navbtn2').on('tap', function() { 
+      nav2Effects(); 
+    });
+    
+    $('.navbtn3').on('tap', function() { 
+      nav3Effects(); 
+    });
+    
+    $('.navbtn4').on('tap', function() { 
+      nav4Effects(); 
+    });
+  </script>
+</div> <!--//home-->

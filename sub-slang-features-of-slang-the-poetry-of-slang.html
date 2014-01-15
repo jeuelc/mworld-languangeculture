@@ -1,0 +1,139 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-slang-features-of-slang-the-poetry-of-slang">
+  <!-- <script src="js/slidebarnat.js"></script> -->
+  <script src="js/slidebar_slang.js"></script>
+  <link rel="stylesheet" href="css/style_slang.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnSlang"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnSlang"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnSlang"></div></div>
+  <div class="infobtnholder"><div class="infobtnSlang"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnSlang"></div></div>
+  <div class="menubtnholder"><div class="menubtnSlang"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"></div>
+  <div data-role="content" class="kidzcontent">
+	<div class="navSlang-thepoetryofslang">
+		<p>Slang is a wicked way to be creative in spoken and written language.  The famous English playwright Shakespeare is thought to have devised more than 1000 new words.  Poets, authors and rappers love to create and popularize new words. </p>
+
+<p>You will find expressions often make use of devices such as metaphor, irony and features of sound like onomatopoeia, rhyme and alliteration.  This is the stuff of great literature and poetry, but it's also the stuff of our everyday slang. </p>
+
+<p>It's not for nothing that slang is often described as 'the people's poetry'.  You don't need to be famous to create slang.  </p>
+	</div>
+	<div class="metaphor-bx">
+	</div>
+	<div class="irony-bx">
+		
+	</div>	
+	<div class="onomatopoeia-bx">
+		
+	</div>	
+	
+	<div class="alliteration-bx">
+		
+	</div>	
+	<div class="rhyme-bx">
+		
+	</div>	
+
+    <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Language_and_Culture/bottomhomelc.png"></a></div>
+  </div> <!-- end content -->  
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js 
+         note: change the ids to be able play the narration
+    -->
+    <div class="micbtnholder"><div class="micbtnSlang" id="playstopThePoetryOfSlang"></div></div>
+    <div class="bSlang"><div class="rwSlang" id="ThePoetryOfSlangaudiobbtn"></div></div>
+    <div class="plSlang"><div class="plpsSlang" id="ThePoetryOfSlangaudioplbtn"></div></div>
+    <div class="fSlang"><div class="fwSlang" id="ThePoetryOfSlangaudiofbtn"></div></div>
+    <div id="actualaudio-ThePoetryOfSlang" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-ThePoetryOfSlang').html('<audio id="ThePoetryOfSlangaudio" controls preload onpause="playsSlang()" onplay="pauseSlang()"><source src="audio/Slang/The_Poetry_Of_Slang.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-slang-features-of-slang-the-poetry-of-slang").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+	
+    $('.metaphor-bx').on('tap', function() {
+      $.mobile.changePage("sub-slang-features-of-slang-the-poetry-of-slang-metaphor.html", {transition: "slide"});
+    });
+    $('.irony-bx').on('tap', function() {
+      $.mobile.changePage("sub-slang-features-of-slang-the-poetry-of-slang-irony.html", {transition: "slide"});
+    });
+    $('.onomatopoeia-bx').on('tap', function() {
+      $.mobile.changePage("sub-slang-features-of-slang-the-poetry-of-slang-onomatopoeia.html", {transition: "slide"});
+    });
+    $('.alliteration-bx').on('tap', function() {
+      $.mobile.changePage("sub-slang-features-of-slang-the-poetry-of-slang-alliteration.html", {transition: "slide"});
+    });
+    $('.rhyme-bx').on('tap', function() {
+      $.mobile.changePage("sub-slang-features-of-slang-the-poetry-of-slang-rhyme-and-sound.html", {transition: "slide"});
+    });
+	
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundSlang.pause(); bgsoundSlang.currentTime = 0;});
+    
+    function goBack() {
+      $.mobile.changePage("sub-slang-features-of-slang.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsSlang() {
+         bgsoundSlang.play();
+    }
+       
+    function pauseSlang() {
+         bgsoundSlang.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopThePoetryOfSlang").on('tap', function() {
+      if(!playing) {
+        ThePoetryOfSlangaudio.play();
+        $('.micbtnSlang').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        ThePoetryOfSlangaudio.pause(); ThePoetryOfSlangaudio.currentTime = 0;
+        $('.micbtnSlang').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#ThePoetryOfSlangaudioplbtn").on('tap', function() {
+      if(!paused) {
+        ThePoetryOfSlangaudio.pause();
+        paused = true;
+      } else {
+        ThePoetryOfSlangaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#ThePoetryOfSlangaudiofbtn").on('tap', function() {
+      var ctime = ThePoetryOfSlangaudio.currentTime;
+      ThePoetryOfSlangaudio.currentTime = ctime + 10;
+    });
+    
+    $("#ThePoetryOfSlangaudiobbtn").on('tap', function() {
+      var ctime = ThePoetryOfSlangaudio.currentTime;
+      ThePoetryOfSlangaudio.currentTime = ctime - 10;
+    });
+    
+    $("#ThePoetryOfSlangaudiopsbtn").on('tap', function() {
+      ThePoetryOfSlangaudio.pause();
+    });
+  </script>
+</div> <!--//home-->

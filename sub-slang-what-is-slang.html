@@ -1,0 +1,120 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-slang-what-is-slang">
+  <!-- <script src="js/slidebarnat.js"></script> -->
+  <script src="js/slidebar_Slang.js"></script>
+  <link rel="stylesheet" href="css/style_Slang.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnSlang"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnSlang"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnSlang"></div></div>
+  <div class="infobtnholder"><div class="infobtnSlang"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnSlang"></div></div>
+  <div class="menubtnholder"><div class="menubtnSlang"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"></div>
+  <div data-role="content" class="kidzcontent">
+	<div class="navSlang-whatisslang">
+		<p>Over the years people have described slang in lots of ways, some flattering but many very unflattering.  Slang is often misunderstood.
+		</p>
+		<p>People often connect it with swearing, but this is wrong.  Sure, slang can be rude, and you'll be seeing examples later, but it's not necessarily connected to taboos in the same way that swearing is.</p>
+
+		<p>Many people also wrongly identify slang with the way teenagers speak, as something most people eventually grow out of.  Of course, teenagers use slang, but then so do adults.  Most importantly though, they never use each other's slang!</p>
+
+		<p>As you will discover, slang has been with us for 'donkey's years' (in other words, a very long time) and is evolving every day!  </p>
+	</div>
+	<div class="slang_school-bx">
+	</div>
+	<div class="image_newton-bx">
+		
+	</div>	
+	
+    <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Language_and_Culture/bottomhomelc.png"></a></div>
+  </div> <!-- end content -->  
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js 
+         note: change the ids to be able play the narration
+    -->
+    <div class="micbtnholder"><div class="micbtnSlang" id="playstopWhatIsSlang"></div></div>
+    <div class="bSlang"><div class="rwSlang" id="WhatIsSlangaudiobbtn"></div></div>
+    <div class="plSlang"><div class="plpsSlang" id="WhatIsSlangaudioplbtn"></div></div>
+    <div class="fSlang"><div class="fwSlang" id="WhatIsSlangaudiofbtn"></div></div>
+    <div id="actualaudio-WhatIsSlang" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-WhatIsSlang').html('<audio id="WhatIsSlangaudio" controls preload onpause="playsSlang()" onplay="pauseSlang()"><source src="audio/Slang/What_Is_Slang.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-slang-what-is-slang").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+	
+    $('.slang_school-bx').on('tap', function() {
+      $.mobile.changePage("sub-slang-what-is-slang-slang-school.html", {transition: "slide"});
+    });
+
+	
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundSlang.pause(); bgsoundSlang.currentTime = 0;});
+    
+    function goBack() {
+      $.mobile.changePage("sub-slang.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsSlang() {
+         bgsoundSlang.play();
+    }
+       
+    function pauseSlang() {
+         bgsoundSlang.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopWhatIsSlang").on('tap', function() {
+      if(!playing) {
+        WhatIsSlangaudio.play();
+        $('.micbtnSlang').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        WhatIsSlangaudio.pause(); WhatIsSlangaudio.currentTime = 0;
+        $('.micbtnSlang').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#WhatIsSlangaudioplbtn").on('tap', function() {
+      if(!paused) {
+        WhatIsSlangaudio.pause();
+        paused = true;
+      } else {
+        WhatIsSlangaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#WhatIsSlangaudiofbtn").on('tap', function() {
+      var ctime = WhatIsSlangaudio.currentTime;
+      WhatIsSlangaudio.currentTime = ctime + 10;
+    });
+    
+    $("#WhatIsSlangaudiobbtn").on('tap', function() {
+      var ctime = WhatIsSlangaudio.currentTime;
+      WhatIsSlangaudio.currentTime = ctime - 10;
+    });
+    
+    $("#WhatIsSlangaudiopsbtn").on('tap', function() {
+      WhatIsSlangaudio.pause();
+    });
+  </script>
+</div> <!--//home-->

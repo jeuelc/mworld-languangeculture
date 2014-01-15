@@ -1,0 +1,163 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-slang-features-of-slang-the-poetry-of-slang-rhyme-and-sound">
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>
+  <script src="js/slidebar_slang.js"></script>
+  <link rel="stylesheet" href="css/style_slang.css"/>
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnSlang"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnSlang"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnSlang"></div></div>
+  <div class="infobtnholder"><div class="infobtnSlang"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnSlang"></div></div>
+  <div class="menubtnholder"><div class="menubtnSlang"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:0px;"><h1>Rhyme and Sound</h1></div>
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+        
+		 
+		
+		
+		<div id="zoomwrapper">
+          <div id="pol1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/9-12/Language_and_Culture/Slang/Features_Of_Slang/The_Poetry_Of_Slang/Rhyme/UKgoods.png" alt="" />
+          </div>
+          
+		   <div id="pol2"class="pPiece" style="left:75px;top:290px;">
+             <img src="css/images/9-12/Language_and_Culture/Slang/Features_Of_Slang/The_Poetry_Of_Slang/Rhyme/Lime_Time_Quiz.png" alt="" />
+          </div>
+        </div><!--/zoomwrapper-->
+      </div>
+      
+      <div class="bpcontentSlang">
+        <p>There are hundreds of slangy rhyming phrases.  Sometimes they have meaningful words, as in 'drain the main', 'tin grin', 'sprain brain', 'eager beaver', 'silly billy', 'over-the-shoulder-boulder-holders', and 'easy-peasy, lemon-squeezy'.  But often they're nonsensical like 'namby-pamby' (weak), 'twiddle-diddles' (testicles), 'lovey-dovey' (overly affectionate), 'higgledy-piggledy' (confused), 'hocus-pocus' (deception) and 'hooley dooley' (expressing surprise).</p>
+
+<p>Rhyming slang was a secret language from the 1850s.  'Rubbity dub' (pub), 'aristotle' (bottle), 'jam tart' (sweetheart), and 'apples and pears' (stairs) date from this time.  An early Australian example are the words for immigrant: 'Jimmy Grant', 'pomegranate', and 'Pommy Grant'.  Notice that the last word always rhymes with the word the speaker has in mind.  It was probably invented by Cockney and Irish workers, but it was quickly adopted by criminals as a way to confuse eavesdroppers!</p>
+
+<p>The slang became even more difficult to grasp when the rhyming word dropped off.  Someone who 'rabbits on' chatters a lot; this comes from 'rabbit and pork' (talk).  Who would guess that the 'raspberry' children blow came from the raspberry tart that was originally 'fart'!  A surprising number of our everyday expressions are short forms for what were originally very rude expressions.</p>
+      </div>
+       
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Language_and_Culture/bottomhomelc.png"></a></div>
+    </div> <!-- end content -->  
+  </div><!--/spacechar-->        
+  
+    <div class="micbtnholder"><div class="micbtnSlang" id="playstopRhyme"></div></div>
+    <div class="bSlang"><div class="rwSlang" id="Rhymeaudiobbtn"></div></div>
+    <div class="plSlang"><div class="plpsSlang" id="Rhymeaudioplbtn"></div></div>
+    <div class="fSlang"><div class="fwSlang" id="Rhymeaudiofbtn"></div></div>
+    <div id="actualaudio-Rhyme" style="visibility:hidden;"></div>
+  <!-- </div> -->
+  <!-- ----------------------- Video embedding --------------------------- -->
+  
+	<div id="watchUKVideoholder" style="width:1024px;height:748px;position:absolute;left:0px;top:0px;visibility:hidden;background:#000000;z-index:-1;">
+    <video id="watchUKVideo" width="1024" height="748" preload>
+      <source src="css/images/9-12/Language_and_Culture/Slang/Features_Of_Slang/The_Poetry_Of_Slang/Rhyme/UK_Video.mpg" type="video/mp4">
+    </video>
+  </div>
+  
+  <!-- ------------------------------------------------------------------ -->
+  
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+ 
+	var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      $('div#pol2').css("z-index", 2);
+      $('div#pol1').css("z-index", 1);
+      $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
+      $('div#pol3 > img').css("-webkit-transform", "rotate(-3deg)");
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-Rhyme').html('<audio id="Rhymeaudio" controls preload onpause="playsSlang()" onplay="pauseSlang()"><source src="audio/Slang/Rhyme_And_Sound.mp3" type="audio/mpeg"></audio>');
+      }             
+      $("#sub-slang-features-of-slang-the-poetry-of-slang-rhyme-and-sound").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundSlang.pause(); bgsoundSlang.currentTime = 0;});
+	
+
+    $("#pol2").on('tap', function() {
+      $.mobile.changePage("sub-slang-features-of-slang-the-poetry-of-slang-rhyme-and-sound-lime-time.html", {transition: "slide"});
+    });
+
+    function goBack() {
+      $.mobile.changePage("sub-slang-features-of-slang-the-poetry-of-slang.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsSlang() {
+         bgsoundSlang.play();
+    }
+       
+    function pauseSlang() {
+         bgsoundSlang.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopRhyme").on('tap', function() {
+      if(!playing) {
+        Rhymeaudio.play();
+        $('.micbtnSlang').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        Rhymeaudio.pause(); Rhymeaudio.currentTime = 0;
+        $('.micbtnSlang').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#Rhymeaudioplbtn").on('tap', function() {
+      if(!paused) {
+        Rhymeaudio.pause();
+        paused = true;
+      } else {
+        Rhymeaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#Rhymeaudiofbtn").on('tap', function() {
+      var ctime = Rhymeaudio.currentTime;
+      Rhymeaudio.currentTime = ctime + 10;
+    });
+    
+    $("#Rhymeaudiobbtn").on('tap', function() {
+      var ctime = Rhymeaudio.currentTime;
+      Rhymeaudio.currentTime = ctime - 10;
+    });
+    
+    $("#Rhymeaudiopsbtn").on('tap', function() {
+      Rhymeaudio.pause();
+    });
+
+	watchUKVideo.addEventListener('ended', function() { 
+		$("#watchUKVideoholder").css({"visibility":"hidden", "z-index":-1});
+		$("#watchUKVideo").css({"z-index":-1});
+		bgsoundSlang.play(); 
+	});
+
+	$("#watchUKVideo").on('tap', function() {
+		$("#watchUKVideoholder").css({"visibility":"hidden", "z-index":-1});
+		$("#watchUKVideo").css({"z-index":-1});
+		bgsoundSlang.play();
+		watchUKVideo.pause();
+		watchUKVideo.currentTime = 0;
+	});	
+    $("#pol1").on('tap', function() {
+      $("#watchUKVideoholder").css({"visibility":"visible", "z-index":10});
+      $("#watchUKVideo").css({"z-index":9});
+      bgsoundSlang.pause();
+      watchUKVideo.play();
+    }); 		
+  </script>
+  <script src="js/twocardLogic.js"></script>  <!-- for card dragging effects -->
+</div> <!--//home-->

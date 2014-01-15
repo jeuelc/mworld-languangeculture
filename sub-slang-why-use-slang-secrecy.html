@@ -1,0 +1,151 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-slang-why-use-slang-secrecy">
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>
+  <script src="js/slidebar_slang.js"></script>
+  <link rel="stylesheet" href="css/style_slang.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnSlang"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnSlang"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnSlang"></div></div>
+  <div class="infobtnholder"><div class="infobtnSlang"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnSlang"></div></div>
+  <div class="menubtnholder"><div class="menubtnSlang"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:0px;"><h1>English Downunder</h1></div>
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+	  <a id="img1" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Language_and_Culture/Slang/Why_Use_Slang/Secrecy/Tennis_Players_Hi_Res.jpg', 'Tennis players have spoken in backslang to preserve secrecy when their opponents are nearby.  (Courtesy: Thinkstock)');">click here</a>
+	    <a id="img2" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Language_and_Culture/Slang/Why_Use_Slang/Secrecy/Fish_Market_Hi_Res.png', 'Can you figure out what these people are saying? (Courtesy: Thinkstock)');">click here</a>
+		
+		 
+		
+
+       	
+		
+		<div id="zoomwrapper">
+          <div id="pol1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/9-12/Language_and_Culture/Slang/Why_Use_Slang/Secrecy/Tennis_Players.jpg" alt="" />
+          </div>
+          <div id="pol2"class="pPiece" style="left:75px;top:290px;">
+             <img src="css/images/9-12/Language_and_Culture/Slang/Why_Use_Slang/Secrecy/Fish_Market.png" alt="" />
+          </div>
+        </div><!--/zoomwrapper-->
+      </div>
+      
+      <div class="bpcontentSlang">
+        <p>Australians and New Zealanders have always thought of their slanguage as important to their cultural identity  not surprisingly, given what went into the original dialect hot pot in the early years of English-speaking settlement.</p>
+
+<p>The slang of convicts, sailors, whalers and gold-diggers mixed together with the emerging standard language  this colloquial hotchpotch set old residents apart from new arrivals ('old chums' versus 'new chums', as they were known).</p>
+  
+<p>Author Edward Gibbon Wakefield wrote in 1829 of the flourishing of 'bad' language:</p>
+
+<p>"The base language of English thieves is becoming the established language of the colony.  Terms of slang and flash are used, as a matter of course, everywhere.  No doubt they will be reckoned quite parliamentary, as soon as we obtain a parliament."</p>
+
+<p>And so an informal culture with a slangy style of speech started what is now known as 'Australian English'.</p>
+      </div>
+       
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Language_and_Culture/bottomhomelc.png"></a></div>
+    </div> <!-- end content -->  
+  </div><!--/spacechar-->        
+  
+    <div class="micbtnholder"><div class="micbtnSlang" id="playstopSecrecy"></div></div>
+    <div class="bSlang"><div class="rwSlang" id="Secrecyaudiobbtn"></div></div>
+    <div class="plSlang"><div class="plpsSlang" id="Secrecyaudioplbtn"></div></div>
+    <div class="fSlang"><div class="fwSlang" id="Secrecyaudiofbtn"></div></div>
+    <div id="actualaudio-Secrecy" style="visibility:hidden;"></div>
+  <!-- </div> -->
+  
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+ 
+	var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      $('div#pol1').css("z-index", 2);
+      $('div#pol2').css("z-index", 1);
+      $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-Secrecy').html('<audio id="Secrecyaudio" controls preload onpause="playsSlang()" onplay="pauseSlang()"><source src="audio/Slang/Secrecy.mp3" type="audio/mpeg"></audio>');
+      }             
+      $("#sub-slang-why-use-slang-secrecy").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundSlang.pause(); bgsoundSlang.currentTime = 0;});
+	
+    $('.falseans').on('tap', function() {
+      alert("Wrong answer");
+    });
+    $('#trueans').on('tap', function() {
+      alert("Correct answer");
+    });
+    
+   
+     $("#pol1").on('tap', function() {
+      $('#img1')[0].click();
+    });
+    
+	$("#pol2").on('tap', function() {
+      $('#img2')[0].click();
+    });
+
+    function goBack() {
+      $.mobile.changePage("sub-slang-why-use-slang.html", {transition: "slide", reverse: true });
+    }
+	
+    function playsSlang() {
+         bgsoundSlang.play();
+    }
+       
+    function pauseSlang() {
+         bgsoundSlang.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopSecrecy").on('tap', function() {
+      if(!playing) {
+        Secrecyaudio.play();
+        $('.micbtnSlang').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        Secrecyaudio.pause(); Secrecyaudio.currentTime = 0;
+        $('.micbtnSlang').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#Secrecyaudioplbtn").on('tap', function() {
+      if(!paused) {
+        Secrecyaudio.pause();
+        paused = true;
+      } else {
+        Secrecyaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#Secrecyaudiofbtn").on('tap', function() {
+      var ctime = Secrecyaudio.currentTime;
+      Secrecyaudio.currentTime = ctime + 10;
+    });
+    
+    $("#Secrecyaudiobbtn").on('tap', function() {
+      var ctime = Secrecyaudio.currentTime;
+      Secrecyaudio.currentTime = ctime - 10;
+    });
+    
+    $("#Secrecyaudiopsbtn").on('tap', function() {
+      Secrecyaudio.pause();
+    });
+  </script>
+  <script src="js/twocardLogic.js"></script>  <!-- for card dragging effects -->
+</div> <!--//home-->

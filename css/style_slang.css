@@ -1,5 +1,5 @@
 /* Main common basic pages */
-#sub-slang, #sub-slang-features-of-slang, #sub-slang-the-slang-life-cycle{
+#sub-slang, #sub-slang-features-of-slang, #sub-slang-the-slang-life-cycle, #sub-slang-why-use-slang, #sub-slang-features-of-slang-the-poetry-of-slang-irony,#sub-slang-features-of-slang-the-poetry-of-slang-metaphor,#sub-slang-features-of-slang-the-poetry-of-slang-rhyme-and-sound,#sub-slang-why-use-slang-english-downunder,#sub-slang-why-use-slang-secrecy, #sub-slang-why-use-slang-standing-out-and-having-fun{
   background:url('images/9-12/Language_and_Culture/Slang/Slang_BG.png') no-repeat;
   height:748px !important;
   overflow:hidden !important;
@@ -7,11 +7,70 @@
 }
 
 /* Custom Pages Style */
-#sub-slang-whats-a-desert-where-are-our-slang{
-  background:url('images/9-12/Language_and_Culture/Slang/Whats_A_Desert/Where_Are_The_Slang/Where_Are_The_Slang_BG.png') no-repeat;
+#sub-slang-what-is-slang{
+  background:url('images/9-12/Language_and_Culture/Slang/What_Is_Slang/What_Is_Slang_BG.png') no-repeat;
   height:748px !important;
   overflow:hidden !important;
   width:1024px !important;
+}
+
+#sub-slang-features-of-slang-the-poetry-of-slang{
+  background:url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/The_Poetry_Of_Slang/The_Poetry_Of_Slang_BG.png') no-repeat;
+  height:748px !important;
+  overflow:hidden !important;
+  width:1024px !important;
+}
+
+#sub-slang-features-of-slang-the-poetry-of-slang-alliteration{
+  background:url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/The_Poetry_Of_Slang/Alliteration/Alliteration_BG.png') no-repeat;
+  height:748px !important;
+  overflow:hidden !important;
+  width:1024px !important;
+}
+
+#sub-slang-features-of-slang-the-poetry-of-slang-onomatopoeia{
+  background:url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/The_Poetry_Of_Slang/Onomatopoeia/Onomatopoeia_BG.png') no-repeat;
+  height:748px !important;
+  overflow:hidden !important;
+  width:1024px !important;
+}
+
+
+#sub-slang-the-slang-life-cycle-slang-today{
+  background:url('images/9-12/Language_and_Culture/Slang/The_Slang_Lifecycle/Slang_Today/Slang_Today_BG.png') no-repeat;
+  height:748px !important;
+  overflow:hidden !important;
+  width:1024px !important;
+
+}
+
+
+#sub-slang-the-slang-life-cycle-the-latest-and-greatest{
+  background:url('images/9-12/Language_and_Culture/Slang/The_Slang_Lifecycle/The_Latest_And_Greatest/The_Latest_And_Greatest_BG.png') no-repeat;
+  height:748px !important;
+  overflow:hidden !important;
+  width:1024px !important;
+
+
+}
+
+#sub-slang-why-use-slang-defining-the-gang{
+  background:url('images/9-12/Language_and_Culture/Slang/Why_Use_Slang/Defining_The_Gang/Defining_The_Gang_BG.png') no-repeat;
+  height:748px !important;
+  overflow:hidden !important;
+  width:1024px !important;
+	
+
+}
+
+#sub-slang-features-of-slang-the-poetry-of-slang-onomatopoeia .bptitleholder{
+	width: 627px;
+	height: 68px;
+	text-align: center;
+	line-height: 28px;
+	position: absolute;
+	top: 170px;
+	left: 194px;
 }
 
 /* Custom Pages Style Ends here */
@@ -136,7 +195,7 @@
 
 
 /* Common Header Div Design */
-#sub-slang .bptitleholder, #sub-slang-features-of-slang .bptitleholder, #sub-slang-the-slang-life-cycle .bptitleholder{
+#sub-slang .bptitleholder, #sub-slang-features-of-slang .bptitleholder, #sub-slang-the-slang-life-cycle .bptitleholder, #sub-slang-why-use-slang .bptitleholder, #sub-slang-features-of-slang-the-poetry-of-slang-irony .bptitleholder,#sub-slang-features-of-slang-the-poetry-of-slang-metaphor .bptitleholder,#sub-slang-features-of-slang-the-poetry-of-slang-rhyme-and-sound .bptitleholder,#sub-slang-why-use-slang-english-downunder .bptitleholder,#sub-slang-why-use-slang-secrecy .bptitleholder, #sub-slang-why-use-slang-standing-out-and-having-fun .bptitleholder{
 	width: 627px;
 	height: 68px;
 	text-align: center;
@@ -147,18 +206,38 @@
 }
 
 /* Custom Header Div Design */
-#sub-Slang-fossil-puzzles .bptitleholder{
-	width: 490px;
-	height: 68px;
-	text-align: center;
-	line-height: 28px;
-	position: absolute;
-	top: 170px;
-	left: 347px;
+#sub-slang-what-is-slang .bptitleholder{
+	background:url('images/9-12/Language_and_Culture/Slang/What_Is_Slang/Header.png') no-repeat;
+	height:193px;
+	width:458px;
+	position:absolute;
+	top:55px;
+	left:20px;
 }
 
+#sub-slang-features-of-slang-the-poetry-of-slang .bptitleholder{
+	background:url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/The_Poetry_Of_Slang/Heading.png') no-repeat;
+	height:193px;
+	width:458px;
+	position:absolute;
+	top:55px;
+	left:20px;
+}
+
+#sub-slang-the-slang-life-cycle-slang-today .bptitleholder{
+	height:193px;
+	width:458px;
+	position:absolute;
+	top:69px;
+	left:476px;
+}
+
+
+
+
+
 /* Common Header Design h1 */
-#sub-slang .bptitleholder h1, #sub-slang-features-of-slang .bptitleholder h1, #sub-slang-the-slang-life-cycle .bptitleholder h1{
+#sub-slang .bptitleholder h1, #sub-slang-features-of-slang .bptitleholder h1, #sub-slang-the-slang-life-cycle .bptitleholder h1, #sub-slang-why-use-slang .bptitleholder h1, #sub-slang-features-of-slang-the-poetry-of-slang-irony .bptitleholder h1,#sub-slang-features-of-slang-the-poetry-of-slang-metaphor .bptitleholder h1,#sub-slang-features-of-slang-the-poetry-of-slang-rhyme-and-sound .bptitleholder h1,#sub-slang-why-use-slang-english-downunder .bptitleholder h1,#sub-slang-why-use-slang-secrecy .bptitleholder h1, #sub-slang-why-use-slang-standing-out-and-having-fun .bptitleholder h1{
 	text-transform: uppercase;
 	color: #FFFFFF !important;
 	font-family: "comic sans ms" !important;
@@ -168,7 +247,7 @@
 }
 
 /* Custom Page Header Design h1 */
-#sub-slang-fossil-puzzles .bptitleholder h1{
+#sub-slang-what-is-slang .bptitleholder h1{
 	text-transform: uppercase;
 	color: #000000 !important;
 	font-family: "comic sans ms" !important;
@@ -176,6 +255,25 @@
 	padding: 0;
 	margin: 0;	
 }
+
+#sub-slang-features-of-slang-the-poetry-of-slang-onomatopoeia .bptitleholder h1{
+	text-transform: uppercase;
+	color: #ffffff !important;
+	font-family: "comic sans ms" !important;
+	font-weight: bold;
+	padding: 0;
+	margin: 0;	
+}
+
+#sub-slang-the-slang-life-cycle-slang-today .bptitleholder h3{
+	text-transform: uppercase;
+	color: #ffffff !important;
+	font-family: "comic sans ms" !important;
+	font-weight: bold;
+	padding: 0;
+	margin: 0;	
+}
+
 
 .bpcontentSlang{
 	color: #000000;
@@ -207,16 +305,160 @@
 
 
 /* Custom content */
-.navSlang-fossilpuzzles{
+.navSlang-whatisslang{
+position: absolute;
+left: 33px;
+top: 256px;
+width: 423px;
+height: 379px;
+overflow: auto;
+text-align: left;
+font-family: comic sans ms;
+font-size: 18px;
+font-weight: normal;
+color: #FFFFFF;
+}
+.navSlang-thepoetryofslang{
 	position: absolute;
-	left: 640px;
-	top: 131px;
-	width: 325px;
-	height: 379px;
+	left: 33px;
+	top: 254px;
+	width: 468px;
+	height: 393px;
+	overflow: auto;
+	text-align: left;
+	font-family: comic sans ms;
+	font-size: 18px;
+	font-weight: normal;
+	color: #FFFFFF;
+}
+
+.navSlang-alleteration{
+	position: absolute;
+	left: 574px;
+	top: 38px;
+	width: 430px;
+	height: 590px;
+	overflow: auto;
+	text-align: left;
+	font-family: comic sans ms;
+	font-size: 18px;
+	font-weight: normal;
+	color: #FFFFFF;
+}
+
+.navSlang-onomatopoeia{
+	position: absolute;
+	left: 574px;
+	top: 229px;
+	width: 430px;
+	height: 428px;
+	overflow: auto;
+	text-align: left;
+	font-family: comic sans ms;
+	font-size: 18px;
+	font-weight: normal;
+	color: #FFFFFF;
+}
+
+.navSlang-slangtoday{
+	position: absolute;
+	left: 515px;
+	top: 141px;
+	width: 430px;
+	height: 428px;
+	overflow: auto;
+	text-align: left;
+	font-family: comic sans ms;
+	font-size: 18px;
+	font-weight: normal;
+	color: #FFFFFF;
+}
+
+.navSlang-thelatestandgreatest{
+	position: absolute;
+	left: 515px;
+	top: 90px;
+	width: 430px;
+	height: 159px;
 	overflow: auto;
 	text-align: left;
 	font-family: comic sans ms;
 	font-size: 18px;
 	font-weight: normal;
 	color: #000000;
+	
+}
+
+.navSlang-definingthegang{
+	position: absolute;
+	left: 313px;
+	top: 256px;
+	width: 415px;
+	height: 457px;
+	overflow: auto;
+	text-align: left;
+	font-family: comic sans ms;
+	font-size: 18px;
+	font-weight: normal;
+	color: #000000;
+	
+
+}
+
+.slang_school-bx{
+background:url('images/9-12/Language_and_Culture/Slang/What_Is_Slang/Button_Slang_School.png') no-repeat;
+height:418px;
+width:465px;
+position:absolute;
+top:10px;
+left:458px;
+}
+.image_newton-bx{
+background:url('images/9-12/Language_and_Culture/Slang/What_Is_Slang/Image_Newton.png') no-repeat;
+height: 456px;
+width: 620px;
+position: absolute;
+top: 285px;
+left: 533px;
+}
+
+.metaphor-bx{
+	background: url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/The_Poetry_Of_Slang/Button_Metaphor.png') no-repeat;
+	height: 167px;
+	width: 188px;
+	position: absolute;
+	top: 47px;
+	left: 559px;
+}
+.irony-bx{
+	background: url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/The_Poetry_Of_Slang/Button_Irony.png') no-repeat;
+	height: 167px;
+	width: 188px;
+	position: absolute;
+	top: 49px;
+	left: 800px;
+}
+.onomatopoeia-bx{
+	background: url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/The_Poetry_Of_Slang/Button_Ono.png') no-repeat;
+	height: 170px;
+	width: 247px;
+	position: absolute;
+	top: 250px;
+	left: 533px;
+}
+.alliteration-bx{
+	background: url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/The_Poetry_Of_Slang/Button_Alliteration.png') no-repeat;
+	height: 167px;
+	width: 189px;
+	position: absolute;
+	top: 254px;
+	left: 796px;
+}
+.rhyme-bx{
+	background: url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/The_Poetry_Of_Slang/Button_Rhyme.png') no-repeat;
+	height: 178px;
+	width: 188px;
+	position: absolute;
+	top: 455px;
+	left: 675px;
 }
