@@ -47,6 +47,7 @@ Johnson and others were very critical of shortened forms like 'hyper'.  Others s
     <div class="plSlang"><div class="plpsSlang" id="SlangTodayaudioplbtn"></div></div>
     <div class="fSlang"><div class="fwSlang" id="SlangTodayaudiofbtn"></div></div>
     <div id="actualaudio-SlangToday" style="visibility:hidden;"></div>
+	<div id="eyes-activity"></div>
   <!--</div>-->
   <script>
   // sound setup is in home.html and index.js
@@ -121,5 +122,20 @@ Johnson and others were very critical of shortened forms like 'hyper'.  Others s
     $("#SlangTodayaudiopsbtn").on('tap', function() {
       SlangTodayaudio.pause();
     });
+
+		$(document).ready(function(){
+			blink();
+			function blink() {
+				if($("#eyes-activity").css('display')=='none'){
+					$("#eyes-activity").css('display','block');
+					setTimeout(blink, 200);
+				}
+				else{
+					$("#eyes-activity").css('display','none');
+					setTimeout(blink, 5000);
+				}
+			}
+        });
+
   </script>
 </div> <!--//home-->

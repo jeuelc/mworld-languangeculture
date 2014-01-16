@@ -1,0 +1,194 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-slang-features-of-slang-the-slang-factory">
+  <!-- <script src="js/slidebarnat.js"></script> -->
+  <script src="js/slidebar_slang.js"></script>
+  <link rel="stylesheet" href="css/style_slang.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnSlang"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnSlang"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnSlang"></div></div>
+  <div class="infobtnholder"><div class="infobtnSlang"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnSlang"></div></div>
+  <div class="menubtnholder"><div class="menubtnSlang"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"></div>
+  <div data-role="content" class="kidzcontent">
+	<div id="navSlang-theslangfactory">
+		<p>We often use a few time-worn tricks to create slang:</p>
+		<p>Shortening: take stuffy old words and squish them up to make them shorter and easier to say.</p>
+		<p>Affixation: add extra sounds or syllables at the start, end or middle of words.  It makes them longer but also injects new life into them!</p>
+		<p>Blending: take two or more words and smear them together to create new ones.</p>
+		<p>Remodelling: same old words, spoken in a new-fangled way.</p>
+	</div>
+	<div id="man-standing"></div>
+	<div id="speech-bubble"></div>	
+	<div id="go-button"></div>	
+	<div id="blinking-eyes"></div>
+	<div id="glowing-doors"></div>
+	<div id="open-doors-remodeling"></div>
+	<div id="open-doors-blending"></div>
+	<div id="open-doors-affixation"></div>
+	<div id="open-doors-shortening"></div>
+
+	<div id="remodelling"></div>
+	<div id="blending"></div>
+	<div id="affixation"></div>
+	<div id="shortening"></div>
+	
+    <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Language_and_Culture/bottomhomelc.png"></a></div>
+  </div> <!-- end content -->  
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js 
+         note: change the ids to be able play the narration
+    -->
+    <div class="micbtnholder"><div class="micbtnSlang" id="playstopTheSlangFactory"></div></div>
+    <div class="bSlang"><div class="rwSlang" id="TheSlangFactoryaudiobbtn"></div></div>
+    <div class="plSlang"><div class="plpsSlang" id="TheSlangFactoryaudioplbtn"></div></div>
+    <div class="fSlang"><div class="fwSlang" id="TheSlangFactoryaudiofbtn"></div></div>
+    <div id="actualaudio-TheSlangFactory" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-TheSlangFactory').html('<audio id="TheSlangFactoryaudio" controls preload onpause="playsSlang()" onplay="pauseSlang()"><source src="audio/Slang/Slag_Factory.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-slang-features-of-slang-the-slang-factory").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+	
+    $('.metaphor-bx').on('tap', function() {
+      $.mobile.changePage("sub-slang-features-of-slang-the-slang-factory-metaphor.html", {transition: "slide"});
+    });
+    $('.irony-bx').on('tap', function() {
+      $.mobile.changePage("sub-slang-features-of-slang-the-slang-factory-irony.html", {transition: "slide"});
+    });
+    $('.onomatopoeia-bx').on('tap', function() {
+      $.mobile.changePage("sub-slang-features-of-slang-the-slang-factory-onomatopoeia.html", {transition: "slide"});
+    });
+    $('.alliteration-bx').on('tap', function() {
+      $.mobile.changePage("sub-slang-features-of-slang-the-slang-factory-alliteration.html", {transition: "slide"});
+    });
+    
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundSlang.pause(); bgsoundSlang.currentTime = 0;});
+    
+    function goBack() {
+      $.mobile.changePage("sub-slang-features-of-slang.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsSlang() {
+         bgsoundSlang.play();
+    }
+       
+    function pauseSlang() {
+         bgsoundSlang.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopTheSlangFactory").on('tap', function() {
+      if(!playing) {
+        TheSlangFactoryaudio.play();
+        $('.micbtnSlang').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        TheSlangFactoryaudio.pause(); TheSlangFactoryaudio.currentTime = 0;
+        $('.micbtnSlang').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#TheSlangFactoryaudioplbtn").on('tap', function() {
+      if(!paused) {
+        TheSlangFactoryaudio.pause();
+        paused = true;
+      } else {
+        TheSlangFactoryaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#TheSlangFactoryaudiofbtn").on('tap', function() {
+      var ctime = TheSlangFactoryaudio.currentTime;
+      TheSlangFactoryaudio.currentTime = ctime + 10;
+    });
+    
+    $("#TheSlangFactoryaudiobbtn").on('tap', function() {
+      var ctime = TheSlangFactoryaudio.currentTime;
+      TheSlangFactoryaudio.currentTime = ctime - 10;
+    });
+    
+    $("#TheSlangFactoryaudiopsbtn").on('tap', function() {
+      TheSlangFactoryaudio.pause();
+    });
+	
+	$(document).ready(function(){
+		$("#man-standing").css('display','block');
+		$("#speech-bubble").css('display','block');
+		$("#navSlang-theslangfactory").css('display','block');
+		
+			var n1	=	1;
+			var itid	=	setInterval(function(){
+			if(n1%2==0){
+				$("#blinking-eyes").css('display','block')}
+			else{
+				$("#blinking-eyes").css('display','none')}
+			n1 = n1 + 1;
+			},1000);
+		
+	
+		$("#go-button").on('tap', function() {
+			$("#man-standing").css('display','none');
+			$("#speech-bubble").css('display','none');
+			$("#navSlang-theslangfactory").css('display','none');
+			$("#blinking-eyes").css('display','none');
+			$("#glowing-doors").css('display','block');
+			clearInterval(itid);
+		});
+	});
+	
+	$("#remodelling").on('tap', function() {
+		if($('#open-doors-remodeling').css('display') == 'none'){
+			$("#open-doors-remodeling").css('display','block');
+		}
+		$('#open-doors-remodeling').css("background-position", "-498px -24px");
+		$.mobile.changePage("sub-slang-features-of-slang-the-slang-factory-remodelling.html", {transition: "slide"});
+	});
+	
+	$("#blending").on('tap', function() {
+		if($('#open-doors-blending').css('display') == 'none'){
+			$("#open-doors-blending").css('display','block');
+		}
+		$('#open-doors-blending').css("background-position", "-305px 8px");
+		$.mobile.changePage("sub-slang-features-of-slang-the-slang-factory-blending.html", {transition: "slide"});
+	});
+	
+	$("#affixation").on('tap', function() {
+		if($('#open-doors-affixation').css('display') == 'none'){
+			$("#open-doors-affixation").css('display','block');
+		}
+		$('#open-doors-affixation').css("background-position", "-150px -19px");
+		$.mobile.changePage("sub-slang-features-of-slang-the-slang-factory-affixation.html", {transition: "slide"});
+	});
+	
+	$("#shortening").on('tap', function() {
+		if($('#open-doors-shortening').css('display') == 'none'){
+			$("#open-doors-shortening").css('display','block');
+		}
+		$('#open-doors-shortening').css("background-position", "9px -100px");
+		$.mobile.changePage("sub-slang-features-of-slang-the-slang-factory-shortening.html", {transition: "slide"});
+	});
+	
+  </script>
+  
+</div> <!--//home-->

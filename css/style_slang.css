@@ -35,7 +35,6 @@
   width:1024px !important;
 }
 
-
 #sub-slang-the-slang-life-cycle-slang-today{
   background:url('images/9-12/Language_and_Culture/Slang/The_Slang_Lifecycle/Slang_Today/Slang_Today_BG.png') no-repeat;
   height:748px !important;
@@ -44,14 +43,11 @@
 
 }
 
-
 #sub-slang-the-slang-life-cycle-the-latest-and-greatest{
   background:url('images/9-12/Language_and_Culture/Slang/The_Slang_Lifecycle/The_Latest_And_Greatest/The_Latest_And_Greatest_BG.png') no-repeat;
   height:748px !important;
   overflow:hidden !important;
   width:1024px !important;
-
-
 }
 
 #sub-slang-why-use-slang-defining-the-gang{
@@ -59,8 +55,13 @@
   height:748px !important;
   overflow:hidden !important;
   width:1024px !important;
-	
+}
 
+#sub-slang-features-of-slang-the-slang-factory{
+  background:url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/Slang_Factory/Slang_Factory_BG.png') no-repeat;
+  height:748px !important;
+  overflow:hidden !important;
+  width:1024px !important;
 }
 
 #sub-slang-features-of-slang-the-poetry-of-slang-onomatopoeia .bptitleholder{
@@ -331,7 +332,20 @@ color: #FFFFFF;
 	font-weight: normal;
 	color: #FFFFFF;
 }
-
+#navSlang-theslangfactory{
+	position: absolute;
+	left: 420px;
+	top: 91px;
+	width: 535px;
+	height: 393px;
+	overflow: auto;
+	text-align: left;
+	font-family: comic sans ms;
+	font-size: 18px;
+	font-weight: normal;
+	color: #000000;
+	z-index: 3;
+}
 .navSlang-alleteration{
 	position: absolute;
 	left: 574px;
@@ -406,20 +420,20 @@ color: #FFFFFF;
 }
 
 .slang_school-bx{
-background:url('images/9-12/Language_and_Culture/Slang/What_Is_Slang/Button_Slang_School.png') no-repeat;
-height:418px;
-width:465px;
-position:absolute;
-top:10px;
-left:458px;
+	background:url('images/9-12/Language_and_Culture/Slang/What_Is_Slang/Button_Slang_School.png') no-repeat;
+	height:418px;
+	width:465px;
+	position:absolute;
+	top:10px;
+	left:458px;
 }
 .image_newton-bx{
-background:url('images/9-12/Language_and_Culture/Slang/What_Is_Slang/Image_Newton.png') no-repeat;
-height: 456px;
-width: 620px;
-position: absolute;
-top: 285px;
-left: 533px;
+	background:url('images/9-12/Language_and_Culture/Slang/What_Is_Slang/Image_Newton.png') no-repeat;
+	height: 456px;
+	width: 620px;
+	position: absolute;
+	top: 285px;
+	left: 533px;
 }
 
 .metaphor-bx{
@@ -461,4 +475,139 @@ left: 533px;
 	position: absolute;
 	top: 455px;
 	left: 675px;
+}
+
+#eyes-activity{
+	background: url('images/9-12/Language_and_Culture/Slang/The_Slang_Lifecycle/Slang_Today/Sprite_Blinking.png') no-repeat;
+	display: none;
+	height: 100px;
+	width: 100px;
+	top: 283px;
+	left: 169px;
+	position: absolute;	
+}
+
+#man-standing{
+	background: url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/Slang_Factory/sprite_man.png') no-repeat;
+	display: none;
+	top: 419px;
+	left: 350px;
+	position: absolute;
+	width: 156px;
+	height: 260px;
+	z-index: 9999999;
+}
+
+#speech-bubble{
+	background: url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/Slang_Factory/bubble.png') no-repeat;
+	display: none;
+	top: 75px;
+	left: 370px;
+	position: absolute;
+	height: 449px;
+	width: 633px;
+	z-index:2;
+}
+
+#go-button{
+	top: 422px;
+	left: 635px;
+	position: absolute;
+	height: 83px;
+	width: 100px;
+	z-index:999;
+}
+
+#blinking-eyes{
+	background: url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/Slang_Factory/sprite_blink.png') no-repeat;
+	display: none;
+	top: 458px;
+	left: 377px;
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	z-index: 9999999;
+}
+
+#glowing-doors{
+	background: url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/Slang_Factory/door_glows.png') no-repeat;
+	display: none;
+	top: 313px;
+	left: 76px;
+	position: absolute;
+	height: 368px;
+	width: 790px;
+	z-index:1;
+}
+
+#open-doors-remodeling{
+	background: url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/Slang_Factory/Open_Doors.png') no-repeat;
+	display:none;
+	top: 350px;
+	left: 586px;
+	position: absolute;
+	height: 184px;
+	width: 167px;
+}
+
+#open-doors-blending{
+	background: url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/Slang_Factory/Open_Doors.png') no-repeat;
+	display:none;
+	top: 317px;
+	left: 394px;
+	position: absolute;
+	height: 137px;
+	width: 119px;
+}
+
+#open-doors-affixation{
+	background: url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/Slang_Factory/Open_Doors.png') no-repeat;
+	display:none;
+	top: 345px;
+	left: 238px;
+	position: absolute;
+	height: 135px;
+	width: 100px;
+}
+
+#open-doors-shortening{
+	background: url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/Slang_Factory/Open_Doors.png') no-repeat;
+	display:none;
+	top: 425px;
+	left: 79px;
+	position: absolute;
+	height: 146px;
+	width: 111px;
+}
+
+#remodelling{
+	top: 280px;
+	left: 639px;
+	position: absolute;
+	height: 82px;
+	width: 140px;
+}
+
+#blending{
+	top: 244px;
+	left: 387px;
+	position: absolute;
+	height: 72px;
+	width: 135px;
+}
+
+#shortening{
+	top: 378px;
+	left: 50px;
+	position: absolute;
+	height: 60px;
+	width: 123px;
+}
+
+#affixation{
+	top: 305px;
+	left: 188px;
+	position: absolute;
+	height: 49px;
+	width: 150px;
 }
