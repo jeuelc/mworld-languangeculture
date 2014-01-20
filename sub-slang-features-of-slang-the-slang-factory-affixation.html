@@ -1,0 +1,257 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-slang-features-of-slang-the-slang-factory-affixation">
+  <!-- <script src="js/slidebarnat.js"></script> -->
+  <script src="js/slidebar_slang.js"></script>
+  <link rel="stylesheet" href="css/style_slang.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnSlang"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnSlang"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnSlang"></div></div>
+  <div class="infobtnholder"><div class="infobtnSlang"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnSlang"></div></div>
+  <div class="menubtnholder"><div class="menubtnSlang"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"></div>
+  <div data-role="content" class="kidzcontent">
+	<div id="navSlang-Affixation">
+		<p>When you add something to a word you're using an 'affix'.  The affixes used to make new slang words are sometimes brand-new, but often they're old ones put to new uses.</p>
+		<p>'Uber' means 'over' in German.  It has been adopted into English to mean 'super' or 'mega'.  It gets put at the beginning of words to emphasize them.</p>
+		<p>'Mc' has cut itself free from the fast-food giant McDonalds and now creates expressions like 'McBooks', 'McMansions', 'McJobs', 'McGarbage' and a whole heap more.  What meaning do you think it adds to these words?</p>
+		<p>'-s' is a lively little suffix that suggests laid-backness and a friendly attitude.</p>
+		<p>'whatchamacallit... thingamabob...' Cartoon character Homer Simpson has encouraged the use of this slangy infix  sticking '-ma-' in the middle of words.  It shows how unsure he is of what he's saying!</p>
+		<p>Swearwords stuffed inside other words are also 'infixes' with attitude.  Depending which country you live in (and which century!) and who you're talking to, these can be offensive or amusing.</p>
+	</div>
+	<div id="man-standing"></div>
+	<div id="Sprite-Dialog"></div>	
+	<div id="gobutton"></div>	
+	<div id="blinking-eye"></div>
+	<div id="glowing-door"></div>
+	<div id="greyed-door"></div>
+	<div id="container-box"></div>
+	<div id="man-about-to-blow"></div>
+	<div id="man-blowing"></div>
+	<div id="man-waiting"></div>
+	<div id="ceiling_patch"></div>
+	<div id="floor_patch"></div>
+
+	<div id="word_1"><div id="word1_text"></div></div>
+	<div id="word_3"><div id="word3_text"></div></div>
+	
+    <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Language_and_Culture/bottomhomelc.png"></a></div>
+  </div> <!-- end content -->  
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js 
+         note: change the ids to be able play the narration
+    -->
+    <div class="micbtnholder"><div class="micbtnSlang" id="playstopAffixation"></div></div>
+    <div class="bSlang"><div class="rwSlang" id="Affixationaudiobbtn"></div></div>
+    <div class="plSlang"><div class="plpsSlang" id="Affixationaudioplbtn"></div></div>
+    <div class="fSlang"><div class="fwSlang" id="Affixationaudiofbtn"></div></div>
+    <div id="actualaudio-Affixation" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-Affixation').html('<audio id="Affixationaudio" controls preload onpause="playsSlang()" onplay="pauseSlang()"><source src="audio/Slang/Affixation.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-slang-features-of-slang-the-slang-factory-affixation").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+	$('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundSlang.pause(); bgsoundSlang.currentTime = 0;});
+    
+    function goBack() {
+      
+    }
+    	
+	function playsSlang() {
+         bgsoundSlang.play();
+    }
+       
+    function pauseSlang() {
+         bgsoundSlang.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopAffixation").on('tap', function() {
+      if(!playing) {
+        Affixationaudio.play();
+        $('.micbtnSlang').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        Affixationaudio.pause(); Affixationaudio.currentTime = 0;
+        $('.micbtnSlang').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#Affixationaudioplbtn").on('tap', function() {
+      if(!paused) {
+        Affixationaudio.pause();
+        paused = true;
+      } else {
+        Affixationaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#Affixationaudiofbtn").on('tap', function() {
+      var ctime = Affixationaudio.currentTime;
+      Affixationaudio.currentTime = ctime + 10;
+    });
+    
+    $("#Affixationaudiobbtn").on('tap', function() {
+      var ctime = Affixationaudio.currentTime;
+      Affixationaudio.currentTime = ctime - 10;
+    });
+    
+    $("#Affixationaudiopsbtn").on('tap', function() {
+      Affixationaudio.pause();
+    });
+	var itid		= 0;
+	var goClicked	=	0;	
+	$(document).ready(function(){
+		$("#man-standing").css('display','block');
+		$("#Sprite-Dialog").css('display','block');
+		$("#navSlang-Affixation").css('display','block');
+	});
+	
+	$("#gobutton").on('tap', function() {
+		$("#navSlang-Affixation").css('display','none');
+		$("#Sprite-Dialog").css('display','none');
+		$("#man-about-to-blow").css('display','block');
+		$("#container-box").css('display','block');
+		$("#ceiling_patch").css('display','block');
+		$("#floor_patch").css('display','block');
+		var counter		=	1;
+		jQuery.easing.sin = function(p, n, firstNum, diff) {
+			return Math.sin(p * Math.PI / 2) * diff + firstNum;
+		};
+
+		jQuery.easing.cos = function(p, n, firstNum, diff) {
+			return firstNum + diff - Math.cos(p * Math.PI / 2) * diff;
+		};	
+	var i		=	0;
+	var simpleWord		=	'';
+	var slangWord		=	'';
+	var items = [['violin','viomalin'],
+				['model','ubermodel'],
+				['what do you call it?','whatchamacallit'],
+				['thing','thingamabob'],
+				['absolutely','absobloodylutely'],
+				['fabulous','fabs'],
+				['totally','totes'],
+				['probably','probs'],
+				['what do you call it?','whatevs']
+				];
+				
+				function looping(i){
+
+				machine = setTimeout(function () {
+					$("#word_1").css('display','block');
+					$("#word1_text").css('display','block');					
+					rotate(90);
+					simpleWord		=	items[i][0];
+					slangWord		=	items[i][1];
+					$("#word1_text").text(simpleWord);
+					$("#word3_text").text(slangWord);
+					SlangConverter();
+					i++;
+					if(i>=9){
+						$("#glowing-door").css('display','block');
+						i	=	0;
+					}
+					looping(i);
+				}, 6000);		
+				}
+				
+		looping(0);
+		function SlangConverter(){
+			
+    		/*$('#word_1').animate({ top: [261, 'cos'],left: [640, 'sin']},1000, function(){*/
+			$('#word_1').animate({left:'640px',top:'260px' },2000, function(){
+			$("#word_1").css('display','none');
+			$("#word1_text").css('display','none');
+			$('#word_1').animate({left:'750px',top:'113px' });
+				$("#man-about-to-blow").css('display','none');
+				$("#man-waiting").css('display','none');
+				$("#man-blowing").css('display','block');
+				$("#word_3").css('display','block');
+				$("#word3_text").css('display','block');
+				$('#word_3').animate({top : [130,'sin'],left : [220,'cos']},1500, function(){
+					$("#man-blowing").css('display','none');
+					$('#man-blowing').animate({left:'298px',top:'339px' });
+					$("#man-waiting").css('display','block');
+					//rotateWord('word_3',-90);
+					$('#word_3').animate({left:'110px',top:'590px' },2500, function(){
+						$("#word_3").css('display','none');
+						$("#word3_text").css('display','none');
+						$('#word_3').animate({left:'380px',top:'242px' });
+						/*$("#glowing-door").css('display','block');*/
+						$("#man-about-to-blow").css('display','block');
+					});					
+				});
+			});
+		}
+		//SlangConverter();
+		var degree = 0;
+		var timer	=	'';
+		/*function rotateWord(divId,rotDeg){
+			$targetDiv		=	$('#'+divId);
+			var targetAngle	=	rotDeg;
+			$targetDiv.css({ WebkitTransform: 'rotate(' + degree + 'deg)'});
+			timer = setTimeout(function() {
+				//--degree; 
+				degree	=	degree - 10;
+				rotateWord(divId,rotDeg);
+			},40);	
+			  if(degree <= targetAngle){
+				clearTimeout(timer);
+			  }			
+		}
+		*/
+		function rotate(degree) {
+			/*$("#word_3").html(degree);*/
+			if (degree >= -80) {
+				$("#word_3").css({
+					WebkitTransform: 'rotate(' + degree + 'deg)'
+				});
+				$("#word_3").css({
+					'-moz-transform': 'rotate(' + degree + 'deg)'
+				});
+				timer = setTimeout(function () {
+					rotate(--degree);
+				}, 20);
+			}
+		}
+	
+		
+		$("#glowing-door").on('tap', function() {
+			if($('#greyed-door').css('display') == 'none'){
+				$("#greyed-door").css('display','block');
+			}
+			$.mobile.changePage("sub-slang-features-of-slang-the-slang-factory.html", {transition: "slide"});
+		});
+	});
+	
+	$("#shortening").on('tap', function() {
+		if($('#open-doors-shortening').css('display') == 'none'){
+			$("#open-doors-shortening").css('display','block');
+		}
+		$('#open-doors-shortening').css("background-position", "9px -100px");
+		$.mobile.changePage("sub-slang-features-of-slang-the-slang-factory-affixation-shortening.html", {transition: "slide"});
+	});
+	
+  </script>  
+</div> <!--//home-->
