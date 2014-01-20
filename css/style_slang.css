@@ -516,7 +516,6 @@ color: #FFFFFF;
 
 #man-standing{
 	background: url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/Slang_Factory/sprite_man.png') no-repeat;
-	display: none;
 	top: 419px;
 	left: 350px;
 	position: absolute;
@@ -560,8 +559,8 @@ color: #FFFFFF;
 	top: 458px;
 	left: 377px;
 	position: absolute;
-	width: 100px;
-	height: 100px;
+	width: 50px;
+	height: 30px;
 	z-index: 9999999;
 }
 

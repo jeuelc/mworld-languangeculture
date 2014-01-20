@@ -21,7 +21,6 @@
 		<p>'whatchamacallit... thingamabob...' Cartoon character Homer Simpson has encouraged the use of this slangy infix  sticking '-ma-' in the middle of words.  It shows how unsure he is of what he's saying!</p>
 		<p>Swearwords stuffed inside other words are also 'infixes' with attitude.  Depending which country you live in (and which century!) and who you're talking to, these can be offensive or amusing.</p>
 	</div>
-	<div id="man-standing"></div>
 	<div id="Sprite-Dialog"></div>	
 	<div id="gobutton"></div>	
 	<div id="blinking-eye"></div>
@@ -122,7 +121,6 @@
 	var itid		= 0;
 	var goClicked	=	0;	
 	$(document).ready(function(){
-		$("#man-standing").css('display','block');
 		$("#Sprite-Dialog").css('display','block');
 		$("#navSlang-Affixation").css('display','block');
 	});
@@ -142,10 +140,10 @@
 		jQuery.easing.cos = function(p, n, firstNum, diff) {
 			return firstNum + diff - Math.cos(p * Math.PI / 2) * diff;
 		};	
-	var i		=	0;
-	var simpleWord		=	'';
-	var slangWord		=	'';
-	var items = [['violin','viomalin'],
+		var i		=	0;
+		var simpleWord		=	'';
+		var slangWord		=	'';
+		var items = [['violin','viomalin'],
 				['model','ubermodel'],
 				['what do you call it?','whatchamacallit'],
 				['thing','thingamabob'],
