@@ -236,6 +236,7 @@
 	
 		
 		$("#glowing-door").on('tap', function() {
+			clearTimeout(machine);
 			if($('#greyed-door').css('display') == 'none'){
 				$("#greyed-door").css('display','block');
 			}
