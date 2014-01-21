@@ -1,0 +1,168 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-slang-features-of-slang-the-slang-factory-blending">
+  <!-- <script src="js/slidebarnat.js"></script> -->
+  <script src="js/slidebar_slang.js"></script>
+  <link rel="stylesheet" href="css/style_slang.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnSlang"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnSlang"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnSlang"></div></div>
+  <div class="infobtnholder"><div class="infobtnSlang"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnSlang"></div></div>
+  <div class="menubtnholder"><div class="menubtnSlang"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"></div>
+  <div data-role="content" class="kidzcontent">
+	<div id="navSlang-Blending">
+		<p>A lot of slang expressions are created by blending two (or occasionally more) existing words.  Here are two:</p>
+			<p>fantabulous (from fantastic + fabulous) </p>
+			<p>stease (from style + ease)</p>
+
+			<p>Dozens of new blended words are appearing all the time and some of them can be very clever.  Try to figure out which words produced in the factory have the following meanings:</p>
+
+			<p>gorgeous</p>
+			<p>attractive, but empty-headed man</p>
+			<p>the disease of being too rich</p>
+			<p>collapsible bottle</p>
+			<p>publication for enthusiasts</p>
+			<p>the practice of decorating overhead wires with shoes</p>
+			<p>a state of anxiety brought on by not having mobile phone contact</p>
+	</div>
+	<style>
+		#gobutton{
+			top: 518px;
+			left: 431px;
+			position: absolute;
+			height: 83px;
+			width: 117px;
+			z-index: 9999;		
+		}
+	</style>
+	<div id="Blending_Machine">
+	</div>
+	<div id="Blending_Popup_Dialog"></div>	
+	<div id="gobutton"></div>
+
+    <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Language_and_Culture/bottomhomelc.png"></a></div>
+  </div> <!-- end content -->  
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js 
+         note: change the ids to be able play the narration
+    -->
+    <div class="micbtnholder"><div class="micbtnSlang" id="playstopBlending"></div></div>
+    <div class="bSlang"><div class="rwSlang" id="Blendingaudiobbtn"></div></div>
+    <div class="plSlang"><div class="plpsSlang" id="Blendingaudioplbtn"></div></div>
+    <div class="fSlang"><div class="fwSlang" id="Blendingaudiofbtn"></div></div>
+    <div id="actualaudio-Blending" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-Blending').html('<audio id="Blendingaudio" controls preload onpause="playsSlang()" onplay="pauseSlang()"><source src="audio/Slang/Blending.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-slang-features-of-slang-the-slang-factory-blending").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+	$('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundSlang.pause(); bgsoundSlang.currentTime = 0;});
+    
+    function goBack() {
+		$.mobile.changePage("sub-slang-features-of-slang-the-slang-factory.html", {transition: "slide"});
+    }
+    	
+	function playsSlang() {
+         bgsoundSlang.play();
+    }
+       
+    function pauseSlang() {
+         bgsoundSlang.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopBlending").on('tap', function() {
+      if(!playing) {
+        Blendingaudio.play();
+        $('.micbtnSlang').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        Blendingaudio.pause(); Blendingaudio.currentTime = 0;
+        $('.micbtnSlang').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#Blendingaudioplbtn").on('tap', function() {
+      if(!paused) {
+        Blendingaudio.pause();
+        paused = true;
+      } else {
+        Blendingaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#Blendingaudiofbtn").on('tap', function() {
+      var ctime = Blendingaudio.currentTime;
+      Blendingaudio.currentTime = ctime + 10;
+    });
+    
+    $("#Blendingaudiobbtn").on('tap', function() {
+      var ctime = Blendingaudio.currentTime;
+      Blendingaudio.currentTime = ctime - 10;
+    });
+    
+    $("#Blendingaudiopsbtn").on('tap', function() {
+      Blendingaudio.pause();
+    });
+	var itid		= 0;
+	var goClicked	=	0;	
+	$(document).ready(function(){
+	});
+	
+	$("#gobutton").on('tap', function() {
+		blending_InitialDisplayPositions();
+		var defer = $.Deferred();
+		var filtered = defer.pipe(function() {
+			return 5;
+		  });
+		defer.resolve(5);
+		filtered.done(function(){
+			alert('heelo');
+		});
+		//blending_StartMachine(0);
+	});
+	
+
+	function hideMachine(){
+		$('#Blending_Machine').hide();
+		return 1;
+	}
+	function blending_StartMachine(blending_counter){
+		// Man with liver in hand
+		// Liver pulls down
+		// Random word appear (4 times rotation)
+		// light falls from the machine on man
+		// Hare changes
+		
+		// Reset to initial position
+		// Liver pulls down
+		// New word and same process
+	}
+	function blending_InitialDisplayPositions(){
+		$("#navSlang-Blending").css('display','none');
+		$("#Blending_Popup_Dialog").css('display','none');		
+	}
+	
+  </script>  
+</div> <!--//home-->

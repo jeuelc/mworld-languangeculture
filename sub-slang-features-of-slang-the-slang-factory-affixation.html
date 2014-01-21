@@ -68,7 +68,8 @@
 	$('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundSlang.pause(); bgsoundSlang.currentTime = 0;});
     
     function goBack() {
-      
+		clearTimeout(machine);
+		$.mobile.changePage("sub-slang-features-of-slang-the-slang-factory.html", {transition: "slide"});
     }
     	
 	function playsSlang() {
@@ -120,9 +121,11 @@
     });
 	var itid		= 0;
 	var goClicked	=	0;	
+	var machine;
 	$(document).ready(function(){
 		$("#Sprite-Dialog").css('display','block');
 		$("#navSlang-Affixation").css('display','block');
+		clearTimeout(machine);
 	});
 	
 	$("#gobutton").on('tap', function() {
@@ -132,6 +135,7 @@
 		$("#container-box").css('display','block');
 		$("#ceiling_patch").css('display','block');
 		$("#floor_patch").css('display','block');
+		$("#glowing-door").css('display','block');
 		var counter		=	1;
 		jQuery.easing.sin = function(p, n, firstNum, diff) {
 			return Math.sin(p * Math.PI / 2) * diff + firstNum;
@@ -167,7 +171,6 @@
 					SlangConverter();
 					i++;
 					if(i>=9){
-						$("#glowing-door").css('display','block');
 						i	=	0;
 					}
 					looping(i);
@@ -176,8 +179,7 @@
 				
 		looping(0);
 		function SlangConverter(){
-			
-    		/*$('#word_1').animate({ top: [261, 'cos'],left: [640, 'sin']},1000, function(){*/
+			/*$('#word_1').animate({ top: [261, 'cos'],left: [640, 'sin']},1000, function(){*/
 			$('#word_1').animate({left:'640px',top:'260px' },2000, function(){
 			$("#word_1").css('display','none');
 			$("#word1_text").css('display','none');
@@ -189,7 +191,7 @@
 				$("#word3_text").css('display','block');
 				$('#word_3').animate({top : [130,'sin'],left : [220,'cos']},1500, function(){
 					$("#man-blowing").css('display','none');
-					$('#man-blowing').animate({left:'298px',top:'339px' });
+					$('#man-blowing').animate({left:'277px',top:'340px' });
 					$("#man-waiting").css('display','block');
 					//rotateWord('word_3',-90);
 					$('#word_3').animate({left:'110px',top:'590px' },2500, function(){
@@ -202,6 +204,7 @@
 				});
 			});
 		}
+		
 		//SlangConverter();
 		var degree = 0;
 		var timer	=	'';

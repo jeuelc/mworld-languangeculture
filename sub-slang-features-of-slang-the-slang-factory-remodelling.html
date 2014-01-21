@@ -16,10 +16,8 @@
 	<div id="navSlang-Remodelling">
 		<p></p>
 	</div>
-	<div id="man-standing"></div>
 	<div id="speech-bubble"></div>	
 	<div id="go-button"></div>	
-	<div id="blinking-eyes"></div>
 	<div id="glowing-doors"></div>
 	<div id="open-doors-remodeling"></div>
 	<div id="open-doors-blending"></div>
@@ -130,7 +128,6 @@
 	var itid		= 0;
 	var goClicked	=	0;	
 	$(document).ready(function(){
-		$("#man-standing").css('display','block');
 		$("#speech-bubble").css('display','block');
 		$("#navSlang-theslangfactory").css('display','block');
 		
@@ -175,30 +172,6 @@
 		}
 		$('#open-doors-remodeling').css("background-position", "-498px -24px");
 		$.mobile.changePage("sub-slang-features-of-slang-the-slang-factory-remodelling-remodelling.html", {transition: "slide"});
-	});
-	
-	$("#blending").on('tap', function() {
-		if($('#open-doors-blending').css('display') == 'none'){
-			$("#open-doors-blending").css('display','block');
-		}
-		$('#open-doors-blending').css("background-position", "-305px 8px");
-		$.mobile.changePage("sub-slang-features-of-slang-the-slang-factory-remodelling-blending.html", {transition: "slide"});
-	});
-	
-	$("#affixation").on('tap', function() {
-		if($('#open-doors-affixation').css('display') == 'none'){
-			$("#open-doors-affixation").css('display','block');
-		}
-		$('#open-doors-affixation').css("background-position", "-150px -19px");
-		$.mobile.changePage("sub-slang-features-of-slang-the-slang-factory-remodelling-affixation.html", {transition: "slide"});
-	});
-	
-	$("#shortening").on('tap', function() {
-		if($('#open-doors-shortening').css('display') == 'none'){
-			$("#open-doors-shortening").css('display','block');
-		}
-		$('#open-doors-shortening').css("background-position", "9px -100px");
-		$.mobile.changePage("sub-slang-features-of-slang-the-slang-factory-remodelling-shortening.html", {transition: "slide"});
 	});
 	
   </script>

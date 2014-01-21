@@ -40,7 +40,6 @@
   height:748px !important;
   overflow:hidden !important;
   width:1024px !important;
-
 }
 
 #sub-slang-the-slang-life-cycle-the-latest-and-greatest{
@@ -73,6 +72,20 @@
 
 #sub-slang-features-of-slang-the-slang-factory-affixation{
   background:url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/Slang_Factory/Affixation/Affication_BG.png') no-repeat;
+  height:748px !important;
+  overflow:hidden !important;
+  width:1024px !important;
+}
+
+#sub-slang-features-of-slang-the-slang-factory-shortening {
+  background:url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/Slang_Factory/Shortening/Shortening_BG.png') no-repeat;
+  height:748px !important;
+  overflow:hidden !important;
+  width:1024px !important;
+}
+
+#sub-slang-features-of-slang-the-slang-factory-blending {
+  background:url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/Slang_Factory/Blending/Blending_BG.png') no-repeat;
   height:748px !important;
   overflow:hidden !important;
   width:1024px !important;
@@ -246,10 +259,6 @@
 	top:69px;
 	left:476px;
 }
-
-
-
-
 
 /* Common Header Design h1 */
 #sub-slang .bptitleholder h1, #sub-slang-features-of-slang .bptitleholder h1, #sub-slang-the-slang-life-cycle .bptitleholder h1, #sub-slang-why-use-slang .bptitleholder h1, #sub-slang-features-of-slang-the-poetry-of-slang-irony .bptitleholder h1,#sub-slang-features-of-slang-the-poetry-of-slang-metaphor .bptitleholder h1,#sub-slang-features-of-slang-the-poetry-of-slang-rhyme-and-sound .bptitleholder h1,#sub-slang-why-use-slang-english-downunder .bptitleholder h1,#sub-slang-why-use-slang-secrecy .bptitleholder h1, #sub-slang-why-use-slang-standing-out-and-having-fun .bptitleholder h1{
@@ -443,7 +452,36 @@ color: #FFFFFF;
 	font-size: 18px;
 	font-weight: normal;
 	color: #000000;
-	z-index: 3;
+	z-index: 999999;
+}
+
+#navSlang-Shortening{
+	position: absolute;
+	left: 115px;
+	top: 165px;
+	width: 815px;
+	height: 294px;
+	overflow: auto;
+	text-align: left;
+	font-family: comic sans ms;
+	font-size: 18px;
+	font-weight: normal;
+	color: #000000;
+	z-index: 5;
+}
+#navSlang-Blending{
+	position: absolute;
+	left: 115px;
+	top: 114px;
+	width: 815px;
+	height: 401px;
+	overflow: auto;
+	text-align: left;
+	font-family: comic sans ms;
+	font-size: 18px;
+	font-weight: normal;
+	color: #000000;
+	z-index: 5;
 }
 
 .slang_school-bx{
@@ -550,7 +588,7 @@ color: #FFFFFF;
 	position: absolute;
 	height: 83px;
 	width: 100px;
-	z-index:999;
+	z-index:9999;
 }
 
 #blinking-eyes{
@@ -573,6 +611,9 @@ color: #FFFFFF;
 	height: 368px;
 	width: 790px;
 	z-index:1;
+	-moz-border-radius: 100px / 50px; 
+    -webkit-border-radius: 100px / 50px; 
+    border-radius: 100px / 50px;
 }
 
 #open-doors-remodeling{
@@ -621,6 +662,7 @@ color: #FFFFFF;
 	position: absolute;
 	height: 82px;
 	width: 140px;
+	z-index:99;
 }
 
 #blending{
@@ -629,6 +671,7 @@ color: #FFFFFF;
 	position: absolute;
 	height: 72px;
 	width: 135px;
+	z-index:99;
 }
 
 #shortening{
@@ -637,6 +680,7 @@ color: #FFFFFF;
 	position: absolute;
 	height: 60px;
 	width: 123px;
+	z-index:99;
 }
 
 #affixation{
@@ -645,6 +689,7 @@ color: #FFFFFF;
 	position: absolute;
 	height: 49px;
 	width: 150px;
+	z-index:99;
 }
 
 #Sprite-Dialog{
@@ -655,6 +700,7 @@ color: #FFFFFF;
 	position: absolute;
 	height: 545px;
 	width: 910px;
+	z-index:9999;
 }
 
 #man-waiting{
@@ -665,16 +711,18 @@ color: #FFFFFF;
 	position: absolute;
 	height: 320px;
 	width: 275px;
+	z-index: 99;
 }
 
 #man-blowing{
 	background: url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/Slang_Factory/Affixation/Sprite_Man_Blowing.png') no-repeat;
 	display: none;
-	top: 339px;
-	left: 298px;
+	top: 340px;
+	left: 277px;
 	position: absolute;
 	height: 350px;
 	width: 300px;
+	z-index: 999;
 }
 
 #man-about-to-blow{
@@ -734,13 +782,13 @@ color: #FFFFFF;
 
 #floor_patch{
 	background: url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/Slang_Factory/Affixation/Sprite_Floor_Patch.png') no-repeat;
-	display:none;
-	top: 595px;
+	display: none;
+	top: 596px;
 	left: 118px;
 	position: absolute;
-	height: 136px;
-	width: 175px;
-	z-index: 999990;
+	height: 435px;
+	width: 905px;
+	z-index: 2;
 }
 
 #word_1{
@@ -790,6 +838,7 @@ color: #FFFFFF;
 #word1_text{
 	display: block;
 	font-size: 18px;
+	font-family: "comic sans ms";
 	padding: 9px 0px 0px 0px;
 	text-align: center;
 }
@@ -797,6 +846,155 @@ color: #FFFFFF;
 #word3_text{
 	display: block;
 	font-size: 18px;
+	font-family: "comic sans ms";
 	padding: 9px 0px 0px 0px;
 	text-align: center;
 }
+
+/* -------------------------------------- Shortenning ------------------------------------ */
+#Popup_Dialog{
+	background: url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/Slang_Factory/Shortening/Dialog.png') no-repeat;
+	display: none;
+	top: 160px;
+	left: 54px;
+	position: absolute;
+	height: 449px;
+	width: 915px;
+	z-index: 4;
+}
+
+#shorteninggobutton{
+	top: 460px;
+	left: 444px;
+	position: absolute;
+	height: 83px;
+	width: 100px;
+	z-index:999;
+}
+
+#man_resting{
+	background: url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/Slang_Factory/Shortening/Man_Resting.png') no-repeat;
+	top: 322px;
+	left: 148px;
+	width: 150px;
+	height: 316px;
+	position: absolute;
+	display:none;
+	z-index:3;
+}
+
+#man_shocking{
+	background: url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/Slang_Factory/Shortening/Man_Shocked.png') no-repeat;
+	top: 322px;
+	left: 148px;
+	width: 202px;
+	height: 355px;
+	position: absolute;
+	display:none;
+	z-index:3;
+}
+
+#cave_patch{
+	background: url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/Slang_Factory/Shortening/cave_patch.png') no-repeat;
+	top: 254px;
+	left: 2px;
+	width: 115px;
+	height: 214px;
+	position: absolute;
+	z-index: 2;
+}
+
+#blade_patch{
+	background: url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/Slang_Factory/Shortening/Blade.png') no-repeat 0 -323px;
+	top: 1px;
+	left: 528px;
+	width: 109px;
+	height: 566px;
+	position: absolute;
+}
+
+#pipe_entry_patch{
+	background: url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/Slang_Factory/Shortening/Machine_Patch3.png') no-repeat;
+	top: 381px;
+	left: 436px;
+	width: 300px;
+	height: 77px;
+	position: absolute;
+	z-index:3;
+}
+
+#pipe_exit_patch{
+	background: url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/Slang_Factory/Shortening/Machine_Patch2.png') no-repeat;
+	top: 235px;
+	left: 716px;
+	width: 180px;
+	height: 65px;
+	position: absolute;
+	z-index:3;
+}
+
+#word1_shortening{
+	display: block;
+	top: 400px;
+	left: 1px;
+	position: absolute;
+	height: 45px;
+	width: 160px;
+	background: #eeeeee;
+	z-index: 1;
+}
+
+#word2_shortening{
+	top: 250px;
+	left: 745px;
+	position: absolute;
+	height: 45px;
+	width: 113px;
+	background: #eeeeee;
+	z-index: 1;
+}
+#word1_shorteningtext{
+	display: block;
+	font-size: 18px;
+	font-family: "comic sans ms";
+	padding: 9px 0px 0px 0px;
+	text-align: center;
+}
+#word2_shorteningtext{
+	display: block;
+	font-size: 18px;
+	font-family: "comic sans ms";
+	padding: 9px 0px 0px 0px;
+	text-align: center;
+}
+#machine_wall{
+	position: absolute;
+	top: 266px;
+	left: 528px;
+	height: 311px;
+	width: 121px;
+	background: url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/Slang_Factory/Shortening/Machine_Patch4.png') no-repeat;
+	z-index: 3;
+}
+
+/* -------------------------------------- Blending ------------------------------------ */
+#Blending_Popup_Dialog{
+	background: url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/Slang_Factory/Blending/Dialog.png') no-repeat;
+	top: 70px;
+	left: 54px;
+	position: absolute;
+	height: 534px;
+	width: 915px;
+	z-index: 4;
+}
+#Blending_Machine{
+	background: url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/Slang_Factory/Blending/Blend_O_Matic.png') no-repeat;
+	top: 31px;
+	left: 348px;
+	position: absolute;
+	height: 610px;
+	width: 970px;
+	z-index: 1;
+}
+
+/* -------------------------------------- Blending Ends here  ------------------------------------ */

@@ -1,0 +1,209 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-slang-features-of-slang-the-slang-factory-shortening">
+  <!-- <script src="js/slidebarnat.js"></script> -->
+  <script src="js/slidebar_slang.js"></script>
+  <link rel="stylesheet" href="css/style_slang.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnSlang"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnSlang"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnSlang"></div></div>
+  <div class="infobtnholder"><div class="infobtnSlang"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnSlang"></div></div>
+  <div class="menubtnholder"><div class="menubtnSlang"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"></div>
+  <div data-role="content" class="kidzcontent">
+	<div id="navSlang-Shortening">
+		<p>When we're in familiar territory, we take shortcuts!  A lot can be taken for granted when you're chatting with someone you know well in a relaxed environment.  So you can afford to drop consonants and vowels here and there while still being understood.  It's not surprising then that a lot of slang expressions are words that have been shortened in some way.</p>
+		<p>Texting and internet chat have been triggers for a huge number of new words to be created and the reason they are taken up so rapidly.</p>
+		<p>Perhaps in a matter of hours, new slang creations will be seen around the world!  It has become almost impossible for printed dictionaries to keep up with the changes.  New expressions appear, old expressions alter their appearance, their meaning and their grammatical behaviour  and it's all happening at breakneck speed!</p>
+	</div>
+	<style>
+		#gobutton{
+			top: 458px;
+			left: 431px;
+			position: absolute;
+			height: 83px;
+			width: 117px;
+			z-index: 9999;		
+		}
+
+	</style>
+	<div id="Popup_Dialog"></div>	
+	<div id="gobutton"></div>
+	<div id="glowingDoor"></div>
+	<div id="man_resting"></div>
+	<div id="man_shocking"></div>
+	<div id="cave_patch"></div>
+	<div id="blade_patch"></div>
+	<div id="pipe_entry_patch"></div>
+	<div id="pipe_exit_patch"></div>
+	<div id="machine_wall"></div>
+	<div id="word1_shortening"><div id="word1_shorteningtext"></div></div>
+	<div id="word2_shortening"><div id="word2_shorteningtext"></div></div>
+	
+    <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Language_and_Culture/bottomhomelc.png"></a></div>
+  </div> <!-- end content -->  
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js 
+         note: change the ids to be able play the narration
+    -->
+    <div class="micbtnholder"><div class="micbtnSlang" id="playstopShortening"></div></div>
+    <div class="bSlang"><div class="rwSlang" id="Shorteningaudiobbtn"></div></div>
+    <div class="plSlang"><div class="plpsSlang" id="Shorteningaudioplbtn"></div></div>
+    <div class="fSlang"><div class="fwSlang" id="Shorteningaudiofbtn"></div></div>
+    <div id="actualaudio-Shortening" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+	var itid		= 0;
+	var goClicked	=	0;	
+	startAnimation	=	1;	
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-Shortening').html('<audio id="Shorteningaudio" controls preload onpause="playsSlang()" onplay="pauseSlang()"><source src="audio/Slang/Shortening.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-slang-features-of-slang-the-slang-factory-shortening").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+	$('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundSlang.pause(); bgsoundSlang.currentTime = 0;});
+    
+    function goBack() {
+		startAnimation=0;
+		$.mobile.changePage("sub-slang-features-of-slang-the-slang-factory.html", {transition: "slide"});
+    }
+    	
+	function playsSlang() {
+         bgsoundSlang.play();
+    }
+       
+    function pauseSlang() {
+         bgsoundSlang.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopShortening").on('tap', function() {
+      if(!playing) {
+        Shorteningaudio.play();
+        $('.micbtnSlang').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        Shorteningaudio.pause(); Shorteningaudio.currentTime = 0;
+        $('.micbtnSlang').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#Shorteningaudioplbtn").on('tap', function() {
+      if(!paused) {
+        Shorteningaudio.pause();
+        paused = true;
+      } else {
+        Shorteningaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#Shorteningaudiofbtn").on('tap', function() {
+      var ctime = Shorteningaudio.currentTime;
+      Shorteningaudio.currentTime = ctime + 10;
+    });
+    
+    $("#Shorteningaudiobbtn").on('tap', function() {
+      var ctime = Shorteningaudio.currentTime;
+      Shorteningaudio.currentTime = ctime - 10;
+    });
+    
+    $("#Shorteningaudiopsbtn").on('tap', function() {
+      Shorteningaudio.pause();
+    });
+
+	$(document).ready(function(){
+		$("#Popup_Dialog").css('display','block');
+		$("#navSlang-Shortening").css('display','block');
+	});
+		counter			=	0;
+		var items = [['totally','totes'],
+				['legitimate','legit'],
+				['whats up','sup'],
+				['you only live once','yolo'],
+				['laugh out loud','lol'],
+				['parents','rents'],
+				['radical','rad'],
+				['disrespect','dis'],
+				['problem','probs'],
+				['I dont know','dunno'],
+				['be right back','brb'],
+				['before','b4'],
+				['hand','h&'],
+				['later','l8r']
+				];
+				
+	$("#gobutton").on('tap', function() {
+		shortening_InitialDisplayPositions();
+		shortening_ProcessWords(0);
+	});
+	// state 1: Display Initial word
+	// animate to machine entry  : $('#word1_shortening').animate({left:'400px'},4000);
+	// drop saw
+	// change resting man to shocked
+	// word exit
+	// word in basket
+	// reset positions of all the divs and 2nd iteration
+
+	function shortening_ProcessWords(counter){
+		shortening_setDivText(counter);
+		$('#word1_shortening').animate({left:'440px'},4000,function(){
+			$('#blade_patch').animate({'background-position-x': '0px','background-position-y': '-194px'}, 100,function(){
+				$('#man_resting').hide();
+				$('#man_shocking').show();
+				$('#word2_shortening').animate({top:'500px'},3000,function(){
+					//Now reset all the positions.
+					shortening_resetPositions();
+					++counter;
+					if(counter>13){
+						counter=0;
+					}
+					if(startAnimation==1){
+						
+						shortening_ProcessWords(counter);
+					}
+				});
+			});			
+		}); 
+	}
+	function shortening_setDivText(counter){
+		$('#word1_shortening #word1_shorteningtext').text(items[counter][0]);
+		$('#word2_shortening #word2_shorteningtext').text(items[counter][1]);
+		return 1;
+	}
+	function shortening_resetPositions(){
+		$('#word1_shortening').css('left','1px');
+		$('#blade_patch').css('background-position', '0px -323px');
+		$('#man_shocking').hide();
+		$('#man_resting').show();
+		$('#word2_shortening').css('top','250px');
+	}
+	function shortening_InitialDisplayPositions(){
+		$("#navSlang-Shortening").css('display','none');
+		$("#Popup_Dialog").css('display','none');
+		$("#man_resting").css('display','block');
+		$("#cave_patch").css('display','block');
+		$("#blade_patch").css('display','block');
+		$("#pipe_entry_patch").css('display','block');
+		$("#pipe_exit_patch").css('display','block');	
+	}
+
+  </script>  
+</div> <!--//home-->
