@@ -14,22 +14,21 @@
   <div class="bptitleholder" style="padding-top:14px;"></div>
   <div data-role="content" class="kidzcontent">
 	<div id="navSlang-Remodelling">
-		<p></p>
+		<p>Many slang expressions are created by distorting the shape of words.</p>
+		<p>Often combining with other processes, this kind of word makeover is at the heart of a lot of playful slang.</p>
+		<p>Refashioned swearwords offer some of the best examples of this kind of verbal play.</p>
+		<p>'Drat!' and 'Rats!' are playful remodellings of what was once a truly awful curse 'God rot!' It meant 'May God rot you!'  or anyone else!  The process is still responsible for some spectacularly transformed swearwords you might hear people use today.  Fiddle-faddle!  and Shucks!  sound like much ruder exclamations but they are a lot safer to use around parents and teachers!</p>
 	</div>
-	<div id="speech-bubble"></div>	
-	<div id="go-button"></div>	
-	<div id="glowing-doors"></div>
-	<div id="open-doors-remodeling"></div>
-	<div id="open-doors-blending"></div>
-	<div id="open-doors-affixation"></div>
-	<div id="open-doors-shortening"></div>
-
-	<div id="remodelling"></div>
-	<div id="blending"></div>
-	<div id="affixation"></div>
-	<div id="shortening"></div>
-	
-    <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Language_and_Culture/bottomhomelc.png"></a></div>
+	<div id="Info_bubble"></div>	
+	<div id="go_btn"></div>	
+	<div id="glowingdoor"></div>
+	<div id="man_mouth_closed"></div>
+	<div id="man_mouth_open"></div>
+	<div id="machine"></div>
+	<div id="hook"></div>
+	<div id="word1_remodelling"><div id="word1_remodelling_text"></div></div>
+	<div id="word2_remodelling"><div id="word2_remodelling_text"></div></div>
+	<div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Language_and_Culture/bottomhomelc.png"></a></div>
   </div> <!-- end content -->  
     
   
@@ -48,33 +47,20 @@
     sound = new Audio(); // 'sound' is now an audio object
     var playing;
     var paused;
+	startAnimation	=	1;
     (function() {
       playing = false;
       paused = true;
       if(sound.canPlayType('audio/mpeg')) {
         $('#actualaudio-Remodelling').html('<audio id="Remodellingaudio" controls preload onpause="playsSlang()" onplay="pauseSlang()"><source src="audio/Slang/Remodelling.mp3" type="audio/mpeg"></audio>');
       } 
-    
       $("#sub-slang-features-of-slang-the-slang-factory-remodelling").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
     })();
     
-	
-    $('.metaphor-bx').on('tap', function() {
-      $.mobile.changePage("sub-slang-features-of-slang-the-slang-factory-remodelling-metaphor.html", {transition: "slide"});
-    });
-    $('.irony-bx').on('tap', function() {
-      $.mobile.changePage("sub-slang-features-of-slang-the-slang-factory-remodelling-irony.html", {transition: "slide"});
-    });
-    $('.onomatopoeia-bx').on('tap', function() {
-      $.mobile.changePage("sub-slang-features-of-slang-the-slang-factory-remodelling-onomatopoeia.html", {transition: "slide"});
-    });
-    $('.alliteration-bx').on('tap', function() {
-      $.mobile.changePage("sub-slang-features-of-slang-the-slang-factory-remodelling-alliteration.html", {transition: "slide"});
-    });
-    
-    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundSlang.pause(); bgsoundSlang.currentTime = 0;});
+	$('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundSlang.pause(); bgsoundSlang.currentTime = 0; });
     
     function goBack() {
+	  startAnimation=0;
       $.mobile.changePage("sub-slang-features-of-slang-the-slang-factory.html", {transition: "slide", reverse: true });
     }
     
@@ -127,52 +113,76 @@
     });
 	var itid		= 0;
 	var goClicked	=	0;	
+	
 	$(document).ready(function(){
-		$("#speech-bubble").css('display','block');
-		$("#navSlang-theslangfactory").css('display','block');
-		
-			var n1	=	1;
-
-			itid	=	setInterval(function(){
-			//clearInterval(itid);
-		
-	
-			if(n1==1){
-				n1	=	0;
-					if(goClicked==1){
-					$("#blinking-eyes").css('display','none');
-						clearInterval(itid);
-					}
-					else{
-						$("#blinking-eyes").css('display','block');
-					}
+		$("#Info_bubble").css('display','block');
+		$("#navSlang-Remodelling").css('display','block');
+		$("#machine").css('display','block');
+		$("#hook").css('display','block');
+		$("#man_mouth_closed").css('display','block');
+	});
+	window.remodellingcounter			=	0;
+	var items = [['thing','thang'],
+				['best friend for life','biffle'],
+				['hell','heck'],
+				['god','gosh'],
+				['damnation','tarnation']
+				];
 				
-				}
-			else{
-			n1 = 1;
-				$("#blinking-eyes").css('display','none')}
-					
+	$("#go_btn").on('tap', function() {
+		remodelling_InitialDisplayPositions();
+		remodelling_ProcessWords();
+	});
+	
+	function remodelling_ProcessWords(){
+		remodelling_setDivText();
+		$('#word1_remodelling').animate({top:'375px'},4000,function(){
+			//$('#word1_remodelling').css('display','none');
+			$.Deferred(function($df){
+				$df.pipe(mouthPos).pipe(word1Reset).pipe(hideMouthOpen).pipe(remodelling_resetPositions).pipe(finalCallback).pipe(remodelling_ProcessWords);
+			}).resolve();			
 
-			},1000);
-		
+
+		}); 
+	}
+	function finalCallback(){
+			++window.remodellingcounter;
+			if(window.remodellingcounter>=5){
+				window.remodellingcounter=0;
+			}
+	}
+	function mouthPos(){
+			$('#man_mouth_closed').hide();
+			$('#word2_remodelling').show();
+			return $('#man_mouth_open').show().delay(1000);
+	}
+	function remodelling_setDivText(){
+		$('#word1_remodelling #word1_remodelling_text').text(items[window.remodellingcounter][0]);
+		$('#word2_remodelling #word2_remodelling_text').text(items[window.remodellingcounter][1]);
+		return 1;
+	}
 	
-		$("#go-button").on('tap', function() {
-			$("#man-standing").css('display','none');
-			$("#speech-bubble").css('display','none');
-			$("#navSlang-theslangfactory").css('display','none');
-			goClicked	=	1;
-			$("#blinking-eyes").css('display','none');
-			$("#glowing-doors").css('display','block');
-		});
-	});
+	function remodelling_resetPositions(){
+		$('#word2_remodelling').hide();
+		return $('#man_mouth_closed').show().delay();
+	}
+	function word1Reset(){
+		return $('#word1_remodelling').css('top','-90px');
+	}
+	function hideMouthOpen(){
+		return $('#man_mouth_open').hide();
+	}
+
+	function remodelling_InitialDisplayPositions(){
+		$("#Info_bubble").css('display','none');
+		$("#navSlang-Remodelling").css('display','none');
+		$("#word1_remodelling").css('display','block');
+	}
 	
-	$("#remodelling").on('tap', function() {
-		if($('#open-doors-remodeling').css('display') == 'none'){
-			$("#open-doors-remodeling").css('display','block');
-		}
-		$('#open-doors-remodeling').css("background-position", "-498px -24px");
-		$.mobile.changePage("sub-slang-features-of-slang-the-slang-factory-remodelling-remodelling.html", {transition: "slide"});
-	});
+	$('#glowingdoor').on('tap', function() {
+	  startAnimation=0;
+      $.mobile.changePage("sub-slang-features-of-slang-the-slang-factory.html", {transition: "slide", reverse: true });
+    });
 	
   </script>
   

@@ -64,7 +64,7 @@
 }
 
 #sub-slang-features-of-slang-the-slang-factory-remodelling{
-  background:url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/Slang_Factory/Remodelling/Start_Layout.png') no-repeat;
+  background:url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/Slang_Factory/Remodelling/Remodelling_BG.png') no-repeat;
   height:748px !important;
   overflow:hidden !important;
   width:1024px !important;
@@ -482,6 +482,21 @@ color: #FFFFFF;
 	font-weight: normal;
 	color: #000000;
 	z-index: 5;
+}
+
+#navSlang-Remodelling{
+	position: absolute;
+	left: 105px;
+	top: 150px;
+	width: 825px;
+	height: 282px;
+	overflow: auto;
+	text-align: left;
+	font-family: comic sans ms;
+	font-size: 18px;
+	font-weight: normal;
+	color: #000000;
+	z-index: 9999;
 }
 
 .slang_school-bx{
@@ -977,6 +992,124 @@ color: #FFFFFF;
 	z-index: 3;
 }
 
+/* ---------------------------------- Remodelling ---------------------------------- */
+#Info_bubble{
+	background: url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/Slang_Factory/Remodelling/tooltip_new.png') no-repeat;
+	top: 144px;
+	left: 60px;
+	width: 910px;
+	height: 369px;
+	position: absolute;
+	display: none;
+	z-index:999;
+}
+	
+#go_btn{
+	top: 418px;
+	left: 442px;
+	width: 105px;
+	height: 90px;
+	position: absolute;
+	z-index:99999;
+}
+
+#glowingdoor{
+	top: 303px;
+	left: 795px;
+	width: 120px;
+	height: 258px;
+	position: absolute;
+	z-index:99999;
+}
+
+#man_mouth_closed{
+	background: url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/Slang_Factory/Remodelling/man_close_mouth.png') no-repeat;
+	top: 264px;
+	left: 404px;
+	width: 160px;
+	height: 415px;
+	position: absolute;
+	z-index: 99;
+	display:none;
+}
+
+#man_mouth_open{
+	background: url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/Slang_Factory/Remodelling/man_open_mouth.png') no-repeat;
+	top: 264px;
+	left: 404px;
+	width: 160px;
+	height: 415px;
+	position: absolute;
+	z-index: 999;
+	display:none;
+}
+
+#machine{
+	background: url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/Slang_Factory/Remodelling/machine_sprite_new.png') no-repeat;
+	top: 235px;
+	left: 10px;
+	width: 440px;
+	height: 445px;
+	position: absolute;
+	display:none;
+	z-index:1;
+}
+
+#hook{
+	background: url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/Slang_Factory/Remodelling/hook.png') no-repeat;
+	top: 0px;
+	left: 330px;
+	width: 125px;
+	height: 135px;
+	position: absolute;
+	display:none;
+}
+	
+#word1_remodelling{
+	display: none;
+	top: -80px;
+	left: 145px;
+	position: absolute;
+	height: 45px;
+	width: 240px;
+	background: #ffffff;
+	-webkit-transform: rotate(100deg);
+}
+
+#word2_remodelling{
+	background: url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/Slang_Factory/Remodelling/bubble_speech_new.png') no-repeat;
+	display:none;
+	top: 199px;
+	left: 547px;
+	width: 250px;
+	height: 158px;
+	position: absolute;
+}
+
+#word1_remodelling_text{
+	-webkit-transform: rotate(180deg);
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 240px;
+	height: 45px;
+	font-size: 25px;
+	text-align: center !important;
+	padding: 0px 0px 0px 0px;
+	font-family: comic sans ms;
+}
+
+#word2_remodelling_text{
+	font-size: 30px;
+	position: absolute;
+	width: 260px;
+	height: 38px;
+	left: 0px;
+	top: 45px;
+	font-family: comic sans ms;
+	text-align: center;
+}
+
 /* -------------------------------------- Blending ------------------------------------ */
 #Blending_Popup_Dialog{
 	background: url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/Slang_Factory/Blending/Dialog.png') no-repeat;
@@ -996,5 +1129,139 @@ color: #FFFFFF;
 	width: 970px;
 	z-index: 1;
 }
+		
+.Blending_Man_Lower_Body_Hand_Up{
+	top: 374px;
+	left: 220px;
+	position: absolute;
+	height: 267px;
+	width: 328px;
+	background: url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/Slang_Factory/Blending/lower_body_with_arm_up.png') no-repeat 0px -71px;
 
+}
+.Blending_Man_Lower_Body_Hand_Down{
+	top: 396px;
+	left: 220px;
+	position: absolute;
+	height: 243px;
+	width: 322px;
+	background: url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/Slang_Factory/Blending/lower_body_with_arm_down.png') no-repeat 0px -82px;
+	display:none;
+}
+#Blending_Man_Head{
+	position: absolute;
+	
+}
+.man_head_1{
+	height: 164px;
+	width: 130px;
+	top: 292px;
+	left: 222px;
+	background: url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/Slang_Factory/Blending/normal_character.png') no-repeat;
+}
+.man_head_2{
+	height: 241px;
+	width: 126px;
+	top: 214px;
+	left: 226px;
+	background: url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/Slang_Factory/Blending/Mullhawk.png') no-repeat;
+}
+.man_head_3{
+	height: 210px;
+	width: 139px;
+	top: 262px;
+	left: 213px;		
+	background: url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/Slang_Factory/Blending/Euromullet.png') no-repeat;
+}
+.man_head_4{
+	position: absolute;
+	height: 165px;
+	width: 153px;
+	top: 293px;
+	left: 200px;		
+	background: url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/Slang_Factory/Blending/Mullet.png') no-repeat;
+}
+.man_head_5{
+	height: 165px;
+	width: 131px;
+	top: 290px;
+	left: 222px;		
+	background: url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/Slang_Factory/Blending/Bowllet.png') no-repeat;
+}
+.man_head_6{
+	height: 157px;
+	width: 142px;
+	top: 301px;
+	left: 211px;		
+	background: url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/Slang_Factory/Blending/Skullet.png') no-repeat;
+}
+.man_head_7{
+	height: 200px;
+	width: 167px;
+	top: 275px;
+	left: 202px;		
+	background: url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/Slang_Factory/Blending/Hiplet.png') no-repeat;
+}
+.man_head_8{
+	height: 172px;
+	width: 124px;
+	top: 283px;
+	left: 229px;		
+	background: url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/Slang_Factory/Blending/Frullet.png') no-repeat;
+}
+.man_head_9{
+	height: 194px;
+	width: 144px;
+	top: 264px;
+	left: 209px;		
+	background: url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/Slang_Factory/Blending/Femullet.png') no-repeat;
+}		
+.Blending_Random_Text{
+	position: absolute;
+	width: 252px;
+	height: 145px;
+	top: 295px;
+	left: 548px;	
+	z-index:2;
+}
+.Blending_Lightning {
+	position: absolute;
+	height: 359px;
+	width: 300px;
+	top: 133px;
+	left: 141px;
+	background: url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/Slang_Factory/Blending/Zap.png');
+	display:none;
+}
+.Blending_Back_Door{
+	position: absolute;
+	height: 338px;
+	width: 164px;
+	top: 297px;
+	left: 12px;
+}
+.hair_text_2{
+	background: url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/Slang_Factory/Blending/Mulhawk_text.png') no-repeat 0px -4px;
+}
+.hair_text_3{
+	background: url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/Slang_Factory/Blending/euromullet_text.png') no-repeat 0px -4px;
+}
+.hair_text_4{
+	background: url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/Slang_Factory/Blending/Mullet_text.png') no-repeat 0px -4px;
+}
+.hair_text_5{
+	background: url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/Slang_Factory/Blending/bowlet_text.png') no-repeat 0px -4px;
+}
+.hair_text_6{
+	background: url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/Slang_Factory/Blending/skullet_text.png') no-repeat 0px -4px;
+}
+.hair_text_7{
+	background: url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/Slang_Factory/Blending/hiplet_text.png') no-repeat 0px -4px;
+}
+.hair_text_8{
+	background: url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/Slang_Factory/Blending/frullet_text.png') no-repeat 0px -4px;
+}
+.hair_text_9{
+	background: url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/Slang_Factory/Blending/femullet_text.png') no-repeat 0px -4px;
+}
 /* -------------------------------------- Blending Ends here  ------------------------------------ */

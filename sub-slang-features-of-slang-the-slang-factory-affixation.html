@@ -180,7 +180,7 @@
 		looping(0);
 		function SlangConverter(){
 			/*$('#word_1').animate({ top: [261, 'cos'],left: [640, 'sin']},1000, function(){*/
-			$('#word_1').animate({left:'640px',top:'260px' },2000, function(){
+			$('#word_1').animate({left:'640px',top:'345px' },2000, function(){
 			$("#word_1").css('display','none');
 			$("#word1_text").css('display','none');
 			$('#word_1').animate({left:'750px',top:'113px' });
@@ -194,7 +194,7 @@
 					$('#man-blowing').animate({left:'277px',top:'340px' });
 					$("#man-waiting").css('display','block');
 					//rotateWord('word_3',-90);
-					$('#word_3').animate({left:'110px',top:'590px' },2500, function(){
+					$('#word_3').animate({left:'110px',top:'680px' },2500, function(){
 						$("#word_3").css('display','none');
 						$("#word3_text").css('display','none');
 						$('#word_3').animate({left:'380px',top:'242px' });
@@ -208,20 +208,7 @@
 		//SlangConverter();
 		var degree = 0;
 		var timer	=	'';
-		/*function rotateWord(divId,rotDeg){
-			$targetDiv		=	$('#'+divId);
-			var targetAngle	=	rotDeg;
-			$targetDiv.css({ WebkitTransform: 'rotate(' + degree + 'deg)'});
-			timer = setTimeout(function() {
-				//--degree; 
-				degree	=	degree - 10;
-				rotateWord(divId,rotDeg);
-			},40);	
-			  if(degree <= targetAngle){
-				clearTimeout(timer);
-			  }			
-		}
-		*/
+		
 		function rotate(degree) {
 			/*$("#word_3").html(degree);*/
 			if (degree >= -80) {

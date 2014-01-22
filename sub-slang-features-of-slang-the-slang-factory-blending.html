@@ -37,8 +37,34 @@
 			width: 117px;
 			z-index: 9999;		
 		}
+		
+	
 	</style>
 	<div id="Blending_Machine">
+	</div>
+	
+	<div class="Blending_Man_Lower_Body_Hand_Up">
+	</div>
+	
+	<div class="Blending_Man_Lower_Body_Hand_Down">
+
+	</div>
+	
+	<div class="man_head_1" id="Blending_Man_Head">
+
+	</div>
+	
+	<div class="Blending_Random_Text">
+		
+
+	</div>
+	<div class="Blending_Lightning">
+	</div>
+	
+	<div class="Blending_Man Blending_Lever_Up">
+	</div>
+	<div class="Blending_Back_Door">
+		
 	</div>
 	<div id="Blending_Popup_Dialog"></div>	
 	<div id="gobutton"></div>
@@ -62,6 +88,11 @@
     sound = new Audio(); // 'sound' is now an audio object
     var playing;
     var paused;
+	var itid		= 0;
+	var goClicked	=	0;	
+	window.hairCounter			=	1;
+	hairCounterLocal			=	1;
+	window.startBlendingMachine	=	1;	
     (function() {
       playing = false;
       paused = true;
@@ -73,8 +104,11 @@
     })();
     
 	$('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundSlang.pause(); bgsoundSlang.currentTime = 0;});
-    
+    $('.Blending_Back_Door').on('tap',function(){
+		goBack();
+	});
     function goBack() {
+		window.startBlendingMachine		=	0;
 		$.mobile.changePage("sub-slang-features-of-slang-the-slang-factory.html", {transition: "slide"});
     }
     	
@@ -125,40 +159,74 @@
     $("#Blendingaudiopsbtn").on('tap', function() {
       Blendingaudio.pause();
     });
-	var itid		= 0;
-	var goClicked	=	0;	
-	$(document).ready(function(){
-	});
-	
+
 	$("#gobutton").on('tap', function() {
 		blending_InitialDisplayPositions();
-		var defer = $.Deferred();
-		var filtered = defer.pipe(function() {
-			return 5;
-		  });
-		defer.resolve(5);
-		filtered.done(function(){
-			alert('heelo');
-		});
-		//blending_StartMachine(0);
+		getHairStyle();
+		function getHairStyle(){
+			if(window.startBlendingMachine==0){
+				delete window.hairCounter;
+				delete window.startBlendingMachine;
+			}
+			else{
+				$.Deferred(function($df) {
+				   $df.pipe(Blending_Man_Arm_Up).pipe(Blending_Man_Arm_Down).pipe(Blending_Random_Text_Animation).pipe(Blending_Falling_Light).pipe(Blending_Change_Hair).pipe(Blending_Background_Initial_Position).pipe(Blending_Reset_Positions).pipe(getHairStyle);
+				}).resolve();
+			}
+		}
 	});
-	
+	function Blending_Man_Arm_Up(){		
+		return $('.Blending_Man_Lower_Body_Hand_Up').show().delay(3000);
+	}	
+	function Blending_Man_Arm_Down(){	
+		$('.Blending_Man_Lower_Body_Hand_Up').hide();		
+		return $('.Blending_Man_Lower_Body_Hand_Down').show().delay(100);
+	}
 
-	function hideMachine(){
-		$('#Blending_Machine').hide();
-		return 1;
-	}
-	function blending_StartMachine(blending_counter){
-		// Man with liver in hand
-		// Liver pulls down
-		// Random word appear (4 times rotation)
-		// light falls from the machine on man
-		// Hare changes
+	function Blending_Random_Text_Animation(){
+		if(window.hairCounter>=9){
+			
+			hairCounterLocal		=	2;
+		}	
+		else{
+			hairCounterLocal		=	window.hairCounter+1;
+		}
+		$('.Blending_Random_Text').addClass('hair_text_'+window.hairCounterLocal);
 		
-		// Reset to initial position
-		// Liver pulls down
-		// New word and same process
+		return	$('.hair_text_'+window.hairCounterLocal).animate({'background-position-x': '0px','background-position-y': '-4px'},1000,function(){
+					$('.hair_text_'+window.hairCounterLocal).animate({'background-position-x': '-262px','background-position-y': '-4px'},1000,function(){
+						$('.hair_text_'+window.hairCounterLocal).animate({'background-position-x': '-521px','background-position-y': '-2px'},1000,function(){
+							$('.hair_text_'+window.hairCounterLocal).animate({'background-position-x': '-780px','background-position-y': '-2px'},1000,function(){
+								$('.hair_text_'+window.hairCounterLocal).animate({'background-position-x': '-780px','background-position-y': '-2px'},1000,function(){
+									$('.hair_text_'+window.hairCounterLocal).animate({'background-position-x': '-1042px','background-position-y': '-2px'},1000);
+								});
+							});
+						});
+					})
+				});
 	}
+	function Blending_Falling_Light(){
+		return $('.Blending_Lightning').show().delay(3000);
+	}
+	function Blending_Change_Hair(){
+		if(window.hairCounter>=9){
+			$('#Blending_Man_Head').removeClass('man_head_'+window.hairCounter);
+			window.hairCounter	=	1;
+		}
+		var prevImg		=	window.hairCounter;
+		$('.Blending_Lightning').hide();		
+		window.hairCounter++;
+		return $('#Blending_Man_Head').removeClass('man_head_'+prevImg).addClass('man_head_'+window.hairCounter).show().delay(5000);
+	}
+	function Blending_Background_Initial_Position(){
+		return $('.hair_text_'+window.hairCounter).css({'background-position-x': '0px','background-position-y': '-4px'});
+	}
+	function Blending_Reset_Positions(){
+		$('.Blending_Man_Lower_Body_Hand_Down').hide();
+		$('.Blending_Random_Text').removeClass('hair_text_'+window.hairCounter);
+		return $('#Blending_Man_Head').removeClass('man_head_'+window.hairCounter).addClass('man_head_1');
+	}
+
 	function blending_InitialDisplayPositions(){
 		$("#navSlang-Blending").css('display','none');
 		$("#Blending_Popup_Dialog").css('display','none');		
