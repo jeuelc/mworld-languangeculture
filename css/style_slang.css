@@ -992,6 +992,14 @@ color: #FFFFFF;
 	z-index: 3;
 }
 
+#goBack_Arrow{
+	position: absolute;
+	width:93px;
+	height:70px;
+	top:668px;
+	left:555px;
+	z-index:2;
+}
 /* ---------------------------------- Remodelling ---------------------------------- */
 #Info_bubble{
 	background: url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/Slang_Factory/Remodelling/tooltip_new.png') no-repeat;

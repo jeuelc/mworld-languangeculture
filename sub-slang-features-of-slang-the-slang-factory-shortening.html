@@ -41,6 +41,7 @@
 	<div id="machine_wall"></div>
 	<div id="word1_shortening"><div id="word1_shorteningtext"></div></div>
 	<div id="word2_shortening"><div id="word2_shorteningtext"></div></div>
+	<div id="goBack_Arrow"></div>
 	
     <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Language_and_Culture/bottomhomelc.png"></a></div>
   </div> <!-- end content -->  
@@ -80,7 +81,7 @@
 		startAnimation=0;
 		$.mobile.changePage("sub-slang-features-of-slang-the-slang-factory.html", {transition: "slide"});
     }
-    	
+	
 	function playsSlang() {
          bgsoundSlang.play();
     }
@@ -204,6 +205,11 @@
 		$("#pipe_entry_patch").css('display','block');
 		$("#pipe_exit_patch").css('display','block');	
 	}
+	
+	$("#goBack_Arrow").on('tap' , function() {
+		startAnimation=0;
+		$.mobile.changePage("sub-slang-features-of-slang-the-slang-factory.html", {transition: "slide"});
+	});
 
   </script>  
 </div> <!--//home-->
