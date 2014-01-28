@@ -1,0 +1,139 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-food-football-and-fiesta-language">
+  <!-- <script src="js/slidebarnat.js"></script> -->
+  <script src="js/slidebar_food_football_and_fiesta.js"></script>
+  <link rel="stylesheet" href="css/style_food_football_and_fiesta.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnFoodFootballFiesta"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnFoodFootballFiesta"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnFoodFootballFiesta"></div></div>
+  <div class="infobtnholder"><div class="infobtnFoodFootballFiesta"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnFoodFootballFiesta"></div></div>
+  <div class="menubtnholder"><div class="menubtnFoodFootballFiesta"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>Language</h1></div>
+  
+    <div data-role="content" class="kidzcontent">
+      <div class="navFoodFootballFiesta-content">
+        <p>In Spain they speak Spanish, right?  Yes, but did you also know that three other languages are spoken?  Basque, Catalan, and Galician.  Almost a quarter of the population speak one of these languages!  Basque is spoken in the Basque Country and Navarre, Catalan is spoken in Catalonia, Valencia and the Balearic Islands (and also in France, Andorra, and Italy!) and Galician is spoken in Galicia, just above Portugal.</p>
+
+		<p>Pretty much all Spaniards speak Spanish.  For some, it's the only language they speak.  For others living in certain regions, they'll switch between languages regularly or they may rarely speak Spanish at all.</p>
+
+		<p>Sharing a national language is important. It allows you to communicate with your fellow citizens and participate fully in social and political life.  Like a nation's boundaries, a national language is not necessarily natural.  National languages become that way.  Tap here to see how.</p>
+      </div>
+        
+      <div class="navbtn1">
+        <p><a href="sub-food-football-and-fiesta-language-becoming-the-national-language.html" data-transition="slide"><img src="css/images/9-12/Language_and_Culture/Food_Football_And_Fiesta/Language/Becoming_The_National_Language.png"></a></p>
+      </div>
+		<div class="navbtn2">
+			<p><a href="sub-food-football-and-fiesta-language-how-different-are-they.html" data-transition="slide"><img src="css/images/9-12/Language_and_Culture/Food_Football_And_Fiesta/Language/How_Different_Are_They.png"></a></p>
+		</div>
+		<div class="navbtn3">
+			<p><a href="sub-food-football-and-fiesta-language-language-and-identity.html" data-transition="slide"><img src="css/images/9-12/Language_and_Culture/Food_Football_And_Fiesta/Language/Language_And_Identity.png"></a></p>
+		</div>
+		<div class="navbtn4">
+			<p><a href="sub-food-football-and-fiesta-language-revival.html" data-transition="slide"><img src="css/images/9-12/Language_and_Culture/Food_Football_And_Fiesta/Language/Revival.png"></a></p>
+		</div> 
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Language_and_Culture/bottomhomelc.png"></a></div>
+    </div> <!-- end content -->  
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js -->
+    <div class="micbtnholder"><div class="micbtnFoodFootballFiesta" id="playstopLanguage"></div></div>
+    <div class="bFoodFootballFiesta"><div class="rwFoodFootballFiesta" id="Languageaudiobbtn"></div></div>
+    <div class="plFoodFootballFiesta"><div class="plpsFoodFootballFiesta" id="Languageaudioplbtn"></div></div>
+    <div class="fFoodFootballFiesta"><div class="fwFoodFootballFiesta" id="Languageaudiofbtn"></div></div>
+    <div id="actualaudio-Language" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-Language').html('<audio id="Languageaudio" controls preload onpause="playsFoodFootballFiesta()" onplay="pauseFoodFootballFiesta()"><source src="audio/Food_Football_And_Fiesta/Language.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-food-football-and-fiesta-language").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { bgsoundFoodFootballFiesta.pause(); bgsoundFoodFootballFiesta.currentTime = 0; mainaudiobg.play(); });
+    
+    function goBack() {
+      $.mobile.changePage("sub-food-football-and-fiesta.html", {transition: "slide", reverse: true });
+      bgsoundFoodFootballFiesta.pause(); 
+      bgsoundFoodFootballFiesta.currentTime = 0;
+    }
+    
+    function playsFoodFootballFiesta() {
+         bgsoundFoodFootballFiesta.play();
+    }
+       
+    function pauseFoodFootballFiesta() {
+         bgsoundFoodFootballFiesta.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+	
+    $("#playstopLanguage").on('tap', function() {
+      if(!playing) {
+        Languageaudio.play();
+        $('.micbtnFoodFootballFiesta').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        Languageaudio.pause(); Languageaudio.currentTime = 0;
+        $('.micbtnFoodFootballFiesta').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#Languageaudioplbtn").on('tap', function() {
+      if(!paused) {
+        Languageaudio.pause();
+        paused = true;
+      } else {
+        Languageaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#Languageaudiofbtn").on('tap', function() {
+      var ctime = Languageaudio.currentTime;
+      Languageaudio.currentTime = ctime + 10;
+    });
+    
+    $("#Languageaudiobbtn").on('tap', function() {
+      var ctime = Languageaudio.currentTime;
+      Languageaudio.currentTime = ctime - 10;
+    });
+    
+    $("#Languageaudiopsbtn").on('tap', function() {
+      Languageaudio.pause();
+      //$(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
+    
+    $('.navbtn1').on('tap', function() { 
+      nav1Effects(); 
+    });
+    
+    $('.navbtn2').on('tap', function() { 
+      nav2Effects(); 
+    });
+    
+    $('.navbtn3').on('tap', function() { 
+      nav3Effects(); 
+    });
+    
+    $('.navbtn4').on('tap', function() { 
+      nav4Effects(); 
+    });
+
+  </script>
+</div> <!--//home-->

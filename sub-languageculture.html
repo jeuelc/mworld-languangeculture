@@ -10,7 +10,7 @@
       <div class="aclink"><a href="#" data-transition="slide"><img src="css/images/9-12/Language_and_Culture/calligraphybtn.png"></a></div>
       <div class="aclink"><a href="#" data-transition="slide"><img src="css/images/9-12/Language_and_Culture/storiesbtn.png"></a></div><br>
       <div class="aclink"><a href="#" data-transition="slide"><img src="css/images/9-12/Language_and_Culture/cometohousebtn.png"></a></div>
-      <div class="aclink"><a href="#" data-transition="slide"><img src="css/images/9-12/Language_and_Culture/dinnerjapbtn.png"></a></div>
+      <div class="aclink"><a href="sub-food-football-and-fiesta.html" id="food_football_and_fiesta" data-transition="slide"><img src="css/images/9-12/Language_and_Culture/dinnerjapbtn.png"></a></div>
       <div class="aclink"><a href="#" data-transition="slide"><img src="css/images/9-12/Language_and_Culture/dinneritalybtn.png"></a></div>
       <div class="aclink"><a href="sub-slang.html" data-transition="slide" id="slang"><img src="css/images/9-12/Language_and_Culture/mynamebtn.png"></a></div>
     </div>
@@ -44,7 +44,12 @@
 				bgsoundSlang.play();
 				langcultsoundbg.pause();
 				langcultsoundbg.currentTime = 0;
-			} 
+			}
+			else if(subjectId=="food_football_and_fiesta"){
+				bgsoundFoodFootballFiesta.play();
+				langcultsoundbg.pause();
+				langcultsoundbg.currentTime = 0;				
+			}
 		});
 	});
 	

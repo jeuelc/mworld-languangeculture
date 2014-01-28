@@ -1,0 +1,146 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-food-football-and-fiesta">
+  <!-- <script src="js/slidebarnat.js"></script> -->
+  <script src="js/slidebar_food_football_and_fiesta.js"></script>
+  <link rel="stylesheet" href="css/style_food_football_and_fiesta.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnFoodFootballFiesta"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnFoodFootballFiesta"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnFoodFootballFiesta"></div></div>
+  <div class="infobtnholder"><div class="infobtnFoodFootballFiesta"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnFoodFootballFiesta"></div></div>
+  <div class="menubtnholder"><div class="menubtnFoodFootballFiesta"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>Food, Football and Fiesta</h1></div>
+  
+    <div data-role="content" class="kidzcontent">
+      <div class="navFoodFootballFiesta-content">
+        <p>What have you heard about Spain?  Bullfights and flamenco?  Siestas and fiestas?  Sun and sand? Football (or perhaps it's soccer where you live)?  Tapas and paella?</p>
+		<p>And have you ever thought that it may not be all true?</p>
+
+		<p>Come and journey to Spain beyond the stereotypes, and you'll discover </p>
+
+		<p>A diverse and complex nation with a fascinating history</p>
+		<p>The importance of food, football and fiestas</p>
+		<p>The languages they speak</p>
+		<p>And what makes a nation.</p>
+
+		<p>Leave your castanets and bullfighting cape behind, and discover the real Spain!</p>
+      </div>
+        
+      <div class="navbtn1">
+        <p><a href="sub-food-football-and-fiesta-a-diverse-nation.html" data-transition="slide"><img src="css/images/9-12/Language_and_Culture/Food_Football_And_Fiesta/A_Diverse_Nation.png"></a></p>
+      </div>
+      <div class="navbtn2">
+        <p><a href="sub-food-football-and-fiesta-food-football-and-fiesta.html" data-transition="slide"><img src="css/images/9-12/Language_and_Culture/Food_Football_And_Fiesta/Food_Football_And_Fiesta.png"></a></p>
+      </div>
+      <div class="navbtn3">
+        <p><a href="sub-food-football-and-fiesta-language.html" data-transition="slide"><img src="css/images/9-12/Language_and_Culture/Food_Football_And_Fiesta/Language.png"></a></p>
+      </div>
+      <div class="navbtn4">
+        <p><a href="sub-food-football-and-fiesta-other-worlds.html" data-transition="slide"><img src="css/images/9-12/Language_and_Culture/Food_Football_And_Fiesta/Other_Worlds.png"></a></p>
+      </div>
+        
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Language_and_Culture/bottomhomelc.png"></a></div>
+    </div> <!-- end content -->  
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js -->
+    <div class="micbtnholder"><div class="micbtnFoodFootballFiesta" id="playstopFoodFootballAndFiesta"></div></div>
+    <div class="bFoodFootballFiesta"><div class="rwFoodFootballFiesta" id="FoodFootballAndFiestaaudiobbtn"></div></div>
+    <div class="plFoodFootballFiesta"><div class="plpsFoodFootballFiesta" id="FoodFootballAndFiestaaudioplbtn"></div></div>
+    <div class="fFoodFootballFiesta"><div class="fwFoodFootballFiesta" id="FoodFootballAndFiestaaudiofbtn"></div></div>
+    <div id="actualaudio-FoodFootballAndFiesta" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-FoodFootballAndFiesta').html('<audio id="FoodFootballAndFiestaaudio" controls preload onpause="playsFoodFootballFiesta()" onplay="pauseFoodFootballFiesta()"><source src="audio/Food_Football_And_Fiesta/Food_Football_And_Fiesta.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-food-football-and-fiesta").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { bgsoundFoodFootballFiesta.pause(); bgsoundFoodFootballFiesta.currentTime = 0; mainaudiobg.play(); });
+    
+    function goBack() {
+      $.mobile.changePage("sub-languageculture.html", {transition: "slide", reverse: true });
+      bgsoundFoodFootballFiesta.pause(); 
+      bgsoundFoodFootballFiesta.currentTime = 0;
+      langcultsoundbg.play();
+    }
+    
+    function playsFoodFootballFiesta() {
+         bgsoundFoodFootballFiesta.play();
+    }
+       
+    function pauseFoodFootballFiesta() {
+         bgsoundFoodFootballFiesta.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+	
+    $("#playstopFoodFootballAndFiesta").on('tap', function() {
+      if(!playing) {
+        FoodFootballAndFiestaaudio.play();
+        $('.micbtnFoodFootballFiesta').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        FoodFootballAndFiestaaudio.pause(); FoodFootballAndFiestaaudio.currentTime = 0;
+        $('.micbtnFoodFootballFiesta').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#FoodFootballAndFiestaaudioplbtn").on('tap', function() {
+      if(!paused) {
+        FoodFootballAndFiestaaudio.pause();
+        paused = true;
+      } else {
+        FoodFootballAndFiestaaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#FoodFootballAndFiestaaudiofbtn").on('tap', function() {
+      var ctime = FoodFootballAndFiestaaudio.currentTime;
+      FoodFootballAndFiestaaudio.currentTime = ctime + 10;
+    });
+    
+    $("#FoodFootballAndFiestaaudiobbtn").on('tap', function() {
+      var ctime = FoodFootballAndFiestaaudio.currentTime;
+      FoodFootballAndFiestaaudio.currentTime = ctime - 10;
+    });
+    
+    $("#FoodFootballAndFiestaaudiopsbtn").on('tap', function() {
+      FoodFootballAndFiestaaudio.pause();
+      //$(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
+    
+    $('.navbtn1').on('tap', function() { 
+      nav1Effects(); 
+    });
+    
+    $('.navbtn2').on('tap', function() { 
+      nav2Effects(); 
+    });
+    
+    $('.navbtn3').on('tap', function() { 
+      nav3Effects(); 
+    });
+    
+    $('.navbtn4').on('tap', function() { 
+      nav4Effects(); 
+    });
+  </script>
+</div> <!--//home-->

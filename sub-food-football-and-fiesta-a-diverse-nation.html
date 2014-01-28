@@ -1,0 +1,132 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-food-football-and-fiesta-a-diverse-nation">
+  <!-- <script src="js/slidebarnat.js"></script> -->
+  <script src="js/slidebar_food_football_and_fiesta.js"></script>
+  <link rel="stylesheet" href="css/style_food_football_and_fiesta.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnFoodFootballFiesta"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnFoodFootballFiesta"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnFoodFootballFiesta"></div></div>
+  <div class="infobtnholder"><div class="infobtnFoodFootballFiesta"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnFoodFootballFiesta"></div></div>
+  <div class="menubtnholder"><div class="menubtnFoodFootballFiesta"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>A diverse nation</h1></div>
+  
+    <div data-role="content" class="kidzcontent">
+      <div class="navFoodFootballFiesta-content3">
+        <p>Nations define us.  They give us passports to travel the world, a team to follow in the Olympic Games or a World Cup, and a sense of belonging, but what makes a nation a nation? </p>
+
+		<p>We tend to believe that all citizens of a nation share likes and dislikes, speak the same language and see themselves as part of a unified community.  Also, we tend to think that countries were always there. However, nations dont just exist; they're built over the years; they've changed and are still changing.</p>
+		<p>Come and see how Spain as a nation came to exist.  You'll discover how a country's borders can come about by battles won and lost and how nations can be made up of quite different regions and peoples.</p>
+      </div>
+        
+      <div class="navbtn1" style="top:420px;">
+        <p><a href="sub-food-football-and-fiesta-a-diverse-nation-boundaries.html" data-transition="slide"><img src="css/images/9-12/Language_and_Culture/Food_Football_And_Fiesta/A_Diverse_Nation/Boundaries.png"></a></p>
+      </div>
+      <div class="navbtn2" style="left:400px;">
+        <p><a href="sub-food-football-and-fiesta-a-diverse-nation-history.html" data-transition="slide"><img src="css/images/9-12/Language_and_Culture/Food_Football_And_Fiesta/A_Diverse_Nation/History.png"></a></p>
+      </div>
+      <div class="navbtn3" style="top:420px;">
+        <p><a href="sub-food-football-and-fiesta-a-diverse-nation-regions.html" data-transition="slide"><img src="css/images/9-12/Language_and_Culture/Food_Football_And_Fiesta/A_Diverse_Nation/Regions.png"></a></p>
+      </div>
+ 
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Language_and_Culture/bottomhomelc.png"></a></div>
+    </div> <!-- end content -->  
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js -->
+    <div class="micbtnholder"><div class="micbtnFoodFootballFiesta" id="playstopADiverseNation"></div></div>
+    <div class="bFoodFootballFiesta"><div class="rwFoodFootballFiesta" id="ADiverseNationaudiobbtn"></div></div>
+    <div class="plFoodFootballFiesta"><div class="plpsFoodFootballFiesta" id="ADiverseNationaudioplbtn"></div></div>
+    <div class="fFoodFootballFiesta"><div class="fwFoodFootballFiesta" id="ADiverseNationaudiofbtn"></div></div>
+    <div id="actualaudio-ADiverseNation" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-ADiverseNation').html('<audio id="ADiverseNationaudio" controls preload onpause="playsFoodFootballFiesta()" onplay="pauseFoodFootballFiesta()"><source src="audio/Food_Football_And_Fiesta/A_Diverse_Nation.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-food-football-and-fiesta-a-diverse-nation").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { bgsoundFoodFootballFiesta.pause(); bgsoundFoodFootballFiesta.currentTime = 0; mainaudiobg.play(); });
+    
+    function goBack() {
+      $.mobile.changePage("sub-food-football-and-fiesta.html", {transition: "slide", reverse: true });
+      bgsoundFoodFootballFiesta.pause(); 
+      bgsoundFoodFootballFiesta.currentTime = 0;
+    }
+    
+    function playsFoodFootballFiesta() {
+         bgsoundFoodFootballFiesta.play();
+    }
+       
+    function pauseFoodFootballFiesta() {
+         bgsoundFoodFootballFiesta.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+	
+    $("#playstopADiverseNation").on('tap', function() {
+      if(!playing) {
+        ADiverseNationaudio.play();
+        $('.micbtnFoodFootballFiesta').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        ADiverseNationaudio.pause(); ADiverseNationaudio.currentTime = 0;
+        $('.micbtnFoodFootballFiesta').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#ADiverseNationaudioplbtn").on('tap', function() {
+      if(!paused) {
+        ADiverseNationaudio.pause();
+        paused = true;
+      } else {
+        ADiverseNationaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#ADiverseNationaudiofbtn").on('tap', function() {
+      var ctime = ADiverseNationaudio.currentTime;
+      ADiverseNationaudio.currentTime = ctime + 10;
+    });
+    
+    $("#ADiverseNationaudiobbtn").on('tap', function() {
+      var ctime = ADiverseNationaudio.currentTime;
+      ADiverseNationaudio.currentTime = ctime - 10;
+    });
+    
+    $("#ADiverseNationaudiopsbtn").on('tap', function() {
+      ADiverseNationaudio.pause();
+      //$(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
+    
+    $('.navbtn1').on('tap', function() { 
+      nav1Effects(); 
+    });
+    
+    $('.navbtn2').on('tap', function() { 
+      nav2Effects(); 
+    });
+    
+    $('.navbtn3').on('tap', function() { 
+      nav3Effects(); 
+    });
+
+  </script>
+</div> <!--//home-->

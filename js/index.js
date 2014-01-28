@@ -843,3 +843,11 @@ bgsoundSlang.addEventListener('ended', function() { bgsoundSlang.play(); });
 
 function pauseSlang() { bgsoundSlang.pause() }
 function playsSlang() { bgsoundSlang.play(); $(".audiopanel").css({"backgroundPosition":"0px 0px"}); }
+
+/************************ Food Football And Fiesta *******************************/
+var bgsoundFoodFootballFiesta = new Audio();
+bgsoundFoodFootballFiesta.src = "audio/Food_Football_And_Fiesta/Food_Football_And_Fiesta_BG.mp3";
+bgsoundFoodFootballFiesta.addEventListener('ended', function() { bgsoundFoodFootballFiesta.play(); });
+
+function pauseFoodFootballFiesta() { bgsoundFoodFootballFiesta.pause() }
+function playsFoodFootballFiesta() { bgsoundFoodFootballFiesta.play(); $(".audiopanel").css({"backgroundPosition":"0px 0px"}); }
