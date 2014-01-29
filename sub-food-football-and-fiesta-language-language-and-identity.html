@@ -1,0 +1,113 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-food-football-and-fiesta-language-language-and-identity">
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>
+  <script src="js/slidebar_food_football_and_fiesta.js"></script>
+  <link rel="stylesheet" href="css/style_food_football_and_fiesta.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnFoodFootballFiesta"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnFoodFootballFiesta"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnFoodFootballFiesta"></div></div>
+  <div class="infobtnholder"><div class="infobtnFoodFootballFiesta"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnFoodFootballFiesta"></div></div>
+  <div class="menubtnholder"><div class="menubtnFoodFootballFiesta"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>How different are they?</h1></div>
+  
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">    
+      <div class="bpcontentFoodFootballFiesta">
+        <p>Language can show that you belong to a group.  </p>
+
+		<p>Do you speak a "world" language?  How does it sound when you hear it spoken by people from another country?  Familiar yet different?  When you notice variations, you mark those speakers as different from you and language, then, becomes a way you identify with your community.</p> 
+
+		<p>Some Spanish rulers wanted to ban smaller languages because they believed people would only start to identify with Spain if everyone spoke Spanish.  Many people continued speaking their own languages though.  They didn't want to lose the connection to their community. </p>
+
+		<p>Language as a symbol of identity can be positive and negative.  In Catalonia, regardless of where you are from, if you learn to speak Catalan you become part of the group.  On the negative side, in the Dominican Republic, the ability to say the Spanish word for parsley properly was how they decided whether you were considered Dominican or from neighbouring Haiti; many of those that couldn't were killed!</p>
+      </div>
+       
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Language_and_Culture/bottomhomelc.png"></a></div>
+    </div> <!-- end content -->  
+  </div><!--/spacechar-->        
+  
+    <div class="micbtnholder"><div class="micbtnFoodFootballFiesta" id="playstopLanguageAndIdentity"></div></div>
+    <div class="bFoodFootballFiesta"><div class="rwFoodFootballFiesta" id="LanguageAndIdentityaudiobbtn"></div></div>
+    <div class="plFoodFootballFiesta"><div class="plpsFoodFootballFiesta" id="LanguageAndIdentityaudioplbtn"></div></div>
+    <div class="fFoodFootballFiesta"><div class="fwFoodFootballFiesta" id="LanguageAndIdentityaudiofbtn"></div></div>
+    <div id="actualaudio-LanguageAndIdentity" style="visibility:hidden;"></div>
+  <!-- </div> -->
+  
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+ 
+	var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-LanguageAndIdentity').html('<audio id="LanguageAndIdentityaudio" controls preload onpause="playsFoodFootballFiesta()" onplay="pauseFoodFootballFiesta()"><source src="audio/Food_Football_And_Fiesta/How_Different_Are_They.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-food-football-and-fiesta-language-language-and-identity").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { bgsoundFoodFootballFiesta.pause(); bgsoundFoodFootballFiesta.currentTime = 0; mainaudiobg.play(); });
+    function goBack() {
+      $.mobile.changePage("sub-food-football-and-fiesta-language.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsFoodFootballFiesta() {
+         bgsoundFoodFootballFiesta.play();
+    }
+       
+    function pauseFoodFootballFiesta() {
+         bgsoundFoodFootballFiesta.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+	
+    $("#playstopLanguageAndIdentity").on('tap', function() {
+      if(!playing) {
+        LanguageAndIdentityaudio.play();
+        $('.micbtnFoodFootballFiesta').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        LanguageAndIdentityaudio.pause(); LanguageAndIdentityaudio.currentTime = 0;
+        $('.micbtnFoodFootballFiesta').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#LanguageAndIdentityaudioplbtn").on('tap', function() {
+      if(!paused) {
+        LanguageAndIdentityaudio.pause();
+        paused = true;
+      } else {
+        LanguageAndIdentityaudio.play();
+        paused = false;
+      }
+	  
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#LanguageAndIdentityaudiofbtn").on('tap', function() {
+      var ctime = LanguageAndIdentityaudio.currentTime;
+      LanguageAndIdentityaudio.currentTime = ctime + 10;
+    });
+    
+    $("#LanguageAndIdentityaudiobbtn").on('tap', function() {
+      var ctime = LanguageAndIdentityaudio.currentTime;
+      LanguageAndIdentityaudio.currentTime = ctime - 10;
+    });
+    
+    $("#LanguageAndIdentityaudiopsbtn").on('tap', function() {
+      LanguageAndIdentityaudio.pause();
+      //$(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
+  </script>
+    <script src="js/threecardLogic.js"></script>  <!-- for card dragging effects -->
+</div> <!--//home-->

@@ -1,0 +1,172 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-food-football-and-fiesta-language-becoming-the-national-language">
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>
+  <script src="js/slidebar_food_football_and_fiesta.js"></script>
+  <link rel="stylesheet" href="css/style_food_football_and_fiesta.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnFoodFootballFiesta"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnFoodFootballFiesta"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnFoodFootballFiesta"></div></div>
+  <div class="infobtnholder"><div class="infobtnFoodFootballFiesta"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnFoodFootballFiesta"></div></div>
+  <div class="menubtnholder"><div class="menubtnFoodFootballFiesta"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>How different are they?</h1></div>
+  
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+		<div id="f1_container" style="visibility:hidden;position:absolute;left:100px;top:270px;">
+          <div id="f1_card">
+            <div class="front face">
+              <img id="dopple" src="css/images/9-12/Language_and_Culture/Food_Football_And_Fiesta/Language/How_Different_Are_They/Origins_Of_Language.png">
+            </div>
+            <div id="backofcard" class="back face center" style="background:url(css/images/9-12/Language_and_Culture/Food_Football_And_Fiesta/Language/How_Different_Are_They/Origins_Of_Language_Reverse.png) no-repeat;">
+              <div class="returncard" style="position:absolute;left: 140px;top: 23px;width: 98px;height: 54px;"></div>
+              <div id="trueans" style="position:absolute;left: 57px;top: 168px;width: 119px;height: 31px;"></div>
+              <div class="falseans" style="position:absolute;left: 193px;top: 168px;width: 119px;height: 31px;"></div>
+			  <div class="falseans" style="position:absolute;left: 57px;top: 204px;width: 119px;height: 31px;"></div>
+			  <div class="falseans" style="position:absolute;left: 193px;top: 204px;width: 119px;height: 31px;"></div>
+			  <div id="Light_Box_Image" style="position:absolute;left: 40px;top: 85px;width: 293px;height: 78px;"></div>
+			</div>
+          </div><!--/f1+card-->
+        </div><!--/f1_container-->
+		<a id="quiz_lightbox" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Language_and_Culture/Food_Football_And_Fiesta/Language/How_Different_Are_They/Origins_Of_Language_Hi_Res.png', '');">click here</a>		
+		<div id="zoomwrapper">
+          <div id="pol1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/9-12/Language_and_Culture/Food_Football_And_Fiesta/Language/How_Different_Are_They/Origins_Of_Language.png" alt="" />
+          </div>
+        </div><!--/zoomwrapper-->
+      </div>
+      
+      <div class="bpcontentFoodFootballFiesta">
+        <p>Castilian, Catalan and Galician are all languages that developed from Latin, the language of the Romans.  So they share many characteristics, as they also do with French, Portuguese and Italian.</p>
+
+		<p>Basque is unrelated to any other language.  Some people think it is the original language spoken by the earliest Europeans.  It doesn't look or sound like the other languages spoken in Spain or anywhere else in the world.  It's a mystery!</p>
+
+		<p>Tap on the different languages to find out how they look and sound.</p>
+      </div>
+       
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Language_and_Culture/bottomhomelc.png"></a></div>
+    </div> <!-- end content -->  
+  </div><!--/spacechar-->        
+  
+    <div class="micbtnholder"><div class="micbtnFoodFootballFiesta" id="playstopHowDifferentAreThey"></div></div>
+    <div class="bFoodFootballFiesta"><div class="rwFoodFootballFiesta" id="HowDifferentAreTheyaudiobbtn"></div></div>
+    <div class="plFoodFootballFiesta"><div class="plpsFoodFootballFiesta" id="HowDifferentAreTheyaudioplbtn"></div></div>
+    <div class="fFoodFootballFiesta"><div class="fwFoodFootballFiesta" id="HowDifferentAreTheyaudiofbtn"></div></div>
+    <div id="actualaudio-HowDifferentAreThey" style="visibility:hidden;"></div>
+  <!-- </div> -->
+  
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+ 
+	var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      $('div#pol2').css("z-index", 2);
+      $('div#pol1').css("z-index", 1);
+      $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
+      $('div#pol3 > img').css("-webkit-transform", "rotate(-3deg)");
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-HowDifferentAreThey').html('<audio id="HowDifferentAreTheyaudio" controls preload onpause="playsFoodFootballFiesta()" onplay="pauseFoodFootballFiesta()"><source src="audio/Food_Football_And_Fiesta/How_Different_Are_They.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-food-football-and-fiesta-language-becoming-the-national-language").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { bgsoundFoodFootballFiesta.pause(); bgsoundFoodFootballFiesta.currentTime = 0; mainaudiobg.play(); });
+    
+	$('.falseans').on('tap', function() {
+      alert("Wrong answer");
+    });
+    $('#trueans').on('tap', function() {
+      alert("Correct answer");
+    });
+	
+	$(".returncard").on('tap', function() {
+      $('#f1_card').css({"-webkit-transform": "rotateY(0deg)"});
+      $('#f1_card').css({"-moz-transform": "rotateY(0deg)"});
+      $('#f1_card').css({"-o-transform": "rotateY(0deg)"});
+      $('#f1_card').css({"transform": "rotateY(0deg)"});
+      setTimeout(function() {
+        $("#pol1").css({"visibility":"visible", "z-index":4});
+        $('#f1_container').css({"visibility":"hidden", "z-index":0});
+      }, 1000);
+    });
+    
+    $("#pol1").on('tap', function() {
+      $('#f1_container').css({"visibility":"visible", "z-index":10});
+      $(this).css({"visibility":"hidden"});
+      $('#f1_card').css({"-webkit-transform": "rotateY(180deg)"});
+      $('#f1_card').css({"-moz-transform": "rotateY(180deg)"});
+      $('#f1_card').css({"-o-transform": "rotateY(180deg)"});
+      $('#f1_card').css({"transform": "rotateY(180deg)"});
+    });
+    
+    $("#Light_Box_Image").on('tap', function() {
+      $('#quiz_lightbox')[0].click();
+    });
+    function goBack() {
+      $.mobile.changePage("sub-food-football-and-fiesta-language.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsFoodFootballFiesta() {
+         bgsoundFoodFootballFiesta.play();
+    }
+       
+    function pauseFoodFootballFiesta() {
+         bgsoundFoodFootballFiesta.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+	
+    $("#playstopHowDifferentAreThey").on('tap', function() {
+      if(!playing) {
+        HowDifferentAreTheyaudio.play();
+        $('.micbtnFoodFootballFiesta').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        HowDifferentAreTheyaudio.pause(); HowDifferentAreTheyaudio.currentTime = 0;
+        $('.micbtnFoodFootballFiesta').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#HowDifferentAreTheyaudioplbtn").on('tap', function() {
+      if(!paused) {
+        HowDifferentAreTheyaudio.pause();
+        paused = true;
+      } else {
+        HowDifferentAreTheyaudio.play();
+        paused = false;
+      }
+	  
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#HowDifferentAreTheyaudiofbtn").on('tap', function() {
+      var ctime = HowDifferentAreTheyaudio.currentTime;
+      HowDifferentAreTheyaudio.currentTime = ctime + 10;
+    });
+    
+    $("#HowDifferentAreTheyaudiobbtn").on('tap', function() {
+      var ctime = HowDifferentAreTheyaudio.currentTime;
+      HowDifferentAreTheyaudio.currentTime = ctime - 10;
+    });
+    
+    $("#HowDifferentAreTheyaudiopsbtn").on('tap', function() {
+      HowDifferentAreTheyaudio.pause();
+      //$(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
+  </script>
+    <script src="js/threecardLogic.js"></script>  <!-- for card dragging effects -->
+</div> <!--//home-->

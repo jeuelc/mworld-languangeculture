@@ -1,0 +1,350 @@
+/* Main common basic pages */
+#sub-food-football-and-fiesta, #sub-food-football-and-fiesta-a-diverse-nation, #sub-food-football-and-fiesta-language, #sub-food-football-and-fiesta-other-worlds, #sub-food-football-and-fiesta-food-football-and-fiesta-bullfighting-and-identity, #sub-food-football-and-fiesta-food-football-and-fiesta-fiesta-bringing-together-community, #sub-food-football-and-fiesta-language-becoming-the-national-language, #sub-food-football-and-fiesta-language-becoming-the-national-language {
+  background:url('images/9-12/Language_and_Culture/Food_Football_And_Fiesta/Food_Football_And_Fiesta_BG.png') no-repeat;
+  height:748px !important;
+  overflow:hidden !important;
+  width:1024px !important;
+}
+
+/* Custom Pages Style */
+#sub-food-football-and-fiesta-fff{
+  background:url('images/9-12/Language_and_Culture/Food_Football_And_Fiesta/Food_Football_And_Fiesta/Food_Football_And_Fiesta_BG.png') no-repeat;
+  height:748px !important;
+  overflow:hidden !important;
+  width:1024px !important;
+}
+#sub-food-football-and-fiesta-food-football-and-fiesta-real-versus-barca{
+  background:url('images/9-12/Language_and_Culture/Food_Football_And_Fiesta/Food_Football_And_Fiesta/Real_Versus_Barca/Real_Versus_Barca_BG.png') no-repeat;
+  height:748px !important;
+  overflow:hidden !important;
+  width:1024px !important;
+}
+
+#sub-food-football-and-fiesta-food-football-and-fiesta-yum{
+  background:url('images/9-12/Language_and_Culture/Food_Football_And_Fiesta/Food_Football_And_Fiesta/Yum/A_Culinary_Tour_BG.png') no-repeat;
+  height:748px !important;
+  overflow:hidden !important;
+  width:1024px !important;
+}
+
+#sub-food-football-and-fiesta-language-becoming-the-national-language-castilian{
+  background:url('images/9-12/Language_and_Culture/Food_Football_And_Fiesta/Language/Becoming_The_National_Language/Castilian/Castilian_BG.png') no-repeat;
+  height:748px !important;
+  overflow:hidden !important;
+  width:1024px !important;
+}
+
+/* Custom Pages Style Ends here */
+
+/* Common Button Design */
+.plFoodFootballFiesta, .psFoodFootballFiesta, .bFoodFootballFiesta, .fFoodFootballFiesta {
+  position:absolute;
+  top:670px;
+  left:1024px;
+  z-index:20;
+}
+
+.micbtnFoodFootballFiesta {
+  background:url('images/9-12/Language_and_Culture/miclc.png') no-repeat 0 -81px;
+  height:81px;
+  width:81px;
+}
+
+.rwFoodFootballFiesta {
+  background:url('images/9-12/Language_and_Culture/rwlc.png') no-repeat 0 -73px;
+  height:73px;
+  width:73px;
+}
+
+.plpsFoodFootballFiesta {
+  background:url('images/9-12/Language_and_Culture/playlc.png') no-repeat 0 -73px;
+  height:73px;
+  width:73px;
+}
+
+.fwFoodFootballFiesta {
+  background:url('images/9-12/Language_and_Culture/fwlc.png') no-repeat 0 -73px;
+  height:73px;
+  width:73px;
+}
+
+.menubtnFoodFootballFiesta {
+  background:url('images/9-12/Language_and_Culture/menulc.png') no-repeat 0 -90px;
+  height:90px;
+  width:90px;
+}
+
+
+.homebtnFoodFootballFiesta {
+  background:url('images/9-12/Language_and_Culture/maplc.png') no-repeat 0 -74px;
+  height:74px;
+  width:80px;
+}
+
+.mpbtnFoodFootballFiesta {
+  background:url('images/9-12/Language_and_Culture/mpointslc.png') no-repeat 0 -84px;
+  height:79px;
+  width:80px;
+}
+
+.cpbtnFoodFootballFiesta {
+  background:url('images/9-12/Language_and_Culture/ctrlpnllc.png') no-repeat 0 -74px;
+  height:74px;
+  width:74px;
+}
+
+.infobtnFoodFootballFiesta {
+  background:url('images/9-12/Language_and_Culture/infolc.png') no-repeat 0 -74px;
+  height:74px;
+  width:74px;
+}
+
+.credsbtnFoodFootballFiesta {
+  background:url('images/9-12/Language_and_Culture/creditslc.png') no-repeat 0 -74px;
+  height:74px;
+  width:74px;
+}
+/* Common Button Design Ends Here */
+
+
+.navFoodFootballFiesta-content {
+	position: absolute;
+	left: 305px;
+	top: 275px;
+	width: 410px;
+	height: 359px;
+	overflow: auto;
+	text-align: center;
+	font-family: "comic sans ms";
+	font-size: 18px;
+	font-weight: normal;
+	color: #000000;
+}
+
+/* Some pages needs different style for text content */
+.navFoodFootballFiesta-looingup {
+	position: absolute;
+	left: 305px;
+	top: 346px;
+	width: 410px;
+	height: 275px;
+	overflow: auto;
+	text-align: center;
+	font-family: "comic sans ms";
+	font-size: 18px;
+	font-weight: normal;
+	color: #000000;
+}
+
+
+.navFoodFootballFiestabtn1{
+	left: 134px;
+    position: absolute;
+    top: 405px;
+}
+
+.navFoodFootballFiestabtn2 {
+    left: 394px;
+    position: absolute;
+    top: 435px;
+}
+.navFoodFootballFiestabtn3 {
+    left: 657px;
+    position: absolute;
+    top: 405px;
+}
+
+
+/* Common Header Div Design */
+#sub-food-football-and-fiesta .bptitleholder, #sub-food-football-and-fiesta-a-diverse-nation .bptitleholder, #sub-food-football-and-fiesta-language .bptitleholder, #sub-food-football-and-fiesta-other-worlds .bptitleholder, #sub-food-football-and-fiesta-food-football-and-fiesta-bullfighting-and-identity .bptitleholder, #sub-food-football-and-fiesta-food-football-and-fiesta-fiesta-bringing-together-community .bptitleholder, #sub-food-football-and-fiesta-language-becoming-the-national-language .bptitleholder, #sub-food-football-and-fiesta-language-becoming-the-national-language .bptitleholder, #sub-food-football-and-fiesta-language-becoming-the-national-language .bptitleholder{
+	width: 627px;
+	height: 68px;
+	text-align: center;
+	line-height: 28px;
+	position: absolute;
+	top: 170px;
+	left: 194px;
+}
+
+/* Custom Header Div Design */
+#sub-food-football-and-fiesta-fff .bptitleholder{
+	height:193px;
+	width:458px;
+	position:absolute;
+	top:55px;
+	left:20px;
+}
+
+#sub-food-football-and-fiesta-food-football-and-fiesta-real-versus-barca .bptitleholder{
+	height:193px;
+	width:458px;
+	position:absolute;
+	top:55px;
+	left:20px;
+}
+#sub-food-football-and-fiesta-food-football-and-fiesta-yum .bptitleholder{
+	height:193px;
+	width:458px;
+	position:absolute;
+	top:55px;
+	left:20px;
+}
+
+#sub-food-football-and-fiesta-language-becoming-the-national-language-castilian .bptitleholder{
+	height:193px;
+	width:458px;
+	position:absolute;
+	top:55px;
+	left:20px;
+}
+
+/* Common Header Design h1 */
+#sub-food-football-and-fiesta .bptitleholder h1, #sub-food-football-and-fiesta-a-diverse-nation .bptitleholder h1, #sub-food-football-and-fiesta-language .bptitleholder h1, #sub-food-football-and-fiesta-other-worlds .bptitleholder h1, #sub-food-football-and-fiesta-food-football-and-fiesta-bullfighting-and-identity .bptitleholder h1, #sub-food-football-and-fiesta-food-football-and-fiesta-fiesta-bringing-together-community .bptitleholder h1, #sub-food-football-and-fiesta-language-becoming-the-national-language .bttitleholder h1, #sub-food-football-and-fiesta-language-becoming-the-national-language .bptitleholder h1, #sub-food-football-and-fiesta-language-becoming-the-national-language .bptitleholder h1{
+	text-transform: uppercase;
+	color: #FFFFFF !important;
+	font-family: "comic sans ms" !important;
+	font-weight: bold;
+	padding: 0;
+	margin: 0;
+}
+
+/* Custom Page Header Design h1 */
+#sub-food-football-and-fiesta-fff .bptitleholder h1{
+	text-transform: uppercase;
+	color: #000000 !important;
+	font-family: "comic sans ms" !important;
+	font-weight: bold;
+	padding: 0;
+	margin: 0;	
+}
+
+#sub-food-football-and-fiesta-food-football-and-fiesta-real-versus-barca .bptitleholder h1{
+	text-transform: uppercase;
+	color: #000000 !important;
+	font-family: "comic sans ms" !important;
+	font-weight: bold;
+	padding: 0;
+	margin: 0;	
+}
+
+#sub-food-football-and-fiesta-language-becoming-the-national-language-castilian .bptitleholder h1{
+	text-transform: uppercase;
+	color: #000000 !important;
+	font-family: "comic sans ms" !important;
+	font-weight: bold;
+	padding: 0;
+	margin: 0;	
+}
+
+.bpcontentFoodFootballFiesta{
+	color: #000000;
+    font-family: "comic sans ms";
+    font-size: 18px;
+    font-weight: normal;
+    height: 356px;
+    left: 550px;
+    overflow-y: auto;
+    position: absolute;
+    text-align: left;
+    top: 266px;
+    width: 413px;
+}
+
+.navFoodFootballFiesta-content3{
+  position:absolute;
+  left:59px;
+  top:263px;
+  width:920px;
+  height:160px;
+  overflow-y:scroll;
+  text-align:left;
+  font-family:"comic sans ms";
+  font-size:18px;
+  font-weight:normal;
+  color:#000000;
+}
+
+
+/* Custom content */
+.navFoodFootballFiesta-FFF{
+	position: absolute;
+	left: 33px;
+	top: 256px;
+	width: 423px;
+	height: 379px;
+	overflow: auto;
+	text-align: left;
+	font-family: comic sans ms;
+	font-size: 18px;
+	font-weight: normal;
+	color: #FFFFFF;
+}
+.bpcontentFoodFootballFiesta-RealVersusBarca{
+	position: absolute;
+	left: 570px;
+	top: 74px;
+	width: 423px;
+	height: 379px;
+	overflow: auto;
+	text-align: left;
+	font-family: comic sans ms;
+	font-size: 18px;
+	font-weight: normal;
+	color: #FFFFFF;
+}
+
+.bpcontentFoodFootballFiesta-Yum{
+	position: absolute;
+	left: 570px;
+	top: 74px;
+	width: 423px;
+	height: 379px;
+	overflow: auto;
+	text-align: left;
+	font-family: comic sans ms;
+	font-size: 18px;
+	font-weight: normal;
+	color: #000000;
+}
+.bpcontentFoodFootballFiesta-Castilian{
+	position: absolute;
+	left: 50px;
+	top: 264px;
+	width: 423px;
+	height: 379px;
+	overflow: auto;
+	text-align: left;
+	font-family: comic sans ms;
+	font-size: 18px;
+	font-weight: normal;
+	color: #000000;
+}
+
+.fiesta_bringing_together_community{
+	position: absolute;
+	height: 143px;
+	width: 145px;
+	top: 519px;
+	left: 83px;
+}
+.bullfighting_and_identity{
+	position: absolute;
+	height: 143px;
+	width: 145px;
+	top: 519px;
+	left: 386px;
+}
+.real_versus_barca{
+	position: absolute;
+	height: 143px;
+	width: 145px;
+	top: 519px;
+	left: 602px;
+}
+.yum{
+	position: absolute;
+	height: 143px;
+	width: 145px;
+	top: 519px;
+	left: 859px;
+}

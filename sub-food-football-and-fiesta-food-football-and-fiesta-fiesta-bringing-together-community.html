@@ -1,0 +1,143 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-food-football-and-fiesta-food-football-and-fiesta-fiesta-bringing-together-community">
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>
+  <script src="js/slidebar_food_football_and_fiesta.js"></script>
+  <link rel="stylesheet" href="css/style_food_football_and_fiesta.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnFoodFootballFiesta"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnFoodFootballFiesta"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnFoodFootballFiesta"></div></div>
+  <div class="infobtnholder"><div class="infobtnFoodFootballFiesta"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnFoodFootballFiesta"></div></div>
+  <div class="menubtnholder"><div class="menubtnFoodFootballFiesta"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>Fiesta ... bringing together community</h1></div>
+  
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+		<a id="img1" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Language_and_Culture/Food_Football_And_Fiesta/Food_Football_And_Fiesta/Fiesta_Bringing_Together_Community/Castellers_Hi_Res.jpg', 'A castell (pronunced [k&#601;s&#712;te&#654;] in Catalan) is a human tower that is built traditionally in festivals at many locations around Catalonia. ');">click here</a>
+        <a id="img2" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Language_and_Culture/Food_Football_And_Fiesta/Food_Football_And_Fiesta/Fiesta_Bringing_Together_Community/Tomatoe_Festival_Hi_Res.jpg', 'La Tomatina (Spanish pronunciation: [la toma&#712;tina]) is a festival that is held in the Valencian town of Buol.  Participants throw tomatoes and get involved in this tomato fight purely for fun. Courtesy of Getty Images.');">click here</a>
+        <a id="img3" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Language_and_Culture/Food_Football_And_Fiesta/Food_Football_And_Fiesta/Fiesta_Bringing_Together_Community/Running_Of_The_Bulls_Hi_Res.jpg', 'Men running, bulls chasing and a large crowd watching on at Avenida Zaragosa.  This famous practice involves running in front of a small group of bulls (typically a dozen) that have been let loose on a course through the city streets.  Courtesy of Getty Images.');">click here</a>        
+		<div id="zoomwrapper">
+          <div id="pol1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/9-12/Language_and_Culture/Food_Football_And_Fiesta/Food_Football_And_Fiesta/Fiesta_Bringing_Together_Community/Castellers.png" alt="" />
+          </div>
+          <div id="pol2" class="pPiece" style="left:75px;top:290px;">
+             <img src="css/images/9-12/Language_and_Culture/Food_Football_And_Fiesta/Food_Football_And_Fiesta/Fiesta_Bringing_Together_Community/Tomatoe_Festival.png" alt="" />
+          </div>
+          <div id="pol3" class="pPiece" style="left:75px;top:290px;">
+             <img src="css/images/9-12/Language_and_Culture/Food_Football_And_Fiesta/Food_Football_And_Fiesta/Fiesta_Bringing_Together_Community/Running_Of_The_Bulls.png" alt="" />
+          </div>		  
+        </div><!--/zoomwrapper-->
+      </div>
+      
+      <div class="bpcontentFoodFootballFiesta">
+        <p>Every Spanish city, big or small, has its own festival.  There are hundreds!  Some are famous worldwide and attract many tourists.</p>
+
+			<p>In Buñol, people throw tomatoes at each other for hours; in Pamplona, they run for three very long minutes in front of six bulls charging at high speed; in Valencia, huge papier mâché sculptures are erected, all of which, except for the best one, are later burned in a big party; in Sabucedo they round up wild horses and cut their manes; in Catalonia people stand on the shoulders of others to form human towers up to 10 storeys high called castellets (little castles).  Imagine being the person at the top!</p>
+
+			<p>These festivities are more than mere fun (which they can be  though maybe not running in front of a charging bull!)  They also express belonging to a community over time, as you engage in festivities undertaken by your ancestor's centuries ago. For newcomers, being involved is a way to belong to the community.</p>
+      </div>
+       
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Language_and_Culture/bottomhomelc.png"></a></div>
+    </div> <!-- end content -->  
+  </div><!--/spacechar-->        
+  
+    <div class="micbtnholder"><div class="micbtnFoodFootballFiesta" id="playstopFiestaBringingTogetherCommunity"></div></div>
+    <div class="bFoodFootballFiesta"><div class="rwFoodFootballFiesta" id="FiestaBringingTogetherCommunityaudiobbtn"></div></div>
+    <div class="plFoodFootballFiesta"><div class="plpsFoodFootballFiesta" id="FiestaBringingTogetherCommunityaudioplbtn"></div></div>
+    <div class="fFoodFootballFiesta"><div class="fwFoodFootballFiesta" id="FiestaBringingTogetherCommunityaudiofbtn"></div></div>
+    <div id="actualaudio-FiestaBringingTogetherCommunity" style="visibility:hidden;"></div>
+  <!-- </div> -->
+  
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+ 
+	var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      $('div#pol2').css("z-index", 2);
+      $('div#pol1').css("z-index", 1);
+      $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
+      $('div#pol3 > img').css("-webkit-transform", "rotate(-3deg)");
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-FiestaBringingTogetherCommunity').html('<audio id="FiestaBringingTogetherCommunityaudio" controls preload onpause="playsFoodFootballFiesta()" onplay="pauseFoodFootballFiesta()"><source src="audio/Food_Football_And_Fiesta/Fiesta_Bringing_Together_Community.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-food-football-and-fiesta-food-football-and-fiesta-fiesta-bringing-together-community").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { bgsoundFoodFootballFiesta.pause(); bgsoundFoodFootballFiesta.currentTime = 0; mainaudiobg.play(); });
+    
+    $("#pol1").on('tap', function() {
+      $('#img1')[0].click();
+    });
+    $("#pol2").on('tap', function() {
+      $('#img2')[0].click();
+    }); 
+	$("#pol3").on('tap', function() {
+		$('#img3')[0].click();
+	}); 
+    function goBack() {
+      $.mobile.changePage("sub-food-football-and-fiesta-food-football-and-fiesta.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsFoodFootballFiesta() {
+         bgsoundFoodFootballFiesta.play();
+    }
+       
+    function pauseFoodFootballFiesta() {
+         bgsoundFoodFootballFiesta.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+	
+    $("#playstopFiestaBringingTogetherCommunity").on('tap', function() {
+      if(!playing) {
+        FiestaBringingTogetherCommunityaudio.play();
+        $('.micbtnFoodFootballFiesta').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        FiestaBringingTogetherCommunityaudio.pause(); FiestaBringingTogetherCommunityaudio.currentTime = 0;
+        $('.micbtnFoodFootballFiesta').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#FiestaBringingTogetherCommunityaudioplbtn").on('tap', function() {
+      if(!paused) {
+        FiestaBringingTogetherCommunityaudio.pause();
+        paused = true;
+      } else {
+        FiestaBringingTogetherCommunityaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#FiestaBringingTogetherCommunityaudiofbtn").on('tap', function() {
+      var ctime = FiestaBringingTogetherCommunityaudio.currentTime;
+      FiestaBringingTogetherCommunityaudio.currentTime = ctime + 10;
+    });
+    
+    $("#FiestaBringingTogetherCommunityaudiobbtn").on('tap', function() {
+      var ctime = FiestaBringingTogetherCommunityaudio.currentTime;
+      FiestaBringingTogetherCommunityaudio.currentTime = ctime - 10;
+    });
+    
+    $("#FiestaBringingTogetherCommunityaudiopsbtn").on('tap', function() {
+      FiestaBringingTogetherCommunityaudio.pause();
+      //$(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
+  </script>
+    <script src="js/threecardLogic.js"></script>  <!-- for card dragging effects -->
+</div> <!--//home-->
