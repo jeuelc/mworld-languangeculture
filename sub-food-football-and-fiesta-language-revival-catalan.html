@@ -1,0 +1,106 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-food-football-and-fiesta-language-revival-catalan">
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>
+  <script src="js/slidebar_food_football_and_fiesta.js"></script>
+  <link rel="stylesheet" href="css/style_food_football_and_fiesta.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnFoodFootballFiesta"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnFoodFootballFiesta"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnFoodFootballFiesta"></div></div>
+  <div class="infobtnholder"><div class="infobtnFoodFootballFiesta"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnFoodFootballFiesta"></div></div>
+  <div class="menubtnholder"><div class="menubtnFoodFootballFiesta"></div></div>
+  
+  <!-- <div class="bptitleholder" style="padding-top:14px;"><h1>Catalan</h1></div> -->
+  
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">    
+      <div class="bpcontentFoodFootballFiesta-Catalan">
+       <!--  <p>Catalan has become a language of the 21st century!  It was the third language to create articles in Wikipedia.  And in 2005, Catalan was the first language to have a non-national domain name (.cat), for webpages published in Catalan or on Catalan-related topics.</p> -->
+      </div>
+       
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Language_and_Culture/bottomhomelc.png"></a></div>
+    </div> <!-- end content -->  
+  </div><!--/spacechar-->        
+  
+    <div class="micbtnholder"><div class="micbtnFoodFootballFiesta" id="playstopCatalan"></div></div>
+    <div class="bFoodFootballFiesta"><div class="rwFoodFootballFiesta" id="Catalanaudiobbtn"></div></div>
+    <div class="plFoodFootballFiesta"><div class="plpsFoodFootballFiesta" id="Catalanaudioplbtn"></div></div>
+    <div class="fFoodFootballFiesta"><div class="fwFoodFootballFiesta" id="Catalanaudiofbtn"></div></div>
+    <div id="actualaudio-Catalan" style="visibility:hidden;"></div>
+  <!-- </div> -->
+  
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+ 
+	var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-Catalan').html('<audio id="Catalanaudio" controls preload onpause="playsFoodFootballFiesta()" onplay="pauseFoodFootballFiesta()"><source src="audio/Food_Football_And_Fiesta/Catalan.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-food-football-and-fiesta-language-revival-catalan").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { bgsoundFoodFootballFiesta.pause(); bgsoundFoodFootballFiesta.currentTime = 0; mainaudiobg.play(); });
+    function goBack() {
+      $.mobile.changePage("sub-food-football-and-fiesta-language.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsFoodFootballFiesta() {
+         bgsoundFoodFootballFiesta.play();
+    }
+       
+    function pauseFoodFootballFiesta() {
+         bgsoundFoodFootballFiesta.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+	
+    $("#playstopCatalan").on('tap', function() {
+      if(!playing) {
+        Catalanaudio.play();
+        $('.micbtnFoodFootballFiesta').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        Catalanaudio.pause(); Catalanaudio.currentTime = 0;
+        $('.micbtnFoodFootballFiesta').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#Catalanaudioplbtn").on('tap', function() {
+      if(!paused) {
+        Catalanaudio.pause();
+        paused = true;
+      } else {
+        Catalanaudio.play();
+        paused = false;
+      }
+	  
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#Catalanaudiofbtn").on('tap', function() {
+      var ctime = Catalanaudio.currentTime;
+      Catalanaudio.currentTime = ctime + 10;
+    });
+    
+    $("#Catalanaudiobbtn").on('tap', function() {
+      var ctime = Catalanaudio.currentTime;
+      Catalanaudio.currentTime = ctime - 10;
+    });
+    
+    $("#Catalanaudiopsbtn").on('tap', function() {
+      Catalanaudio.pause();
+      //$(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
+  </script>
+</div> <!--//home-->

@@ -1,5 +1,5 @@
 /* Main common basic pages */
-#sub-food-football-and-fiesta, #sub-food-football-and-fiesta-a-diverse-nation, #sub-food-football-and-fiesta-language, #sub-food-football-and-fiesta-other-worlds, #sub-food-football-and-fiesta-food-football-and-fiesta-bullfighting-and-identity, #sub-food-football-and-fiesta-food-football-and-fiesta-fiesta-bringing-together-community, #sub-food-football-and-fiesta-language-becoming-the-national-language, #sub-food-football-and-fiesta-language-becoming-the-national-language {
+#sub-food-football-and-fiesta, #sub-food-football-and-fiesta-a-diverse-nation, #sub-food-football-and-fiesta-language, #sub-food-football-and-fiesta-other-worlds, #sub-food-football-and-fiesta-food-football-and-fiesta-bullfighting-and-identity, #sub-food-football-and-fiesta-food-football-and-fiesta-fiesta-bringing-together-community, #sub-food-football-and-fiesta-language-becoming-the-national-language, #sub-food-football-and-fiesta-language-becoming-the-national-language, #sub-food-football-and-fiesta-language-revival {
   background:url('images/9-12/Language_and_Culture/Food_Football_And_Fiesta/Food_Football_And_Fiesta_BG.png') no-repeat;
   height:748px !important;
   overflow:hidden !important;
@@ -29,6 +29,19 @@
 
 #sub-food-football-and-fiesta-language-becoming-the-national-language-castilian{
   background:url('images/9-12/Language_and_Culture/Food_Football_And_Fiesta/Language/Becoming_The_National_Language/Castilian/Castilian_BG.png') no-repeat;
+  height:748px !important;
+  overflow:hidden !important;
+  width:1024px !important;
+}
+
+#sub-food-football-and-fiesta-language-language-and-identity{
+  background:url('images/9-12/Language_and_Culture/Food_Football_And_Fiesta/Language/Language_And_Identity/Language_And_Identity_BG.png') no-repeat;
+  height:748px !important;
+  overflow:hidden !important;
+  width:1024px !important;
+}
+#sub-food-football-and-fiesta-language-revival-catalan{
+  background:url('images/9-12/Language_and_Culture/Food_Football_And_Fiesta/Language/Revival/Catalan/Catalan_BG.png') no-repeat;
   height:748px !important;
   overflow:hidden !important;
   width:1024px !important;
@@ -156,7 +169,7 @@
 
 
 /* Common Header Div Design */
-#sub-food-football-and-fiesta .bptitleholder, #sub-food-football-and-fiesta-a-diverse-nation .bptitleholder, #sub-food-football-and-fiesta-language .bptitleholder, #sub-food-football-and-fiesta-other-worlds .bptitleholder, #sub-food-football-and-fiesta-food-football-and-fiesta-bullfighting-and-identity .bptitleholder, #sub-food-football-and-fiesta-food-football-and-fiesta-fiesta-bringing-together-community .bptitleholder, #sub-food-football-and-fiesta-language-becoming-the-national-language .bptitleholder, #sub-food-football-and-fiesta-language-becoming-the-national-language .bptitleholder, #sub-food-football-and-fiesta-language-becoming-the-national-language .bptitleholder{
+#sub-food-football-and-fiesta .bptitleholder, #sub-food-football-and-fiesta-a-diverse-nation .bptitleholder, #sub-food-football-and-fiesta-language .bptitleholder, #sub-food-football-and-fiesta-other-worlds .bptitleholder, #sub-food-football-and-fiesta-food-football-and-fiesta-bullfighting-and-identity .bptitleholder, #sub-food-football-and-fiesta-food-football-and-fiesta-fiesta-bringing-together-community .bptitleholder, #sub-food-football-and-fiesta-language-becoming-the-national-language .bptitleholder, #sub-food-football-and-fiesta-language-becoming-the-national-language .bptitleholder, #sub-food-football-and-fiesta-language-becoming-the-national-language .bptitleholder, #sub-food-football-and-fiesta-language-revival .bptitleholder{
 	width: 627px;
 	height: 68px;
 	text-align: center;
@@ -199,7 +212,7 @@
 }
 
 /* Common Header Design h1 */
-#sub-food-football-and-fiesta .bptitleholder h1, #sub-food-football-and-fiesta-a-diverse-nation .bptitleholder h1, #sub-food-football-and-fiesta-language .bptitleholder h1, #sub-food-football-and-fiesta-other-worlds .bptitleholder h1, #sub-food-football-and-fiesta-food-football-and-fiesta-bullfighting-and-identity .bptitleholder h1, #sub-food-football-and-fiesta-food-football-and-fiesta-fiesta-bringing-together-community .bptitleholder h1, #sub-food-football-and-fiesta-language-becoming-the-national-language .bttitleholder h1, #sub-food-football-and-fiesta-language-becoming-the-national-language .bptitleholder h1, #sub-food-football-and-fiesta-language-becoming-the-national-language .bptitleholder h1{
+#sub-food-football-and-fiesta .bptitleholder h1, #sub-food-football-and-fiesta-a-diverse-nation .bptitleholder h1, #sub-food-football-and-fiesta-language .bptitleholder h1, #sub-food-football-and-fiesta-other-worlds .bptitleholder h1, #sub-food-football-and-fiesta-food-football-and-fiesta-bullfighting-and-identity .bptitleholder h1, #sub-food-football-and-fiesta-food-football-and-fiesta-fiesta-bringing-together-community .bptitleholder h1, #sub-food-football-and-fiesta-language-becoming-the-national-language .bttitleholder h1, #sub-food-football-and-fiesta-language-becoming-the-national-language .bptitleholder h1, #sub-food-football-and-fiesta-language-becoming-the-national-language .bptitleholder h1, #sub-food-football-and-fiesta-language-revival .bptitleholder h1{
 	text-transform: uppercase;
 	color: #FFFFFF !important;
 	font-family: "comic sans ms" !important;
@@ -307,6 +320,33 @@
 	color: #000000;
 }
 .bpcontentFoodFootballFiesta-Castilian{
+	position: absolute;
+	left: 50px;
+	top: 264px;
+	width: 423px;
+	height: 379px;
+	overflow: auto;
+	text-align: left;
+	font-family: comic sans ms;
+	font-size: 18px;
+	font-weight: normal;
+	color: #000000;
+}
+
+.bpcontentFoodFootballFiesta-LanguageAndIdentity{
+	position: absolute;
+	left: 50px;
+	top: 264px;
+	width: 423px;
+	height: 379px;
+	overflow: auto;
+	text-align: left;
+	font-family: comic sans ms;
+	font-size: 18px;
+	font-weight: normal;
+	color: #000000;
+}
+.bpcontentFoodFootballFiesta-Catalan{
 	position: absolute;
 	left: 50px;
 	top: 264px;
