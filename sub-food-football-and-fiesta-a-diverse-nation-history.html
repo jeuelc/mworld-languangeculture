@@ -1,0 +1,146 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-food-football-and-fiesta-a-diverse-nation-history">
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>
+  <script src="js/slidebar_food_football_and_fiesta.js"></script>
+  <link rel="stylesheet" href="css/style_food_football_and_fiesta.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnFoodFootballFiesta"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnFoodFootballFiesta"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnFoodFootballFiesta"></div></div>
+  <div class="infobtnholder"><div class="infobtnFoodFootballFiesta"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnFoodFootballFiesta"></div></div>
+  <div class="menubtnholder"><div class="menubtnFoodFootballFiesta"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>History</h1></div>
+  
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+		<a id="img1" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Language_and_Culture/Food_Football_And_Fiesta/A_Diverse_Nation/History/Castilla_Lea3n_Hi_Res.png', 'Salamance, Spain');">click here</a>
+        <a id="img2" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Language_and_Culture/Food_Football_And_Fiesta/A_Diverse_Nation/History/Alhambra_Hi_Res.jpg', 'The Alhambra is a palace and fortress complex in the Granada, Spain.');">click here</a>   		
+		<div id="zoomwrapper">
+          <div id="pol1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/9-12/Language_and_Culture/Food_Football_And_Fiesta/A_Diverse_Nation/History/Castilla_Lea3n.png" alt="" />
+          </div>
+          <div id="pol2" class="pPiece" style="left:75px;top:290px;">
+             <img src="css/images/9-12/Language_and_Culture/Food_Football_And_Fiesta/A_Diverse_Nation/History/Alhambra.png" alt="" />
+          </div>
+        </div><!--/zoomwrapper-->
+      </div>
+      
+      <div class="bpcontentFoodFootballFiesta">
+        <p>Because of where it sits on the map, Spain is like a bridge between Europe and Africa, and many peoples and cultures have left their footprint behind.</p>
+
+		<p>About 30,000 years ago, the Iberians lived there (that's where the name 'Iberian Peninsula' comes from) as well as the Celts from the north.  
+		However, the Romans were the first to think of Spain as a single territory.  They called it 'Hispania'  The Romans brought the Latin language, which over time became three languages  Spanish, Galician and Catalan.  They're all spoken in Spain today.</p>
+
+		<p>When the Roman Empire collapsed, Hispania was invaded by different peoples from central Europe, and most of these didn't see Spain as one nation.  Then in 8CE Spain was conquered by Muslims from North Africa and was known as 'Al-Andalus'.  For 700 years Muslims, Jews and Christians lived in Spain.</p>
+
+		<p>1492 changed all that: the Jews and Muslims were expelled and <a href="#christopher_columbus" data-rel="popup">Christopher Columbus</a> "discovered" America for the Spanish kings.  For many historians, Spain was born that year.</p>
+      </div>
+       
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Language_and_Culture/bottomhomelc.png"></a></div>
+    </div> <!-- end content -->  
+  </div><!--/spacechar-->        
+	<!------------------------------------- Definition box ----------------------------------- -->
+	<div data-role="popup" id="christopher_columbus" data-position-to="window" data-overlay-theme="a" style="text-align:center;">
+		<div id="node-pop">
+			<p>Christopher Columbus</p>
+			<p>Christopher Columbus (1451-1506) was a navigator and explorer from Genoa (in Italy) who believed that it was possible to reach East Asia by travelling west. He convinced Queen Isabella and King Ferdinand to finance his journey, but, instead of finding India, he landed in the Caribbean and later the Americas, which was unknown to Europeans at that time.</p>
+		</div>
+    </div>
+	<!---------------------------------------------------------------------------------------- -->
+    <div class="micbtnholder"><div class="micbtnFoodFootballFiesta" id="playstopHistory"></div></div>
+    <div class="bFoodFootballFiesta"><div class="rwFoodFootballFiesta" id="Historyaudiobbtn"></div></div>
+    <div class="plFoodFootballFiesta"><div class="plpsFoodFootballFiesta" id="Historyaudioplbtn"></div></div>
+    <div class="fFoodFootballFiesta"><div class="fwFoodFootballFiesta" id="Historyaudiofbtn"></div></div>
+    <div id="actualaudio-History" style="visibility:hidden;"></div>
+  <!-- </div> -->
+  
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+ 
+	var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      $('div#pol1').css("z-index", 2);
+      $('div#pol2').css("z-index", 1);
+      $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-History').html('<audio id="Historyaudio" controls preload onpause="playsFoodFootballFiesta()" onplay="pauseFoodFootballFiesta()"><source src="audio/Food_Football_And_Fiesta/History.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-food-football-and-fiesta-a-diverse-nation-history").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { bgsoundFoodFootballFiesta.pause(); bgsoundFoodFootballFiesta.currentTime = 0; mainaudiobg.play(); });
+    
+    $("#pol1").on('tap', function() {
+       $('#img1')[0].click();
+    });
+    $("#pol2").on('tap', function() {
+      $('#img2')[0].click();
+    }); 	
+    function goBack() {
+      $.mobile.changePage("sub-food-football-and-fiesta-a-diverse-nation.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsFoodFootballFiesta() {
+         bgsoundFoodFootballFiesta.play();
+    }
+       
+    function pauseFoodFootballFiesta() {
+         bgsoundFoodFootballFiesta.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+	
+    $("#playstopHistory").on('tap', function() {
+      if(!playing) {
+        Historyaudio.play();
+        $('.micbtnFoodFootballFiesta').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        Historyaudio.pause(); Historyaudio.currentTime = 0;
+        $('.micbtnFoodFootballFiesta').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#Historyaudioplbtn").on('tap', function() {
+      if(!paused) {
+        Historyaudio.pause();
+        paused = true;
+      } else {
+        Historyaudio.play();
+        paused = false;
+      }
+	  
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#Historyaudiofbtn").on('tap', function() {
+      var ctime = Historyaudio.currentTime;
+      Historyaudio.currentTime = ctime + 10;
+    });
+    
+    $("#Historyaudiobbtn").on('tap', function() {
+      var ctime = Historyaudio.currentTime;
+      Historyaudio.currentTime = ctime - 10;
+    });
+    
+    $("#Historyaudiopsbtn").on('tap', function() {
+      Historyaudio.pause();
+      //$(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
+  </script>
+    <script src="js/twocardLogic.js"></script>  <!-- for card dragging effects -->
+</div> <!--//home-->

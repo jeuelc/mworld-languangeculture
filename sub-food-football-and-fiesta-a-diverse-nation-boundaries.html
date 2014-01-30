@@ -1,0 +1,152 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-food-football-and-fiesta-a-diverse-nation-boundaries">
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>
+  <script src="js/slidebar_food_football_and_fiesta.js"></script>
+  <link rel="stylesheet" href="css/style_food_football_and_fiesta.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnFoodFootballFiesta"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnFoodFootballFiesta"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnFoodFootballFiesta"></div></div>
+  <div class="infobtnholder"><div class="infobtnFoodFootballFiesta"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnFoodFootballFiesta"></div></div>
+  <div class="menubtnholder"><div class="menubtnFoodFootballFiesta"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>Boundaries</h1></div>
+  
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+		<a id="img1" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Language_and_Culture/Food_Football_And_Fiesta/A_Diverse_Nation/Boundaries/Cliff_Houses_Hi_Res.jpg', 'Houses built on the cliffs overlooking the Mediterranean Sea in the south of Spain');">click here</a>
+        <a id="img2" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Language_and_Culture/Food_Football_And_Fiesta/A_Diverse_Nation/Boundaries/The_Spanish_Pyrenees_Hi_Res.jpg', 'The mountain range, the Spanish Pyrenees, is Spain\'s border with France in the north-east.');">click here</a>   
+        <a id="img3" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Language_and_Culture/Food_Football_And_Fiesta/A_Diverse_Nation/Boundaries/Map_Of_Western_Europe_Hi_Res.jpg', 'This western European map shows Spain\'s location on the Iberian Peninsula');">click here</a> 		
+		<div id="zoomwrapper">
+          <div id="pol1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/9-12/Language_and_Culture/Food_Football_And_Fiesta/A_Diverse_Nation/Boundaries/Gibraltar.png" alt="" />
+          </div>
+          <div id="pol2" class="pPiece" style="left:75px;top:290px;">
+             <img src="css/images/9-12/Language_and_Culture/Food_Football_And_Fiesta/A_Diverse_Nation/Boundaries/Cliff_Houses.png" alt="" />
+          </div>
+          <div id="pol3" class="pPiece" style="left:75px;top:290px;">
+             <img src="css/images/9-12/Language_and_Culture/Food_Football_And_Fiesta/A_Diverse_Nation/Boundaries/The_Spanish_Pyrenees.png" alt="" />
+          </div>
+          <div id="pol4" class="pPiece" style="left:75px;top:290px;">
+             <img src="css/images/9-12/Language_and_Culture/Food_Football_And_Fiesta/A_Diverse_Nation/Boundaries/Map_Of_Western_Europe.png" alt="" />
+          </div>
+        </div><!--/zoomwrapper-->
+      </div>
+      
+      <div class="bpcontentFoodFootballFiesta">
+        <p>Nations have borders.  Borders mark where citizens of one country have the right to live, vote in elections, pay taxes, are schooled in a particular way, etc.  Nations watch their borders, allowing or stopping entry by people who arent citizens.  Usually to cross from one country to another you need to show your passport or an identity card.</p>
+
+		<p>Spain is in south-western Europe on the Iberian Peninsula.  The Pyrenees mountain range is its border with France in the north-east and on the west is Portugal.  To the south is the Mediterranean Sea and to the north is the Atlantic Ocean.  It wasnt always like this.  For centuries part of southern France belonged to Spain, but the Spaniards were forced to give it up after losing a war in 1659. Spain also consists of the Balearic Islands in the Mediterranean and the Canary Islands, off the coast of west Africa  over 2,000km from mainland Spain!</p>
+      </div>
+       
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Language_and_Culture/bottomhomelc.png"></a></div>
+    </div> <!-- end content -->  
+  </div><!--/spacechar-->        
+  
+    <div class="micbtnholder"><div class="micbtnFoodFootballFiesta" id="playstopBoundaries"></div></div>
+    <div class="bFoodFootballFiesta"><div class="rwFoodFootballFiesta" id="Boundariesaudiobbtn"></div></div>
+    <div class="plFoodFootballFiesta"><div class="plpsFoodFootballFiesta" id="Boundariesaudioplbtn"></div></div>
+    <div class="fFoodFootballFiesta"><div class="fwFoodFootballFiesta" id="Boundariesaudiofbtn"></div></div>
+    <div id="actualaudio-Boundaries" style="visibility:hidden;"></div>
+  <!-- </div> -->
+  
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+ 
+	var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      $('div#pol1').css("z-index", 3);
+      $('div#pol2').css("z-index", 2);
+      $('div#pol3').css("z-index", 1);
+      $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('#watchLavaFlowholder').css({"visibility":"hidden", "z-index":-10});		
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
+      $('div#pol3 > img').css("-webkit-transform", "rotate(-3deg)");
+      $('#watchMtTungurahuaholder').css({"visibility":"hidden", "z-index":-10});		
+      $('div#pol4 > img').css("-webkit-transform", "rotate(-3deg)");
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-Boundaries').html('<audio id="Boundariesaudio" controls preload onpause="playsFoodFootballFiesta()" onplay="pauseFoodFootballFiesta()"><source src="audio/Food_Football_And_Fiesta/Boundaries.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-food-football-and-fiesta-a-diverse-nation-boundaries").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { bgsoundFoodFootballFiesta.pause(); bgsoundFoodFootballFiesta.currentTime = 0; mainaudiobg.play(); });
+    
+    $("#pol1").on('tap', function() {
+      $.mobile.changePage('sub-food-football-and-fiesta-a-diverse-nation-boundaries-gibraltar-versus-ceuta-and-melilla.html',{transition:"slide"});
+    });
+    $("#pol2").on('tap', function() {
+      $('#img1')[0].click();
+    }); 
+	$("#pol3").on('tap', function() {
+		$('#img2')[0].click();
+	}); 
+	$("#pol4").on('tap', function() {
+		$('#img3')[0].click();
+	}); 	
+    function goBack() {
+      $.mobile.changePage("sub-food-football-and-fiesta-a-diverse-nation.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsFoodFootballFiesta() {
+         bgsoundFoodFootballFiesta.play();
+    }
+       
+    function pauseFoodFootballFiesta() {
+         bgsoundFoodFootballFiesta.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+	
+    $("#playstopBoundaries").on('tap', function() {
+      if(!playing) {
+        Boundariesaudio.play();
+        $('.micbtnFoodFootballFiesta').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        Boundariesaudio.pause(); Boundariesaudio.currentTime = 0;
+        $('.micbtnFoodFootballFiesta').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#Boundariesaudioplbtn").on('tap', function() {
+      if(!paused) {
+        Boundariesaudio.pause();
+        paused = true;
+      } else {
+        Boundariesaudio.play();
+        paused = false;
+      }
+	  
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#Boundariesaudiofbtn").on('tap', function() {
+      var ctime = Boundariesaudio.currentTime;
+      Boundariesaudio.currentTime = ctime + 10;
+    });
+    
+    $("#Boundariesaudiobbtn").on('tap', function() {
+      var ctime = Boundariesaudio.currentTime;
+      Boundariesaudio.currentTime = ctime - 10;
+    });
+    
+    $("#Boundariesaudiopsbtn").on('tap', function() {
+      Boundariesaudio.pause();
+      //$(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
+  </script>
+    <script src="js/fourcardLogic.js"></script>  <!-- for card dragging effects -->
+</div> <!--//home-->

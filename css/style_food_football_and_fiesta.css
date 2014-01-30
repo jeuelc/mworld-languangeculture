@@ -1,5 +1,5 @@
 /* Main common basic pages */
-#sub-food-football-and-fiesta, #sub-food-football-and-fiesta-a-diverse-nation, #sub-food-football-and-fiesta-language, #sub-food-football-and-fiesta-other-worlds, #sub-food-football-and-fiesta-food-football-and-fiesta-bullfighting-and-identity, #sub-food-football-and-fiesta-food-football-and-fiesta-fiesta-bringing-together-community, #sub-food-football-and-fiesta-language-becoming-the-national-language, #sub-food-football-and-fiesta-language-becoming-the-national-language, #sub-food-football-and-fiesta-language-revival {
+#sub-food-football-and-fiesta, #sub-food-football-and-fiesta-a-diverse-nation, #sub-food-football-and-fiesta-language, #sub-food-football-and-fiesta-other-worlds, #sub-food-football-and-fiesta-food-football-and-fiesta-bullfighting-and-identity, #sub-food-football-and-fiesta-food-football-and-fiesta-fiesta-bringing-together-community, #sub-food-football-and-fiesta-language-becoming-the-national-language, #sub-food-football-and-fiesta-language-becoming-the-national-language, #sub-food-football-and-fiesta-language-revival, #sub-food-football-and-fiesta-a-diverse-nation-boundaries, #sub-food-football-and-fiesta-a-diverse-nation-history , #sub-food-football-and-fiesta-a-diverse-nation-regions, #sub-food-football-and-fiesta-other-worlds-cuba, #sub-food-football-and-fiesta-other-worlds-india{
   background:url('images/9-12/Language_and_Culture/Food_Football_And_Fiesta/Food_Football_And_Fiesta_BG.png') no-repeat;
   height:748px !important;
   overflow:hidden !important;
@@ -42,6 +42,13 @@
 }
 #sub-food-football-and-fiesta-language-revival-catalan{
   background:url('images/9-12/Language_and_Culture/Food_Football_And_Fiesta/Language/Revival/Catalan/Catalan_BG.png') no-repeat;
+  height:748px !important;
+  overflow:hidden !important;
+  width:1024px !important;
+}
+
+#sub-food-football-and-fiesta-other-worlds-a-common-humanity{
+  background:url('images/9-12/Language_and_Culture/Food_Football_And_Fiesta/Other_Worlds/A_Common_Humanity/A_Common_Humanity_BG.png') no-repeat;
   height:748px !important;
   overflow:hidden !important;
   width:1024px !important;
@@ -169,7 +176,7 @@
 
 
 /* Common Header Div Design */
-#sub-food-football-and-fiesta .bptitleholder, #sub-food-football-and-fiesta-a-diverse-nation .bptitleholder, #sub-food-football-and-fiesta-language .bptitleholder, #sub-food-football-and-fiesta-other-worlds .bptitleholder, #sub-food-football-and-fiesta-food-football-and-fiesta-bullfighting-and-identity .bptitleholder, #sub-food-football-and-fiesta-food-football-and-fiesta-fiesta-bringing-together-community .bptitleholder, #sub-food-football-and-fiesta-language-becoming-the-national-language .bptitleholder, #sub-food-football-and-fiesta-language-becoming-the-national-language .bptitleholder, #sub-food-football-and-fiesta-language-becoming-the-national-language .bptitleholder, #sub-food-football-and-fiesta-language-revival .bptitleholder{
+#sub-food-football-and-fiesta .bptitleholder, #sub-food-football-and-fiesta-a-diverse-nation .bptitleholder, #sub-food-football-and-fiesta-language .bptitleholder, #sub-food-football-and-fiesta-other-worlds .bptitleholder, #sub-food-football-and-fiesta-food-football-and-fiesta-bullfighting-and-identity .bptitleholder, #sub-food-football-and-fiesta-food-football-and-fiesta-fiesta-bringing-together-community .bptitleholder, #sub-food-football-and-fiesta-language-becoming-the-national-language .bptitleholder, #sub-food-football-and-fiesta-language-becoming-the-national-language .bptitleholder, #sub-food-football-and-fiesta-language-becoming-the-national-language .bptitleholder, #sub-food-football-and-fiesta-language-revival .bptitleholder, #sub-food-football-and-fiesta-a-diverse-nation-boundaries .bptitleholder, #sub-food-football-and-fiesta-a-diverse-nation-history .bptitleholder, #sub-food-football-and-fiesta-a-diverse-nation-regions .bptitleholder, #sub-food-football-and-fiesta-other-worlds-a-common-humanity .bptitleholder,  #sub-food-football-and-fiesta-other-worlds-cuba  .bptitleholder, #sub-food-football-and-fiesta-other-worlds-india .bptitleholder{
 	width: 627px;
 	height: 68px;
 	text-align: center;
@@ -212,7 +219,7 @@
 }
 
 /* Common Header Design h1 */
-#sub-food-football-and-fiesta .bptitleholder h1, #sub-food-football-and-fiesta-a-diverse-nation .bptitleholder h1, #sub-food-football-and-fiesta-language .bptitleholder h1, #sub-food-football-and-fiesta-other-worlds .bptitleholder h1, #sub-food-football-and-fiesta-food-football-and-fiesta-bullfighting-and-identity .bptitleholder h1, #sub-food-football-and-fiesta-food-football-and-fiesta-fiesta-bringing-together-community .bptitleholder h1, #sub-food-football-and-fiesta-language-becoming-the-national-language .bttitleholder h1, #sub-food-football-and-fiesta-language-becoming-the-national-language .bptitleholder h1, #sub-food-football-and-fiesta-language-becoming-the-national-language .bptitleholder h1, #sub-food-football-and-fiesta-language-revival .bptitleholder h1{
+#sub-food-football-and-fiesta .bptitleholder h1, #sub-food-football-and-fiesta-a-diverse-nation .bptitleholder h1, #sub-food-football-and-fiesta-language .bptitleholder h1, #sub-food-football-and-fiesta-other-worlds .bptitleholder h1, #sub-food-football-and-fiesta-food-football-and-fiesta-bullfighting-and-identity .bptitleholder h1, #sub-food-football-and-fiesta-food-football-and-fiesta-fiesta-bringing-together-community .bptitleholder h1, #sub-food-football-and-fiesta-language-becoming-the-national-language .bttitleholder h1, #sub-food-football-and-fiesta-language-becoming-the-national-language .bptitleholder h1, #sub-food-football-and-fiesta-language-becoming-the-national-language .bptitleholder h1, #sub-food-football-and-fiesta-language-revival .bptitleholder h1,  #sub-food-football-and-fiesta-a-diverse-nation-boundaries .bptitleholder h1, #sub-food-football-and-fiesta-a-diverse-nation-history .bptitleholder h1, #sub-food-football-and-fiesta-a-diverse-nation-regions .bptitleholder h1, #sub-food-football-and-fiesta-other-worlds-a-common-humanity .bptitleholder h1, #sub-food-football-and-fiesta-other-worlds-cuba  .bptitleholder h1, #sub-food-football-and-fiesta-other-worlds-india .bptitleholder h1{
 	text-transform: uppercase;
 	color: #FFFFFF !important;
 	font-family: "comic sans ms" !important;
@@ -358,6 +365,20 @@
 	font-size: 18px;
 	font-weight: normal;
 	color: #000000;
+}
+
+.bpcontentFoodFootballFiesta-ACommonHumanity{
+	position: absolute;
+	left: 549px;
+	top: 75px;
+	width: 423px;
+	height: 379px;
+	overflow: auto;
+	text-align: left;
+	font-family: comic sans ms;
+	font-size: 18px;
+	font-weight: normal;
+	color: #FFFFFF;
 }
 
 .fiesta_bringing_together_community{
