@@ -30,6 +30,9 @@
           </div>
           <div id="pol3" class="pPiece" style="left:75px;top:290px;">
              <img src="css/images/9-12/Language_and_Culture/Food_Football_And_Fiesta/A_Diverse_Nation/Regions/Map_Of_Portugal.png" alt="" />
+          </div>
+          <div id="pol4" class="pPiece" style="left:75px;top:290px;">
+             <img src="css/images/9-12/Language_and_Culture/Food_Football_And_Fiesta/A_Diverse_Nation/Regions/Can_Regions_Be_Nations.png" alt="" />
           </div>		  
         </div><!--/zoomwrapper-->
       </div>
@@ -62,11 +65,13 @@
     (function() {
       playing = false;
       paused = true;
+      $('div#pol1').css("z-index", 3);
       $('div#pol2').css("z-index", 2);
-      $('div#pol1').css("z-index", 1);
-      $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#pol3').css("z-index", 1);
+      $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");	
       $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
-      $('div#pol3 > img').css("-webkit-transform", "rotate(-3deg)");
+      $('div#pol3 > img').css("-webkit-transform", "rotate(-3deg)");		
+      $('div#pol4 > img').css("-webkit-transform", "rotate(-3deg)");
       if(sound.canPlayType('audio/mpeg')) {
         $('#actualaudio-Regions').html('<audio id="Regionsaudio" controls preload onpause="playsFoodFootballFiesta()" onplay="pauseFoodFootballFiesta()"><source src="audio/Food_Football_And_Fiesta/Regions.mp3" type="audio/mpeg"></audio>');
       } 
@@ -85,6 +90,9 @@
     $("#pol3").on('tap', function() {
       $('#img3')[0].click();
     }); 	
+	$('#pol4').on('tap',function(){
+		$.mobile.changePage('sub-food-football-and-fiesta-a-diverse-nation-regions-can-regions-be-nations.html',{transition:"slide"});
+	});
     function goBack() {
       $.mobile.changePage("sub-food-football-and-fiesta-a-diverse-nation.html", {transition: "slide", reverse: true });
     }
@@ -140,5 +148,5 @@
       //$(".audiopanel").css({"backgroundPosition":"0px 0px"});
     });
   </script>
-    <script src="js/threecardLogic.js"></script>  <!-- for card dragging effects -->
+    <script src="js/fourcardLogic.js"></script>  <!-- for card dragging effects -->
 </div> <!--//home-->
