@@ -11,11 +11,23 @@
   <div class="credsbtnholder"><div class="credsbtnSlang"></div></div>
   <div class="menubtnholder"><div class="menubtnSlang"></div></div>
   
+  <div class="resting_peasant" id="peasant_bx"></div>
+  <div class="resting_wighead" id="wighead_bx"></div>
+  <div class="resting_soldier" id="soldier_bx"></div>  
+  <div class="resting_hipster" id="hipster_bx"></div>
+  <div class="resting_girl" id="girl_bx"></div>
+  
+  <div class="peasant_bubble bubble1" id="peasantBubble_bx"><div class="peasantWordText"></div></div>
+  <div class="wighead_bubble bubble1" id="wigheadBubble_bx"><div class="wigheadWordText"></div></div>
+  <div class="soldier_bubble bubble1" id="soldierBubble_bx"><div class="soldierWordText"></div></div>
+  <div class="hipster_bubble bubble2" id="hipsterBubble_bx"><div class="hipsterWordText"></div></div>
+  <div class="girl_bubble bubble2" id="girlBubble_bx"><div class="girlWordText"></div></div>
+  
   <div class="bptitleholder" style="padding-top:14px;"></div>
   <div data-role="content" class="kidzcontent">
 	<div class="navSlang-thelatestandgreatest">
-		<p>There have been many words used to express contentment over the centuries of recorded English language.  Touch the characters to hear them speak:</p>
-
+		<p>There have been many words used to express contentment over the centuries of recorded English language.</p>
+		<p>Touch the characters to hear them speak:</p>
 		<p>How many of these do you still hear around you?</p>
 	</div>
 
@@ -34,11 +46,142 @@
     <div class="fSlang"><div class="fwSlang" id="TheLatestAndGreatestaudiofbtn"></div></div>
     <div id="actualaudio-TheLatestAndGreatest" style="visibility:hidden;"></div>
   <!--</div>-->
+  
+  <!-- ------------------------ Peasant Audios --------------------------  -->
+  <div class="mainAudios_wrapper">
+	  <audio id="peasantaudio_0" controls preload><source src="audio/Slang/Characters_Audios/Peasant_Rum.mp3" type="audio/mpeg"></audio>
+	  <audio id="peasantaudio_1" controls preload><source src="audio/Slang/Characters_Audios/Peasant_Bene.mp3" type="audio/mpeg"></audio>
+	  
+	  <audio id="wigheadaudio_0" controls preload><source src="audio/Slang/Characters_Audios/Wighead_Hipster.mp3" type="audio/mpeg"></audio>
+	  <audio id="wigheadaudio_1" controls preload><source src="audio/Slang/Characters_Audios/Wighead_Tip_Top.mp3" type="audio/mpeg"></audio>
+	  
+	  <audio id="soldieraudio_0" controls preload><source src="audio/Slang/Characters_Audios/Soldier_A1.mp3" type="audio/mpeg"></audio>
+	  <audio id="soldieraudio_1" controls preload><source src="audio/Slang/Characters_Audios/Soldier_Firt_Rate.mp3" type="audio/mpeg"></audio>
+	  <audio id="soldieraudio_2" controls preload><source src="audio/Slang/Characters_Audios/Soldier_Grand.mp3" type="audio/mpeg"></audio>
+	  <audio id="soldieraudio_3" controls preload><source src="audio/Slang/Characters_Audios/Soldier_Hotsy_Tosty.mp3" type="audio/mpeg"></audio>
+	  <audio id="soldieraudio_4" controls preload><source src="audio/Slang/Characters_Audios/Soldier_Jolly_Good.mp3" type="audio/mpeg"></audio>
+	  <audio id="soldieraudio_5" controls preload><source src="audio/Slang/Characters_Audios/Soldier_Super.mp3" type="audio/mpeg"></audio>
+	  <audio id="soldieraudio_6" controls preload><source src="audio/Slang/Characters_Audios/Soldier_Topping.mp3" type="audio/mpeg"></audio>
+	  
+	  <audio id="hipsteraudio_0" controls preload><source src="audio/Slang/Characters_Audios/Hipster_Fantabulous.mp3" type="audio/mpeg"></audio>
+	  <audio id="hipsteraudio_1" controls preload><source src="audio/Slang/Characters_Audios/Hipster_Far_Out.mp3" type="audio/mpeg"></audio>
+	  <audio id="hipsteraudio_2" controls preload><source src="audio/Slang/Characters_Audios/Hipster_Phat.mp3" type="audio/mpeg"></audio>
+	  <audio id="hipsteraudio_3" controls preload><source src="audio/Slang/Characters_Audios/Hipster_Rad.mp3" type="audio/mpeg"></audio>
+	  <audio id="hipsteraudio_4" controls preload><source src="audio/Slang/Characters_Audios/Hipster_Untold.mp3" type="audio/mpeg"></audio>
+	  
+	  <audio id="girlaudio_0" controls preload><source src="audio/Slang/Characters_Audios/Girl_Awesome.mp3" type="audio/mpeg"></audio>
+	  <audio id="girlaudio_1" controls preload><source src="audio/Slang/Characters_Audios/Girl_Cool.mp3" type="audio/mpeg"></audio>
+	  <audio id="girlaudio_2" controls preload><source src="audio/Slang/Characters_Audios/Girl_Grouse.mp3" type="audio/mpeg"></audio>
+	  <audio id="girlaudio_3" controls preload><source src="audio/Slang/Characters_Audios/Girl_Ripper.mp3" type="audio/mpeg"></audio>
+	  <audio id="girlaudio_4" controls preload><source src="audio/Slang/Characters_Audios/Girl_Unreal.mp3" type="audio/mpeg"></audio>
+  </div>
+  <!-- ------------------------------------------------------------------- -->
+  
   <script>
   // sound setup is in home.html and index.js
     sound = new Audio(); // 'sound' is now an audio object
     var playing;
     var paused;
+	peasantCounter	=	0;
+	wigheadCounter	=	0;
+	soldierCounter	=	0;
+	hipsterCounter	=	0;
+	girlCounter		=	0;
+	
+	peasantTalkingAnim		=	0;
+	wigheadTalkingAnim		=	0;
+	soldierTalkingAnim		=	0;
+	hipsterTalkingAnim		=	0;
+	girlTalkingAnim			=	0;
+	
+	audioListArr		=	new Array();
+	
+	peasantWordsArray	=	new Array(2);
+	wigheadWordsArray	=	new Array(2);
+	soldierWordsArray	=	new Array(7);
+	hipsterWordsArray	=	new Array(5);
+	girlWordsArray		=	new Array(5);
+	
+	pesantAudioArray	=	new Array(2);
+	wigheadAudioArray	=	new Array(2);
+	soldierAudioArray	=	new Array(7);
+	hipsterAudioArray	=	new Array(5);
+	girlAudioArray	=	new Array(5);
+	
+	function initializeVars(){
+		/* --------- Peasant Audios ---------------- */
+		peasantWordsArray[0]	=	'Rum';				peasantWordsArray[1]	=	'Bean';		
+		
+		pesantAudioArray[0]		=	peasantaudio_0;		pesantAudioArray[1]	=	peasantaudio_1;
+		/* ----------------------------------------- */
+		
+		/* ------------ Wighead Audios ------------- */
+		wigheadWordsArray[0]	=	'Hipster';			wigheadWordsArray[1]	=	'Tip Top'; 
+		
+		wigheadAudioArray[0]	=	wigheadaudio_0; 	wigheadAudioArray[1]	=	wigheadaudio_1;
+		/* ----------------------------------------- */
+		
+		/* ------------ Soldier Audios ------------- */
+		soldierWordsArray[0]	=	'A1';			soldierWordsArray[1]	=	'Firt Rate'; 
+		soldierWordsArray[2]	=	'Grand'; 		soldierWordsArray[3]	=	'Hosty Tosty';
+		soldierWordsArray[4]	=	'Jolly Good'; 	soldierWordsArray[5]	=	'Super';
+		soldierWordsArray[6]	=	'Topping';
+		
+		soldierAudioArray[0]	=	soldieraudio_0; soldierAudioArray[1]	=	soldieraudio_1;
+		soldierAudioArray[2]	=	soldieraudio_2; soldierAudioArray[3]	=	soldieraudio_3;
+		soldierAudioArray[4]	=	soldieraudio_4; soldierAudioArray[5]	=	soldieraudio_5;
+		soldierAudioArray[6]	=	soldieraudio_6;
+		/* ----------------------------------------- */
+		
+		/* ------------ Hipster Audios ------------- */
+		hipsterWordsArray[0]	=	'Fantabulous';			hipsterWordsArray[1]	=	'Far Out'; 
+		hipsterWordsArray[2]	=	'Phat'; 		hipsterWordsArray[3]	=	'Rad';
+		hipsterWordsArray[4]	=	'Untold';
+		
+		hipsterAudioArray[0]	=	hipsteraudio_0; hipsterAudioArray[1]	=	hipsteraudio_1;
+		hipsterAudioArray[2]	=	hipsteraudio_2; hipsterAudioArray[3]	=	hipsteraudio_3;
+		hipsterAudioArray[4]	=	hipsteraudio_4;
+		/* ----------------------------------------- */
+		
+		/* ------------ Girl Audios ------------- */
+		/* girlWordsArray	=	['Awesome','Cool','Grouse']; */
+		girlWordsArray[0]	=	'Awesome';		girlWordsArray[1]	=	'Cool'; 
+		girlWordsArray[2]	=	'Grouse'; 		girlWordsArray[3]	=	'Ripper';
+		girlWordsArray[4]	=	'Unreal';
+		
+		girlAudioArray[0]	=	girlaudio_0; 	girlAudioArray[1]	=	girlaudio_1;
+		girlAudioArray[2]	=	girlaudio_2; 	girlAudioArray[3]	=	girlaudio_3;
+		girlAudioArray[4]	=	girlaudio_4;
+		/* ----------------------------------------- */
+		
+		audioListArr[0]			=	bgsoundSlang;
+		audioListArr[1]			=	peasantaudio_0;
+		audioListArr[2]			=	peasantaudio_1;
+		audioListArr[3]			=	wigheadaudio_0;
+		audioListArr[4]			=	wigheadaudio_1;
+		audioListArr[5]			=	soldieraudio_0;
+		audioListArr[6]			=	soldieraudio_1;
+		audioListArr[7]			=	soldieraudio_2;
+		audioListArr[8]			=	soldieraudio_3;
+		audioListArr[9]			=	soldieraudio_4;
+		audioListArr[10]		=	soldieraudio_5;
+		audioListArr[11]		=	soldieraudio_6;
+		audioListArr[12]		=	hipsteraudio_0;
+		audioListArr[13]		=	hipsteraudio_1;
+		audioListArr[14]		=	hipsteraudio_2;
+		audioListArr[15]		=	hipsteraudio_3;
+		audioListArr[16]		=	hipsteraudio_4;
+		audioListArr[17]		=	girlaudio_0;
+		audioListArr[18]		=	girlaudio_1;
+		audioListArr[19]		=	girlaudio_2;
+		audioListArr[20]		=	girlaudio_3;
+		audioListArr[21]		=	girlaudio_4;
+	}
+	
+	$(document).ready(function(){
+		initializeVars();
+	});
+	
     (function() {
       playing = false;
       paused = true;
@@ -48,14 +191,178 @@
     
       $("#sub-slang-the-slang-life-cycle-the-latest-and-greatest").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
     })();
-    
-	
+    	
     $('.metaphor-bx').on('tap', function() {
       $.mobile.changePage("sub-slang-features-of-slang-the-poetry-of-slang.html", {transition: "slide"});
     });
 
     $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundSlang.pause(); bgsoundSlang.currentTime = 0;});
     
+	$('#peasant_bx').on('tap', function() {
+		peasantAnim();
+	});
+	
+	function peasantAnim(){
+		$('.peasantWordText').text(peasantWordsArray[peasantCounter]);
+		$('#peasantBubble_bx').fadeIn();
+		pauseRestOfAudios(pesantAudioArray[peasantCounter]);
+		pesantAudioArray[peasantCounter].play();
+		$('#peasant_bx').removeClass('resting_peasant');
+		$('#peasant_bx').addClass('talking_peasant');
+		if(peasantTalkingAnim!=0){
+			clearTimeout(peasantTalkingAnim);
+		}
+		if(peasantCounter	==	0){
+			peasantCounter++;
+		}
+		else{
+			peasantCounter	=	0;
+		}
+		peasantTalkingAnim	= window.setTimeout(function(){
+			console.log('peasantIntervalWorking');			
+			$('#peasant_bx').addClass('resting_peasant');
+			$('#peasant_bx').removeClass('talking_peasant');
+			$('#peasantBubble_bx').fadeOut();
+			bgsoundSlang.play();		
+			clearTimeout(peasantTalkingAnim);
+			peasantTalkingAnim			=	0;
+		},2000);
+	}
+	
+	$('#wighead_bx').on('tap', function() {
+		wigheadAnim();
+	});
+	
+	function wigheadAnim(){
+		$('.wigheadWordText').text(wigheadWordsArray[wigheadCounter]);
+		$('#wigheadBubble_bx').fadeIn();
+		pauseRestOfAudios(wigheadAudioArray[wigheadCounter]);
+		wigheadAudioArray[wigheadCounter].play();
+		$('#wighead_bx').removeClass('resting_wighead');
+		$('#wighead_bx').addClass('talking_wighead');
+		if(wigheadTalkingAnim!=0){
+			clearTimeout(wigheadTalkingAnim);
+		}
+		if(wigheadCounter	==	0){
+			wigheadCounter++;
+		}
+		else{
+			wigheadCounter	=	0;
+		}
+		wigheadTalkingAnim	= window.setTimeout(function(){
+			console.log('wigheadIntervalWorking');			
+			$('#wighead_bx').addClass('resting_wighead');
+			$('#wighead_bx').removeClass('talking_wighead');
+			$('#wigheadBubble_bx').fadeOut();
+			bgsoundSlang.play();		
+			clearTimeout(wigheadTalkingAnim);
+			wigheadTalkingAnim			=	0;
+		},2000);
+	}
+	
+	$('#soldier_bx').on('tap', function() {
+		soldierAnim();
+	});
+	
+	function soldierAnim(){
+		$('.soldierWordText').text(soldierWordsArray[soldierCounter]);
+		$('#soldierBubble_bx').fadeIn();
+		pauseRestOfAudios(soldierAudioArray[soldierCounter]);
+		soldierAudioArray[soldierCounter].play();
+		$('#soldier_bx').removeClass('resting_soldier');
+		$('#soldier_bx').addClass('talking_soldier');
+		if(soldierTalkingAnim!=0){
+			clearTimeout(soldierTalkingAnim);
+		}
+		if(soldierCounter	==	6){
+			soldierCounter	=	0;
+		}
+		else{
+			soldierCounter++;
+		}
+		soldierTalkingAnim	= window.setTimeout(function(){
+			console.log('soldierIntervalWorking');			
+			$('#soldier_bx').addClass('resting_soldier');
+			$('#soldier_bx').removeClass('talking_soldier');
+			$('#soldierBubble_bx').fadeOut();
+			bgsoundSlang.play();		
+			clearTimeout(soldierTalkingAnim);
+			soldierTalkingAnim			=	0;
+		},2000);
+	}
+	
+	$('#hipster_bx').on('tap', function() {
+		hipsterAnim();
+	});
+	
+	function hipsterAnim(){
+		$('.hipsterWordText').text(hipsterWordsArray[hipsterCounter]);
+		$('#hipsterBubble_bx').fadeIn();
+		pauseRestOfAudios(hipsterAudioArray[hipsterCounter]);
+		hipsterAudioArray[hipsterCounter].play();
+		$('#hipster_bx').removeClass('resting_hipster');
+		$('#hipster_bx').addClass('talking_hipster');
+		if(hipsterTalkingAnim!=0){
+			clearTimeout(hipsterTalkingAnim);
+		}
+		if(hipsterCounter	==	4){
+			hipsterCounter	=	0;
+		}
+		else{
+			hipsterCounter++;
+		}
+		hipsterTalkingAnim	= window.setTimeout(function(){
+			console.log('hipsterIntervalWorking');			
+			$('#hipster_bx').addClass('resting_hipster');
+			$('#hipster_bx').removeClass('talking_hipster');
+			$('#hipsterBubble_bx').fadeOut();
+			bgsoundSlang.play();		
+			clearTimeout(hipsterTalkingAnim);
+			hipsterTalkingAnim			=	0;
+		},2000);
+	}
+	
+	$('#girl_bx').on('tap', function() {
+		girlAnim();
+	});
+	
+	function girlAnim(){
+		$('.girlWordText').text(girlWordsArray[girlCounter]);
+		$('#girlBubble_bx').fadeIn();
+		pauseRestOfAudios(girlAudioArray[girlCounter]);
+		girlAudioArray[girlCounter].play();
+		$('#girl_bx').removeClass('resting_girl');
+		$('#girl_bx').addClass('talking_girl');
+		if(girlTalkingAnim!=0){
+			clearTimeout(girlTalkingAnim);
+		}
+		if(girlCounter	==	4){
+			girlCounter	=	0;
+		}
+		else{
+			girlCounter++;
+		}
+		girlTalkingAnim	= window.setTimeout(function(){
+			console.log('girlIntervalWorking');			
+			$('#girl_bx').addClass('resting_girl');
+			$('#girl_bx').removeClass('talking_girl');
+			$('#girlBubble_bx').fadeOut();
+			bgsoundSlang.play();		
+			clearTimeout(girlTalkingAnim);
+			girlTalkingAnim			=	0;
+		},2000);
+	}
+	
+	function pauseRestOfAudios(me){
+		// audio list
+		for(var i=0;i<audioListArr.length;i++){
+			if(audioListArr[i]	!=	me){
+				audioListArr[i].pause();
+				audioListArr[i].currentTime = 0;
+			}
+		}
+	}
+	
     function goBack() {
       $.mobile.changePage("sub-slang-the-slang-life-cycle.html", {transition: "slide", reverse: true });
     }

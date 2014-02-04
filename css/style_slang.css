@@ -413,17 +413,16 @@ color: #FFFFFF;
 
 .navSlang-thelatestandgreatest{
 	position: absolute;
-	left: 515px;
-	top: 90px;
-	width: 430px;
-	height: 159px;
+	left: 455px;
+	top: 83px;
+	width: 505px;
+	height: 168px;
 	overflow: auto;
 	text-align: left;
 	font-family: comic sans ms;
 	font-size: 18px;
 	font-weight: normal;
-	color: #000000;
-	
+	color: #000000;	
 }
 
 .navSlang-definingthegang{
@@ -1273,3 +1272,172 @@ color: #FFFFFF;
 	background: url('images/9-12/Language_and_Culture/Slang/Features_Of_Slang/Slang_Factory/Blending/femullet_text.png') no-repeat 0px -4px;
 }
 /* -------------------------------------- Blending Ends here  ------------------------------------ */
+
+
+/* ----------------------------------------- The Latest And Greatest ----------------------------- */
+
+.resting_peasant{
+	background: url('images/9-12/Language_and_Culture/Slang/The_Slang_Lifecycle/The_Latest_And_Greatest/Peasant_Resting.png') no-repeat 0px 0px;
+	width: 91px;
+	height: 208px;
+	position: absolute;
+	top: 355px;
+	left: 170px;
+}
+
+.resting_wighead{
+	background: url('images/9-12/Language_and_Culture/Slang/The_Slang_Lifecycle/The_Latest_And_Greatest/Wighead_Resting.png') no-repeat 0px 0px;
+	width: 100px;
+	height: 214px;
+	position: absolute;
+	top: 345px;
+	left: 306px;
+}
+
+.resting_soldier{
+	background: url('images/9-12/Language_and_Culture/Slang/The_Slang_Lifecycle/The_Latest_And_Greatest/Soldier_Resting.png') no-repeat 0px 0px;
+	width: 80px;
+	height: 237px;
+	position: absolute;
+	top: 320px;
+	left: 480px;
+}
+
+.resting_hipster{
+	background: url('images/9-12/Language_and_Culture/Slang/The_Slang_Lifecycle/The_Latest_And_Greatest/Hipster_Resting.png') no-repeat 0px 0px;
+	width: 87px;
+	height: 229px;
+	position: absolute;
+	top: 330px;
+	left: 610px;
+}
+
+.resting_girl{
+	background: url('images/9-12/Language_and_Culture/Slang/The_Slang_Lifecycle/The_Latest_And_Greatest/Girl_Resting.png') no-repeat 0px 0px;
+	width: 62px;
+	height: 160px;
+	position: absolute;
+	top: 400px;
+	left: 775px;
+}
+
+.talking_peasant{
+	background: url('images/9-12/Language_and_Culture/Slang/The_Slang_Lifecycle/The_Latest_And_Greatest/Peasant_Talking.png') no-repeat 0px 0px;
+	width: 120px;
+	height: 232px;
+	position: absolute;
+	top: 330px;
+	left: 150px;
+}
+
+.talking_wighead{
+	background: url('images/9-12/Language_and_Culture/Slang/The_Slang_Lifecycle/The_Latest_And_Greatest/Wighead_Talking.png') no-repeat 0px 0px;
+	width: 123px;
+	height: 212px;
+	position: absolute;
+	top: 345px;
+	left: 306px;
+}
+
+.talking_soldier{
+	background: url('images/9-12/Language_and_Culture/Slang/The_Slang_Lifecycle/The_Latest_And_Greatest/Soldier_Talking.png') no-repeat 0px 0px;
+	width: 95px;
+	height: 235px;
+	position: absolute;
+	top: 320px;
+	left: 480px;
+}
+
+.talking_hipster{
+	background: url('images/9-12/Language_and_Culture/Slang/The_Slang_Lifecycle/The_Latest_And_Greatest/Hipster_Talking.png') no-repeat 0px 0px;
+	width: 110px;
+	height: 235px;
+	position: absolute;
+	top: 330px;
+	left: 610px;
+}
+
+.talking_girl{
+	background: url('images/9-12/Language_and_Culture/Slang/The_Slang_Lifecycle/The_Latest_And_Greatest/Girl_Talking.png') no-repeat 0px 0px;
+	width: 79px;
+	height: 161px;
+	position: absolute;
+	top: 400px;
+	left: 775px;
+}
+
+.bubble1{
+	background: url('images/9-12/Language_and_Culture/Slang/The_Slang_Lifecycle/The_Latest_And_Greatest/Bubble1.png') no-repeat 0px 0px;
+	width:155px;
+	height:95px;
+}
+
+.bubble2{
+	background: url('images/9-12/Language_and_Culture/Slang/The_Slang_Lifecycle/The_Latest_And_Greatest/Bubble2.png') no-repeat 0px 0px;
+	width:155px;
+	height:95px;
+}
+
+.peasant_bubble{
+	left: 75px;
+	top: 263px;
+	position: absolute;
+	display:none;
+}
+
+.peasantWordText{
+	text-align:center;
+	font-family: "comic sans ms";	
+}
+
+.wigheadWordText{
+	text-align:center;
+	font-family: "comic sans ms";
+}
+
+.soldierWordText{
+	text-align:center;
+	font-family: "comic sans ms";
+}
+
+.hipsterWordText{
+	text-align:center;
+	font-family: "comic sans ms";
+}
+
+.girlWordText{
+	text-align:center;
+	font-family: "comic sans ms";
+}
+
+.wighead_bubble{
+	left: 238px;
+	top: 257px;
+	position: absolute;
+	display:none;
+}
+
+.soldier_bubble{
+	left: 395px;
+	top: 245px;
+	position: absolute;
+	display:none;
+}
+
+.hipster_bubble{
+	left: 605px;
+	top: 240px;
+	position: absolute;
+	display:none;
+}
+
+.girl_bubble{
+	left: 755px;
+	top: 295px;
+	position: absolute;
+	display:none;
+}
+
+.mainAudios_wrapper{
+	display:none;
+}
