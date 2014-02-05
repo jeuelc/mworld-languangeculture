@@ -52,7 +52,7 @@
 	  <audio id="peasantaudio_0" controls preload><source src="audio/Slang/Characters_Audios/Peasant_Rum.mp3" type="audio/mpeg"></audio>
 	  <audio id="peasantaudio_1" controls preload><source src="audio/Slang/Characters_Audios/Peasant_Bene.mp3" type="audio/mpeg"></audio>
 	  
-	  <audio id="wigheadaudio_0" controls preload><source src="audio/Slang/Characters_Audios/Wighead_Hipster.mp3" type="audio/mpeg"></audio>
+	  <audio id="wigheadaudio_0" controls preload><source src="audio/Slang/Characters_Audios/Wighead_Wicked.mp3" type="audio/mpeg"></audio>
 	  <audio id="wigheadaudio_1" controls preload><source src="audio/Slang/Characters_Audios/Wighead_Tip_Top.mp3" type="audio/mpeg"></audio>
 	  
 	  <audio id="soldieraudio_0" controls preload><source src="audio/Slang/Characters_Audios/Soldier_A1.mp3" type="audio/mpeg"></audio>
@@ -110,48 +110,28 @@
 	
 	function initializeVars(){
 		/* --------- Peasant Audios ---------------- */
-		peasantWordsArray[0]	=	'Rum';				peasantWordsArray[1]	=	'Bean';		
-		
-		pesantAudioArray[0]		=	peasantaudio_0;		pesantAudioArray[1]	=	peasantaudio_1;
+		peasantWordsArray	=	['Rum','Bean'];		
+		pesantAudioArray	=	[peasantaudio_0,peasantaudio_1];
 		/* ----------------------------------------- */
 		
 		/* ------------ Wighead Audios ------------- */
-		wigheadWordsArray[0]	=	'Hipster';			wigheadWordsArray[1]	=	'Tip Top'; 
-		
-		wigheadAudioArray[0]	=	wigheadaudio_0; 	wigheadAudioArray[1]	=	wigheadaudio_1;
+		wigheadWordsArray	=	['Wicked','Tip Top']; 
+		wigheadAudioArray	=	[wigheadaudio_0,wigheadaudio_1];
 		/* ----------------------------------------- */
 		
 		/* ------------ Soldier Audios ------------- */
-		soldierWordsArray[0]	=	'A1';			soldierWordsArray[1]	=	'Firt Rate'; 
-		soldierWordsArray[2]	=	'Grand'; 		soldierWordsArray[3]	=	'Hosty Tosty';
-		soldierWordsArray[4]	=	'Jolly Good'; 	soldierWordsArray[5]	=	'Super';
-		soldierWordsArray[6]	=	'Topping';
-		
-		soldierAudioArray[0]	=	soldieraudio_0; soldierAudioArray[1]	=	soldieraudio_1;
-		soldierAudioArray[2]	=	soldieraudio_2; soldierAudioArray[3]	=	soldieraudio_3;
-		soldierAudioArray[4]	=	soldieraudio_4; soldierAudioArray[5]	=	soldieraudio_5;
-		soldierAudioArray[6]	=	soldieraudio_6;
+		soldierWordsArray	=	['A1','Firt Rate','Grand','Hosty Tosty','Jolly Good','Super','Topping'];
+		soldierAudioArray	=	[soldieraudio_0,soldieraudio_1,soldieraudio_2,soldieraudio_3,soldieraudio_4,soldieraudio_5,soldieraudio_6];
 		/* ----------------------------------------- */
 		
 		/* ------------ Hipster Audios ------------- */
-		hipsterWordsArray[0]	=	'Fantabulous';			hipsterWordsArray[1]	=	'Far Out'; 
-		hipsterWordsArray[2]	=	'Phat'; 		hipsterWordsArray[3]	=	'Rad';
-		hipsterWordsArray[4]	=	'Untold';
-		
-		hipsterAudioArray[0]	=	hipsteraudio_0; hipsterAudioArray[1]	=	hipsteraudio_1;
-		hipsterAudioArray[2]	=	hipsteraudio_2; hipsterAudioArray[3]	=	hipsteraudio_3;
-		hipsterAudioArray[4]	=	hipsteraudio_4;
+		hipsterWordsArray	=	['Fantabulous','Far Out','Phat','Rad','Untold'];
+		hipsterAudioArray	=	[hipsteraudio_0,hipsteraudio_1,hipsteraudio_2,hipsteraudio_3,hipsteraudio_4];
 		/* ----------------------------------------- */
 		
 		/* ------------ Girl Audios ------------- */
-		/* girlWordsArray	=	['Awesome','Cool','Grouse']; */
-		girlWordsArray[0]	=	'Awesome';		girlWordsArray[1]	=	'Cool'; 
-		girlWordsArray[2]	=	'Grouse'; 		girlWordsArray[3]	=	'Ripper';
-		girlWordsArray[4]	=	'Unreal';
-		
-		girlAudioArray[0]	=	girlaudio_0; 	girlAudioArray[1]	=	girlaudio_1;
-		girlAudioArray[2]	=	girlaudio_2; 	girlAudioArray[3]	=	girlaudio_3;
-		girlAudioArray[4]	=	girlaudio_4;
+		girlWordsArray	=	['Awesome','Cool','Grouse','Ripper','Unreal']; 
+		girlAudioArray	=	[girlaudio_0,girlaudio_1,girlaudio_2,girlaudio_3,girlaudio_4];
 		/* ----------------------------------------- */
 		
 		audioListArr[0]			=	bgsoundSlang;

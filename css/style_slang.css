@@ -1387,27 +1387,32 @@ color: #FFFFFF;
 
 .peasantWordText{
 	text-align:center;
-	font-family: "comic sans ms";	
+	font-family: "comic sans ms";
+	padding:18px 0px 0px 0px;
 }
 
 .wigheadWordText{
 	text-align:center;
 	font-family: "comic sans ms";
+	padding:18px 0px 0px 0px;
 }
 
 .soldierWordText{
 	text-align:center;
 	font-family: "comic sans ms";
+	padding:18px 0px 0px 0px;
 }
 
 .hipsterWordText{
 	text-align:center;
 	font-family: "comic sans ms";
+	padding:18px 0px 0px 0px;
 }
 
 .girlWordText{
 	text-align:center;
 	font-family: "comic sans ms";
+	padding:18px 0px 0px 0px;
 }
 
 .wighead_bubble{
